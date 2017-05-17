@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.html">swim wear</a></h1>
+	        <h1 class="navbar-brand"><a  href="index.html">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			            <div class="row">
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Women</a></li>
+						            <li><a class="list" href="products.html">Products</a></li>
 						            <li><a class="list1" href="products.html">PrettySecrets</a></li>
 						            <li><a class="list1" href="products.html">N-Gal</a></li>
 						            <li><a class="list1" href="products.html">Lobster</a></li>
@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Kids</a></li>
+						            <li><a class="list" href="products.html">Transactions</a></li>
 						            <li><a class="list1" href="products.html">River Island</a></li>
 						            <li><a class="list1" href="products.html">Penny</a></li>
 						            <li><a class="list1" href="products.html">Nidhi Munim</a></li>
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Men</a></li>
+						            <li><a class="list" href="products.html">Open Shop</a></li>
 						            <li><a class="list1" href="products.html">Fiesta Clara</a></li>
 						            <li><a class="list1" href="products.html">Quiksilver</a></li>
 						            <li><a class="list1" href="products.html">Incult</a></li>

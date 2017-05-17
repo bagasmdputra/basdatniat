@@ -85,7 +85,7 @@ $(window).load(function() {
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	       <h1 class="navbar-brand"><a  href="index.php">swim wear</a></h1>
+	       <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 
@@ -261,7 +261,7 @@ $(window).load(function() {
 <div class="subscribe">
 	 <div class="container">
 	 <div class="subscribe1">
-		 <h4>the latest from swim wear</h4>
+		 <h4>the latest from Tokokeren</h4>
 		 </div>
 		 <div class="subscribe2">
 		 <form>
