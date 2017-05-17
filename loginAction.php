@@ -1,18 +1,19 @@
 <?php
     require 'connect.php';
+    echo('masuk');
     $db = connectDB();
     if (isset($_POST['login'])){
-
+        echo "if";
         $email = $_POST['email'];
         $password = $_POST['password'];
         $isAdmin = isAdmin($db, $email, $password);
         if ($isAdmin == true){
-            header("Location: ..\index.php");
+            header("Location: admin/index.php");
         }
 
         $sql = 'SELECT * FROM PENGGUNA';
         $result = pg_query($db, $sql);
-
+        echo($result + 'haha');
         // Check connection
         if (!$db) {
             die("Connection failed ");
@@ -25,7 +26,7 @@
                     $_SESSION['email'] = "email";
                     $_SESSION['role'] = 'user';
                     $_SESSION['real_email'] = $email;
-                    header("Location: products.php");
+                    header("Location: pelanggan.php");
                     break;
                 }
             }

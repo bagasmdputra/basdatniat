@@ -4,7 +4,7 @@
     function connectDB() {
         $host        = "host=127.0.0.1";
         $port        = "port=5432";
-        $dbname      = "dbname = postgres";
+        $dbname      = "dbname = c12";
         $credentials = "user = postgres password=basdat";
 
         // Create connection
