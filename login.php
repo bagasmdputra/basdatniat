@@ -10,7 +10,6 @@
 	}
 	else{
 ?>
- ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -239,7 +238,7 @@ $(window).load(function() {
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
-				<form action="loginaction.php" method="post">
+				<form action="loginAction.php" method="post">
 				  <div>
 					<span>Email Address<label>*</label></span>
 					<input name="email" id="email"type="email" required/>
@@ -249,7 +248,7 @@ $(window).load(function() {
 					<input name="password" id="pwdLogin" type="password">
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
+				  <input type="submit" name='login'value="Login">
 			    </form>
 			   </div>
 			   <div class="clearfix"> </div>
