@@ -55,7 +55,7 @@
             <ul class="nav navbar-top-links navbar-right">
                 <li><a href="#"><i class="fa fa-user fa-fw"></i> Nama Admin</a>
                 </li>
-                <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.navbar-top-links -->
