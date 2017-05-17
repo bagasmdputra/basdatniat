@@ -1,3 +1,16 @@
+<?php
+	require 'connect.php';
+	if(isset($_SESSION['role'])){
+		if($_SESSION['role'] == 'admin'){
+			require 'admin.php';
+		}
+		else if($_SESSION['role'] == 'user'){
+			require 'pengguna.php';
+		}
+	}
+	else{
+?>
+ ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -8,13 +21,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren  | Login ::</title>
+<title>Tokokeren|Login</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
@@ -51,8 +64,8 @@ $(window).load(function() {
 					<li class="text"><a href="login.php">login</a>
 					<li><div class="cart box_1">
 							<a href="checkout.php">
-								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
-							</a>	
+								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)
+							</a>
 							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
 							<div class="clearfix"> </div>
 						</div></li>
@@ -76,7 +89,7 @@ $(window).load(function() {
 	       <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="index.php">Home</a></li>
@@ -199,7 +212,7 @@ $(window).load(function() {
 						</form>
 					</div>
 				</div>
-			
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -226,19 +239,19 @@ $(window).load(function() {
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
-				<form>
+				<form action="loginaction.php" method="post">
 				  <div>
 					<span>Email Address<label>*</label></span>
-					<input type="text"> 
+					<input name="email" id="email"type="email" required/>
 				  </div>
 				  <div>
 					<span>Password<label>*</label></span>
-					<input type="text"> 
+					<input name="password" id="pwdLogin" type="password">
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
 				  <input type="submit" value="Login">
 			    </form>
-			   </div>	
+			   </div>
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>
@@ -317,6 +330,7 @@ $(window).load(function() {
 			</div>
 		</div>
 	<!--footer-->
-			
+
 </body>
 </html>
+<?php } ?>
