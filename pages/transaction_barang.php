@@ -82,29 +82,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
-				
-					<div class="col-md-6 ">
-                        <div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_barang.php" class="button"> Barang </a>
-                            </div>
-                        </div>
-					</div>
-				<div class="col-md-6">
-						<div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_pulsa.php" class="button"> Pulsa </a>
-                            </div>
-                        </div>
-				</div>
-				<div class="clearfix"></div>
-			
-		</div>
-		</div>
+		<div class="table-responsive">
+         <table class="table">
+                        <thead>
+                          <tr>
+                              <th>No Invoice</th>
+                              <th>Nama Toko</th>
+                              <th>Tanggal</th>
+                              <th>Status</th>
+                              <th>Total Bayar</th>
+                              <th>Alamat Kirim</th>
+                              <th>Biaya Kirim</th>
+                              <th>Nomor Resi</th>
+                              <th>Jasa Kirim</th>
+                              <th>Ulasan</th>
+                          </tr>
+                            </thead>
+<?php 
+
+$db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+
+    $query = "SELECT * FROM TRANSAKSI_SHIPPED WHERE email_pembeli='Marica@gmail.com'"; 
+
+    $result = pg_query($query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    while($myrow = pg_fetch_assoc($result)) { 
+
+        $stat = "hai";
+        if ($myrow['status']=='1'){
+            $stat = "Transaksi dilakukan";
+        }elseif ($myrow['status']=='2'){
+            $stat = "Barang sudah dibayar";
+        }elseif ($myrow['status']=='3'){
+            $stat = "Barang sudah dikirim";
+        }else{
+            $stat = "Barang sudah diterima";
+        }
+
+        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                <p><a class=\"button stroke orange\" href=\"produklist.php?%s\">Daftar&nbspproduk</a></p>
+                          </td></tr>",
+                $myrow['no_invoice'],
+                $myrow['nama_toko'], 
+                $myrow['tanggal'],
+                $stat,
+                $myrow['total_bayar'],
+                $myrow['alamat_kirim'],
+                $myrow['biaya_kirim'],
+                $myrow['no_resi'],
+                $myrow['nama_jasa_kirim'],
+                ("invoice_no=".$myrow['no_invoice'])
+               );
+        } 
+ ?> 
+
+                    </table> 
+            </div>
+    
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->

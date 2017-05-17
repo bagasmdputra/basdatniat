@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="index.php">Home</a></li>
 		        <li class="dropdown">
 		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="products.php">Open Shop</a></li>
 					<li><a href="products.php">Add product</a></li>
 	        </ul>
@@ -82,29 +82,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
-				
-					<div class="col-md-6 ">
-                        <div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_barang.php" class="button"> Barang </a>
-                            </div>
-                        </div>
-					</div>
-				<div class="col-md-6">
-						<div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_pulsa.php" class="button"> Pulsa </a>
-                            </div>
-                        </div>
-				</div>
-				<div class="clearfix"></div>
-			
-		</div>
-		</div>
+		<div class="table-responsive">
+         <table class="table">
+                        <thead>
+                          <tr>
+                              <th>No Invoice</th>
+                              <th>Nama Produk</th>
+                              <th>Tanggal</th>
+                              <th>Status</th>
+                              <th>Total Bayar</th>
+                              <th>Nominal</th>
+                              <th>Nomor</th>
+                          </tr>
+                            </thead>
+<?php 
+
+    $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+
+        $query = "
+        SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
+        FROM TRANSAKSI_PULSA a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
+        WHERE email_pembeli='Kendal@gmail.com'"; 
+
+        $result = pg_query($query); 
+        if (!$result) { 
+            echo "Problem with query " . $query . "<br/>"; 
+            echo pg_last_error(); 
+            exit(); 
+        } 
+
+        while($myrow = pg_fetch_assoc($result)) { 
+   
+            $stat = "hai";
+            if ($myrow['status']=='1'){
+                $stat = "Transaksi dilakukan";
+            }else{
+                $stat = "Pulsa sudah dibayar";
+            }
+
+            printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",
+                    $myrow['no_invoice'],
+                    $myrow['nama'], 
+                    $myrow['tanggal'],
+                    $stat,
+                    $myrow['total_bayar'],
+                    $myrow['nominal'],
+                    $myrow['nomor']
+                   );
+        }
+
+?> 
+                    </table> 
+            </div>
+    
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->

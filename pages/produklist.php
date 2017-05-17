@@ -58,8 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul class="nav navbar-nav">
 			<li><a href="index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
+		            <li><a href="products.php">Products</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="products.php">Open Shop</a></li>
 					<li><a href="products.php">Add product</a></li>
 	        </ul>
@@ -82,29 +82,71 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
-				
-					<div class="col-md-6 ">
-                        <div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_barang.php" class="button"> Barang </a>
-                            </div>
-                        </div>
-					</div>
-				<div class="col-md-6">
-						<div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_pulsa.php" class="button"> Pulsa </a>
-                            </div>
-                        </div>
-				</div>
-				<div class="clearfix"></div>
-			
-		</div>
-		</div>
+		<div class="table-responsive">
+         <table class="table">
+                        <thead>
+                          <tr>
+                              <th>Nama Produk</th>
+                              <th>Berat</th>
+                              <th>Kuantitas</th>
+                              <th>Harga</th>
+                              <th>Sub total</th>
+                              <th>Ulasan</th>
+                          </tr>
+                            </thead>
+<?php 
+    
+
+    $number = $_GET['invoice_no'];
+
+    $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+//    email diganti dari session
+        $email = "gaston@gmail.com";
+
+        $query = "
+            SELECT a.kode_produk, nama,berat, kuantitas, b.harga, sub_total, komentar 
+            FROM LIST_ITEM a 
+            LEFT JOIN PRODUK b 
+                ON a.kode_produk = b.kode_produk 
+            LEFT JOIN 
+                    (SELECT * FROM ULASAN WHERE email_pembeli='$email')  c 
+                ON c.kode_produk = b.kode_produk 
+            WHERE no_invoice='$number' "; 
+
+        $result = pg_query($query); 
+        if (!$result) { 
+            echo "Problem with query " . $query . "<br/>"; 
+            echo pg_last_error(); 
+            exit(); 
+        } 
+
+        while($myrow = pg_fetch_assoc($result)) { 
+            
+            $kode_produk = $myrow['kode_produk'];
+            $ulasan = "<button type=\"submit\" disabled>Ulas</button>";
+            
+            if(is_null($myrow['komentar'])){
+                $ulasan = "<p><a class=\"button stroke orange\" href=\"ulas.php?kode_produk=$kode_produk\">Ulas</a></p>";
+            }
+            
+            
+            printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                    %s
+                              </td></tr>",
+                    $myrow['nama'],
+                    $myrow['berat'], 
+                    $myrow['kuantitas'],
+                    $myrow['harga'],
+                    $myrow['sub_total'],
+                    $ulasan
+                    
+                   );
+        } 
+        ?> 
+
+                    </table> 
+            </div>
+    
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->

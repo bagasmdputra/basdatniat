@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
 		            <li><a href="./pages/products.php">Products</a></li>
 					<li><a href="./pages/transactions.php">Transactions</a></li>
@@ -82,29 +82,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
+    <div class="content">
+ <div class="main-1">
+		<div class="container">
+<div class="login-page">
+			   <div class="account_grid">
+<div class="col-md-12">
+                <form action="loginAction.php" method="post">
+				  <div>
+					<span>Nama<label>*</label></span>
+					<input name="name" id="name" type="text" required/>
+				  </div>
+                    
+                    <div>
+                    <label for="input-7-sm" class="control-label">Small Rating</label>  
+                    <input id="input-7-sm" class="rating rating-loading" value="2" data-min="0" data-max="5" data-step="0.5" data-size="sm"><hr/>
+                    </div>
+                    
+				  <div>
+					<span>Review<label>*</label></span>
+                      <textarea name="review" class="form-control" rows="5" id="review" type="textarea" required></textarea>
+				  </div>
 				
-					<div class="col-md-6 ">
-                        <div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_barang.php" class="button"> Barang </a>
-                            </div>
-                        </div>
-					</div>
-				<div class="col-md-6">
-						<div class="img-container">
-                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
-                            <div class="middle">
-                                <a href="transaction_pulsa.php" class="button"> Pulsa </a>
-                            </div>
-                        </div>
-				</div>
-				<div class="clearfix"></div>
-			
-		</div>
-		</div>
+				  <input type="submit" name='submit' value="Submit">
+			    </form>
+      <div class="clearfix"> </div>
+    </div>
+    </div>
+            </div>
+     </div>
+        </div>
+    </div>
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
