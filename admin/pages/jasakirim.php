@@ -44,79 +44,37 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Admin JasaKirim</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Nama Admin</a>
-                </li>
-                <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
-                        </li>
-                        <li>
-                            <a href="jasakirim.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
-                        </li>
-                        <li>
-                            <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+         <?php 
+            require 'navbar.php';
+        ?>
 
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Jasa Kirim (Pulsa)</h1>
+                    <h1 class="page-header">Tambah Jasa Kirim</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="pulsa.php" class="form-horizontal">
+                    <form action="pulsa.php" method="post" class="form-horizontal">
                         <div class="form-group">
-                            <label for="kode-produk" class="control-label col-sm-4 col-lg-2">Nama</label>
-                            <div class="col-sm-8 col-lg-10">
+                            <label for="Nama-lengkap" class="control-label col-sm-4 col-lg-3">Nama</label>
+                            <div class="col-sm-8 col-lg-9">
                                 <input type="text" name="Nama-lengkap" class="form-control" required>
                             </div>
                         </div>
-                        </div>
                         <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Lama Kirim</label>
-                            <div class="col-sm-8 col-lg-10">
+                            <label for="Lama-kirim" class="control-label col-sm-4 col-lg-3">Lama Kirim</label>
+                            <div class="col-sm-8 col-lg-9">
                                 <input type="number" name="Lama-kirim" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Tarif</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="Tarif-pulsa" class="form-control" required>
+                            <label for="Tarif" class="control-label col-sm-4 col-lg-3">Tarif</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <input type="number" name="Tarif" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
