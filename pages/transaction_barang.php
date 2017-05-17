@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
 		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
@@ -82,6 +82,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
+    <div class="content">
+	 <div class="container">
 		<div class="table-responsive">
          <table class="table">
                         <thead>
@@ -143,6 +145,9 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
 
                     </table> 
             </div>
+        </div>
+        </div>
+
     
 		<div class="banner-bottom">
 		<div class="gallery-cursual">

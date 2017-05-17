@@ -56,12 +56,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
+		            <li><a href="products.php">Products</a></li>
 					<li><a href="transactions.php">Transactions</a></li>
-					<li><a href="products.php">Open Shop</a></li>
-					<li><a href="products.php">Add product</a></li>
+					<li><a href="openshop.php">Open Shop</a></li>
+					<li><a href="addproduct.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -82,6 +82,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
+    
+       <div class="content">
+	 <div class="container">
 		<div class="table-responsive">
          <table class="table">
                         <thead>
@@ -134,6 +137,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 ?> 
                     </table> 
             </div>
+           </div>
+    </div>
     
 		<div class="banner-bottom">
 		<div class="gallery-cursual">

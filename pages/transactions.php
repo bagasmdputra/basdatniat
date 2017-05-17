@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
 		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
@@ -56,12 +56,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="products.php">Open Shop</a></li>
-					<li><a href="products.php">Add product</a></li>
+		            <li><a href="products.php">Products</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
+					<li><a href="openshop.php">Open Shop</a></li>
+					<li><a href="addproducts.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -82,6 +82,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
+    <div class="banner-section">
+			<div class="container">
+				<div class="banner-grids">
+					<div class="col-md-12 banner-grid">
+						<h2>Transactions you've done</h2>
+						<p>Click one of the buttons below to check your history of transaction.</p>
+						
+					</div>
+				
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</div>
+    
+    
 		<div class="banner-section">
 			<div class="container">
 				

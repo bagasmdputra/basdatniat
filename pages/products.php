@@ -9,18 +9,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Tokokeren | Home :: </title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
-		<script src="js/simpleCart.min.js"> </script>
+		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
 </head>
 <body>
@@ -30,8 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.php">login</a></li>
-					<li class="text"><a href="login.php">Cart</a></li>
+					<li class="text"><a href="../login.php">login</a></li>
+					<li class="text"><a href="../login.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -55,27 +56,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="./pages/openshop.php">Open Shop</a></li>
-					<li><a href="./pages/addproduct.php">Add product</a></li>
+		            <li><a href="products.php">Products</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
+					<li><a href="openshop.php">Open Shop</a></li>
+					<li><a href="addproducts.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
 </div>
-			   <div class="search-box">
-					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
+			 
 			
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
@@ -89,25 +82,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
+        <div class="banner-section">
 			<div class="container">
 				<div class="banner-grids">
-					<div class="col-md-6 banner-grid">
-						<h2>the latest collections</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a href="products.php" class="button"> shop now </a>
+					<div class="col-md-12 banner-grid">
+						<h2>Buy our latest products</h2>
+						<p>Click one of the buttons below to explore our best offers only for you.</p>
+						
 					</div>
-				<div class="col-md-6 banner-grid1">
-						<img src="images/p2.png" class="img-responsive" alt=""/>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
+		</div>
+		</div>
+    
+		<div class="banner-section">
+			<div class="container">
+				
+					<div class="col-md-6 ">
+                        <div class="img-container">
+                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
+                            <div class="middle">
+                                <a href="products_barang.php" class="button"> Barang </a>
+                            </div>
+                        </div>
+					</div>
+				<div class="col-md-6">
+						<div class="img-container">
+                            <img src="../images/p2.png" class="img-responsive image" alt=""/>
+                            <div class="middle">
+                                <a href="products_pulsa.php" class="button"> Pulsa </a>
+                            </div>
+                        </div>
+				</div>
+				<div class="clearfix"></div>
+			
 		</div>
 		</div>
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
-		<script src="js/owl.carousel.js"></script>
+		<script src="../js/owl.carousel.js"></script>
 			<script>
 				$(document).ready(function() {
 					$("#owl-demo").owlCarousel({
@@ -170,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
+				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
 			<div class="item-info">
 					<h5>Lorem ipsum</h5>
 				</div>
@@ -186,6 +201,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 		
+		<div class="subscribe">
+	 <div class="container">
+
+		
+	 <div class="clearfix"></div>
+	 </div>
+</div>
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
