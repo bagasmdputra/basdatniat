@@ -8,13 +8,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Swim Wear a E-Commerce online Shopping Category Flat Bootstrap Responsive Website Template| Single :: w3layouts</title>
+<title>Tokokeren | Single :: </title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Swim Wear Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
@@ -47,19 +47,12 @@ $(window).load(function() {
 		<div class="header">
 			<div class="header-top">
 			<div class="container">
-				 <div class="lang_list">
-					<select tabindex="4" class="dropdown1">
-						<option value="" class="label" value="">En</option>
-						<option value="1">English</option>
-						<option value="2">French</option>
-						<option value="3">German</option>
-					</select>
-   			</div>
+
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.html">login</a>
+					<li class="text"><a href="login.php">login</a>
 					<li><div class="cart box_1">
-							<a href="checkout.html">
+							<a href="checkout.php">
 								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
@@ -82,42 +75,42 @@ $(window).load(function() {
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.html">swim wear</a></h1>
+	        <h1 class="navbar-brand"><a  href="index.php">swim wear</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.html">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
 		            <ul class="dropdown-menu multi-column columns-3">
 			            <div class="row">
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Women</a></li>
-						            <li><a class="list1" href="products.html">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.html">N-Gal</a></li>
-						            <li><a class="list1" href="products.html">Lobster</a></li>
-						            <li><a class="list1" href="products.html">Citypret</a></li>
+						            <li><a class="list" href="products.php">Women</a></li>
+						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
+						            <li><a class="list1" href="products.php">N-Gal</a></li>
+						            <li><a class="list1" href="products.php">Lobster</a></li>
+						            <li><a class="list1" href="products.php">Citypret</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Kids</a></li>
-						            <li><a class="list1" href="products.html">River Island</a></li>
-						            <li><a class="list1" href="products.html">Penny</a></li>
-						            <li><a class="list1" href="products.html">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.html">Divaat</a></li>
+						            <li><a class="list" href="products.php">Kids</a></li>
+						            <li><a class="list1" href="products.php">River Island</a></li>
+						            <li><a class="list1" href="products.php">Penny</a></li>
+						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
+						            <li><a class="list1" href="products.php">Divaat</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Men</a></li>
-						            <li><a class="list1" href="products.html">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.html">Quiksilver</a></li>
-						            <li><a class="list1" href="products.html">Incult</a></li>
-						            <li><a class="list1" href="products.html">Proline</a></li>
+						            <li><a class="list" href="products.php">Men</a></li>
+						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
+						            <li><a class="list1" href="products.php">Quiksilver</a></li>
+						            <li><a class="list1" href="products.php">Incult</a></li>
+						            <li><a class="list1" href="products.php">Proline</a></li>
 					            </ul>
 				            </div>
 			            </div>
@@ -129,29 +122,29 @@ $(window).load(function() {
 			            <div class="row">
 				            <div class="col-sm-4">
 					           <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Women</a></li>
-						            <li><a class="list1" href="products.html">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.html">N-Gal</a></li>
-						            <li><a class="list1" href="products.html">Lobster</a></li>
-						            <li><a class="list1" href="products.html">Citypret</a></li>
+						            <li><a class="list" href="products.php">Women</a></li>
+						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
+						            <li><a class="list1" href="products.php">N-Gal</a></li>
+						            <li><a class="list1" href="products.php">Lobster</a></li>
+						            <li><a class="list1" href="products.php">Citypret</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					             <ul class="multi-column-dropdown">
-						            <li><a class="list"  href="products.html">Kids</a></li>
-						            <li><a class="list1" href="products.html">River Island</a></li>
-						            <li><a class="list1" href="products.html">Penny</a></li>
-						            <li><a class="list1" href="products.html">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.html">Divaat</a></li>
+						            <li><a class="list"  href="products.php">Kids</a></li>
+						            <li><a class="list1" href="products.php">River Island</a></li>
+						            <li><a class="list1" href="products.php">Penny</a></li>
+						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
+						            <li><a class="list1" href="products.php">Divaat</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a  class="list" href="products.html">Men</a></li>
-						            <li><a class="list1" href="products.html">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.html">Quiksilver</a></li>
-						            <li><a class="list1" href="products.html">Incult</a></li>
-						            <li><a class="list1" href="products.html">Proline</a></li>
+						            <li><a  class="list" href="products.php">Men</a></li>
+						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
+						            <li><a class="list1" href="products.php">Quiksilver</a></li>
+						            <li><a class="list1" href="products.php">Incult</a></li>
+						            <li><a class="list1" href="products.php">Proline</a></li>
 					            </ul>
 				            </div>
 			            </div>
@@ -163,36 +156,36 @@ $(window).load(function() {
 			            <div class="row">
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Women</a></li>
-						            <li><a class="list1" href="products.html">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.html">N-Gal</a></li>
-						            <li><a class="list1" href="products.html">Lobster</a></li>
-						            <li><a class="list1" href="products.html">Citypret</a></li>
+						            <li><a class="list" href="products.php">Women</a></li>
+						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
+						            <li><a class="list1" href="products.php">N-Gal</a></li>
+						            <li><a class="list1" href="products.php">Lobster</a></li>
+						            <li><a class="list1" href="products.php">Citypret</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					             <ul class="multi-column-dropdown">
-						            <li><a  class="list" href="products.html">Kids</a></li>
-						            <li><a class="list1" href="products.html">River Island</a></li>
-						            <li><a class="list1" href="products.html">Penny</a></li>
-						            <li><a class="list1" href="products.html">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.html">Divaat</a></li>
+						            <li><a  class="list" href="products.php">Kids</a></li>
+						            <li><a class="list1" href="products.php">River Island</a></li>
+						            <li><a class="list1" href="products.php">Penny</a></li>
+						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
+						            <li><a class="list1" href="products.php">Divaat</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.html">Men</a></li>
-						            <li><a class="list1" href="products.html">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.html">Quiksilver</a></li>
-						            <li><a class="list1" href="products.html">Incult</a></li>
-						            <li><a class="list1" href="products.html">Proline</a></li>
+						            <li><a class="list" href="products.php">Men</a></li>
+						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
+						            <li><a class="list1" href="products.php">Quiksilver</a></li>
+						            <li><a class="list1" href="products.php">Incult</a></li>
+						            <li><a class="list1" href="products.php">Proline</a></li>
 					            </ul>
 				            </div>
 			            </div>
 		            </ul>
 		        </li>
-					<li><a href="products.html">Top</a></li>
-					<li><a href="products.html">Bikini</a></li>
+					<li><a href="products.php">Top</a></li>
+					<li><a href="products.php">Bikini</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -228,19 +221,19 @@ $(window).load(function() {
 					<div class="col-md-4 single-grid1">
 						<h2>account</h2>
 							<ul>
-								<li><a href="login.html">login</a></li>
-								<li><a href="login.html">Register</a></li>
-								<li><a href="login.html">Forgot Your Password</a></li>
-								<li><a href="account.html">my account</a></li>
-								<li><a href="login.html">address books</a></li>
-								<li><a href="login.html">wishlist</a></li>
-								<li><a href="login.html">order history</a></li>
-								<li><a href="login.html">downloads</a></li>
-								<li><a href="login.html">reward points</a></li>
-								<li><a href="login.html">return</a></li>
-								<li><a href="login.html">transaction</a></li>
-								<li><a href="login.html">newsletter</a></li>
-								<li><a href="login.html">recurring payments</a></li>
+								<li><a href="login.php">login</a></li>
+								<li><a href="login.php">Register</a></li>
+								<li><a href="login.php">Forgot Your Password</a></li>
+								<li><a href="account.php">my account</a></li>
+								<li><a href="login.php">address books</a></li>
+								<li><a href="login.php">wishlist</a></li>
+								<li><a href="login.php">order history</a></li>
+								<li><a href="login.php">downloads</a></li>
+								<li><a href="login.php">reward points</a></li>
+								<li><a href="login.php">return</a></li>
+								<li><a href="login.php">transaction</a></li>
+								<li><a href="login.php">newsletter</a></li>
+								<li><a href="login.php">recurring payments</a></li>
 							</ul>
 					</div>
 					<div class="col-md-4 single-grid">		
@@ -373,7 +366,7 @@ $(window).load(function() {
 				<h3>Related Products</h3>
 				<div class="product-model-sec single-product-grids">
 					<div class="product-grid single-product">
-						<a href="single.html">
+						<a href="single.php">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/m1.jpg" class="img-responsive" alt="">
@@ -397,7 +390,7 @@ $(window).load(function() {
 						</div>
 					</div>
 					<div class="product-grid single-product">
-						<a href="single.html">
+						<a href="single.php">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/m2.jpg" class="img-responsive" alt="">
@@ -421,7 +414,7 @@ $(window).load(function() {
 						</div>
 					</div>
 					<div class="product-grid single-product">
-						<a href="single.html">
+						<a href="single.php">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/m3.jpg" class="img-responsive" alt="">
@@ -445,7 +438,7 @@ $(window).load(function() {
 						</div>
 					</div>
 					<div class="product-grid single-product">
-						<a href="single.html">
+						<a href="single.php">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/m4.jpg" class="img-responsive" alt="">
@@ -480,7 +473,7 @@ $(window).load(function() {
 					<div class="col-md-2 footer-grid">
 					<h4>company</h4>
 					<ul>
-						<li><a href="products.html">products</a></li>
+						<li><a href="products.php">products</a></li>
 						<li><a href="#">Work Here</a></li>
 						<li><a href="#">Team</a></li>
 						<li><a href="#">Happenings</a></li>
@@ -493,7 +486,7 @@ $(window).load(function() {
 						<li><a href="#">Support</a></li>
 						<li><a href="#">FAQ</a></li>
 						<li><a href="#">Warranty</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>
 					</ul>
 					</div>
 					<div class="col-md-2 footer-grid">
@@ -521,7 +514,7 @@ $(window).load(function() {
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					<p>Copyright &copy; 2015 Swim Wear. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+					<p>Copyright &copy; 2015 Tokokeren. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 					</div>
 				<div class="clearfix"></div>
 				</div>
