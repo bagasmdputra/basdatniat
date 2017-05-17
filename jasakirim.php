@@ -1,5 +1,5 @@
 <?php
-
+  echo "string";
 ?>
 
 <!DOCTYPE html>
@@ -99,28 +99,28 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="pulsa.php" class="form-horizontal">
+                    <form action="jasakirim.php" class="form-horizontal">
                         <div class="form-group">
-                            <label for="kode-produk" class="control-label col-sm-4 col-lg-2">Nama</label>
+                            <label for="kode-produk" class="control-label col-sm-4 col-lg-2">Nama Lengkap</label>
                             <div class="col-sm-8 col-lg-10">
                                 <input type="text" name="Nama-lengkap" class="form-control" required>
                             </div>
                         </div>
                         </div>
-                        <br>
-                        <br>
                         <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Lama Kirim</label>
+                            <label for="lama-kirim" class="control-label col-sm-4 col-lg-2">Lama</label>
                             <div class="col-sm-8 col-lg-10">
                                 <input type="number" name="Lama" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Tarif</label>
+                            <label for="tarif-pulsa" class="control-label col-sm-4 col-lg-2">Tarif</label>
                             <div class="col-sm-8 col-lg-10">
                                 <input type="number" name="Tarif-pulsa" class="form-control" required>
                             </div>
                         </div>
+                        <br>
+                        <br>
                         <div class="form-group">
                             <div class="text-center">
                                 <button class="btn btn-default" type="submit" value="submit">Submit</button>
