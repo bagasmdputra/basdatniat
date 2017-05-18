@@ -8,13 +8,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren  | Account ::</title>
+<title>Tokokeren|Register</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
@@ -59,8 +59,8 @@ $(window).load(function() {
 					<li class="text"><a href="login.php">login</a>
 					<li><div class="cart box_1">
 							<a href="checkout.php">
-								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
-							</a>	
+								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)
+							</a>
 							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
 							<div class="clearfix"> </div>
 						</div></li>
@@ -84,7 +84,7 @@ $(window).load(function() {
 	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="index.php">Home</a></li>
@@ -207,7 +207,7 @@ $(window).load(function() {
 						</form>
 					</div>
 				</div>
-			
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -225,26 +225,30 @@ $(window).load(function() {
 	<div class="main-1">
 		<div class="container">
 			<div class="register">
-		  	  <form> 
+		  	  <form>
 				 <div class="register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<span>First Name<label>*</label></span>
-						<input type="text"> 
+						<span>Full Name<label>*</label></span>
+						<input type="text" name="fullName" id="fullName">
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						<span>Last Name<label>*</label></span>
-						<input type="text"> 
+						<span>Email<label>*</label></span>
+						<input type="text" name="email" id="email">
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						 <span>Email Address<label>*</label></span>
-						 <input type="text"> 
+						 <span>Phone Number<label>*</label></span>
+						 <input type="text">
 					 </div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
-					   </a>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Sex<label>*</label></span>
+						 <select name="sex" type="text">
+						 	<option value="L">L</option>
+							<option value="P">P</option>
+						 </select>
 					 </div>
+
+				 </div>
 				     <div class="register-bottom-grid">
 						    <h3>LOGIN INFORMATION</h3>
 							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
@@ -340,6 +344,6 @@ $(window).load(function() {
 			</div>
 		</div>
 	<!--footer-->
-			
+
 </body>
 </html>
