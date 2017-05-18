@@ -9,18 +9,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Tokokeren | Home :: </title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery.min.js"></script>
+<script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
-		<script src="js/simpleCart.min.js"> </script>
+		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
 </head>
 <body>
@@ -30,8 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.php">login</a></li>
-					<li class="text"><a href="login.php">Cart</a></li>
+					<li class="text"><a href="../login.php">login</a></li>
+					<li class="text"><a href="../login.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -55,27 +56,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
 		            <li><a href="./pages/products.php">Products</a></li>
 					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="./pages/openshop.php">Open Shop</a></li>
-					<li><a href="./pages/addproduct.php">Add product</a></li>
+					<li><a href="products.php">Open Shop</a></li>
+					<li><a href="products.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
 </div>
-			   <div class="search-box">
-					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
+			 
 			
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
@@ -89,21 +82,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
-				<div class="banner-grids">
-					<div class="col-md-6 banner-grid">
-						<h2>the latest collections</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a href="products.php" class="button"> shop now </a>
-					</div>
-				<div class="col-md-6 banner-grid1">
-						<img src="images/p2.png" class="img-responsive" alt=""/>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		</div>
+    <div class="content">
+ <div class="main-1">
+		<div class="container">
+<div class="login-page">
+			   <div class="account_grid">
+<div class="col-md-12">
+                <form action="loginAction.php" method="post">
+				  <div>
+					<span>Nama<label>*</label></span>
+					<input name="name" id="name" type="text" required/>
+				  </div>
+                    
+                    <div>
+                    <label for="input-7-sm" class="control-label">Small Rating</label>  
+                    <input id="input-7-sm" class="rating rating-loading" value="2" data-min="0" data-max="5" data-step="0.5" data-size="sm"><hr/>
+                    </div>
+                    
+				  <div>
+					<span>Review<label>*</label></span>
+                      <textarea name="review" class="form-control" rows="5" id="review" type="textarea" required></textarea>
+				  </div>
+				
+				  <input type="submit" name='submit' value="Submit">
+			    </form>
+      <div class="clearfix"> </div>
+    </div>
+    </div>
+            </div>
+     </div>
+        </div>
+    </div>
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -170,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
+				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
 			<div class="item-info">
 					<h5>Lorem ipsum</h5>
 				</div>
@@ -186,6 +195,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 		
+		<div class="subscribe">
+	 <div class="container">
+
+		
+	 <div class="clearfix"></div>
+	 </div>
+</div>
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
