@@ -50,13 +50,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
+	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
 		            <li><a href="./pages/products.php">Products</a></li>
 					<li><a href="./pages/transactions.php">Transactions</a></li>
@@ -86,23 +86,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          <table class="table">
                         <thead>
                           <tr>
-                              <th>No Invoice</th>
-                              <th>Nama Toko</th>
-                              <th>Tanggal</th>
-                              <th>Status</th>
-                              <th>Total Bayar</th>
-                              <th>Alamat Kirim</th>
-                              <th>Biaya Kirim</th>
-                              <th>Nomor Resi</th>
-                              <th>Jasa Kirim</th>
-                              <th>Ulasan</th>
+                              <th>Kode Produk</th>
+                              <th>Nama Produk</th>
+                              <th>Harga</th>
+                              <th>Deskripsi</th>
+                              <th>Is Asuransi</th>
+                              <th>Stok</th>
+                              <th>Is Baru</th>
+                              <th>Harga Grosir</th>
+                              <th>Beli</th>
                           </tr>
                             </thead>
 <?php 
 
 $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
 
-    $query = "SELECT * FROM TRANSAKSI_SHIPPED WHERE email_pembeli='Marica@gmail.com'"; 
+    $query = "
+        SELECT a.kode_produk, nama, harga, deskripsi, is_asuransi, stok, is_baru, harga_grosir
+        FROM SHIPPED_PRODUK a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
+        WHERE nama_toko='ABC Telecom'
+        ORDER BY a.kode_produk ASC"; 
 
     $result = pg_query($query); 
     if (!$result) { 
@@ -113,30 +116,18 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
 
     while($myrow = pg_fetch_assoc($result)) { 
 
-        $stat = "hai";
-        if ($myrow['status']=='1'){
-            $stat = "Transaksi dilakukan";
-        }elseif ($myrow['status']=='2'){
-            $stat = "Barang sudah dibayar";
-        }elseif ($myrow['status']=='3'){
-            $stat = "Barang sudah dikirim";
-        }else{
-            $stat = "Barang sudah diterima";
-        }
-
-        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                <p><a class=\"button stroke orange\" href=\"produklist.php?%s\">Daftar&nbspproduk</a></p>
+        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                <p><a class=\"button stroke orange\" href=\"produklist.php?kode_produk=%s\">Daftar&nbspproduk</a></p>
                           </td></tr>",
-                $myrow['no_invoice'],
-                $myrow['nama_toko'], 
-                $myrow['tanggal'],
-                $stat,
-                $myrow['total_bayar'],
-                $myrow['alamat_kirim'],
-                $myrow['biaya_kirim'],
-                $myrow['no_resi'],
-                $myrow['nama_jasa_kirim'],
-                ("invoice_no=".$myrow['no_invoice'])
+                $myrow['kode_produk'],
+                $myrow['nama'], 
+                $myrow['harga'],
+                $myrow['deskripsi'],
+                $myrow['is_asuransi'],
+                $myrow['stok'],
+                $myrow['is_baru'],
+                $myrow['harga_grosir'],
+                $myrow['kode_produk']
                );
         } 
  ?> 
