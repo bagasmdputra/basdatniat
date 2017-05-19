@@ -1,0 +1,9 @@
+diff a/admin/pages/index.php b/admin/pages/index.php	(rejected hunks)
+@@ -73,7 +73,6 @@
+                             <a href="jasakirim.php"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
+                         </li>
+                         <li>
+-                            <a href="#"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
+                             <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
+                         </li>
+                         <li>
