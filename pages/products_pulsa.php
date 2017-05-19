@@ -13,6 +13,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    
+    
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -58,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul class="nav navbar-nav">
 			<li><a href="index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
+		            <li><a href="products.php">Products</a></li>
 					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="products.php">Open Shop</a></li>
 					<li><a href="products.php">Add product</a></li>
@@ -85,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="content">
 	 <div class="container">
 		<div class="table-responsive">
-         <table class="table">
+         <table id="produkpulsa" class="table">
                         <thead>
                           <tr>
                               <th>Kode produk</th>
@@ -151,80 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
-		</div>
-		</div>
-		
-		<div class="subscribe">
-	 <div class="container">
 
-		
-	 <div class="clearfix"></div>
-	 </div>
-</div>
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
@@ -280,6 +210,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	<!--footer-->
-		
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#produkpulsa').DataTable();
+        });
+    </script>
 </body>
 </html>

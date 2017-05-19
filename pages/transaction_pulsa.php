@@ -13,6 +13,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -86,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="content">
 	 <div class="container">
 		<div class="table-responsive">
-         <table class="table">
+         <table id="transaksipulsa" class="table">
                         <thead>
                           <tr>
                               <th>No Invoice</th>
@@ -284,6 +286,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	<!--footer-->
-		
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#transaksipulsa').DataTable();
+        });
+    </script>
 </body>
 </html>
