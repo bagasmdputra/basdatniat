@@ -1,5 +1,5 @@
 <?php
-  require "connect.php";
+  session_start();
   echo($_SESSION['role']);
  ?>
 <form action="logout.php" method="post">

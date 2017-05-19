@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>TOKOKEREN|ADMIN</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,6 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -86,11 +85,9 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-=======
         <?php
             require 'navbar.php';
         ?>
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 
         <div id="page-wrapper">
             <div class="row">

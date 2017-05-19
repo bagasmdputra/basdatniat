@@ -37,7 +37,63 @@ $(window).load(function() {
   });
 });
 </script>
+<style media="screen">
 
+h1.title {
+font-size: 50px;
+font-family: 'Passion One', cursive;
+font-weight: 400;
+}
+
+hr{
+width: 10%;
+color: #fff;
+}
+
+.form-group{
+margin-bottom: 15px;
+}
+
+label{
+margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+	font-size: 11px;
+	padding-top: 3px;
+}
+
+.main-login{
+background-color: #fff;
+	/* shadows and rounded borders */
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+margin-top: 30px;
+margin: 0 auto;
+max-width: 330px;
+	padding: 40px 40px;
+
+}
+
+.login-button{
+margin-top: 5px;
+}
+
+.login-register{
+font-size: 11px;
+text-align: center;
+}
+
+</style>
 
 
 </head>
@@ -46,14 +102,6 @@ $(window).load(function() {
 		<div class="header">
 			<div class="header-top">
 			<div class="container">
-				 <div class="lang_list">
-					<select tabindex="4" class="dropdown1">
-						<option value="" class="label" value="">En</option>
-						<option value="1">English</option>
-						<option value="2">French</option>
-						<option value="3">German</option>
-					</select>
-   			</div>
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="login.php">login</a>
@@ -224,52 +272,73 @@ $(window).load(function() {
  <!-- registration -->
 	<div class="main-1">
 		<div class="container">
-			<div class="register">
-		  	  <form>
-				 <div class="register-top-grid">
-					<h3>PERSONAL INFORMATION</h3>
-					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<span>Full Name<label>*</label></span>
-						<input type="text" name="fullName" id="fullName">
-					 </div>
-					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						<span>Email<label>*</label></span>
-						<input type="text" name="email" id="email">
-					 </div>
-					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						 <span>Phone Number<label>*</label></span>
-						 <input type="text">
-					 </div>
-					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						 <span>Sex<label>*</label></span>
-						 <select name="sex" type="text">
-						 	<option value="L">L</option>
-							<option value="P">P</option>
-						 </select>
-					 </div>
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Register</h1>
+	               		<hr />
+	               	</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="#">
 
-				 </div>
-				     <div class="register-bottom-grid">
-						    <h3>LOGIN INFORMATION</h3>
-							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>Password<label>*</label></span>
-								<input type="text">
-							 </div>
-							 <div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Confirm Password<label>*</label></span>
-								<input type="text">
-							 </div>
-					 </div>
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				   </form>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+					</form>
 				</div>
-		   </div>
-		 </div>
+			</div>
+		</div>
 	</div>
 <!-- registration -->
 

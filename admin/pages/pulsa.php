@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
 
-=======
     session_start();
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +44,6 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -92,11 +88,9 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-=======
-        <?php 
+        <?php
             require 'navbar.php';
         ?>
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 
         <div id="page-wrapper">
             <div class="row">
@@ -139,7 +133,7 @@
                             </div>
                         </div>
                     </form>
-                    <?php 
+                    <?php
                         if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
                         $_SESSION['form-pulsa-message'] = null;
                     ?>
