@@ -99,43 +99,42 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="promo.php" class="form-horizontal">
+                  <h2>Membuat Promo</h2>
+                  <hr/>
+                  <form action="membuat_promo.php" method="post">
                       <div class="form-group">
-                        <label>Deskripsi :</label>
-                        <p><textarea id="promo-description" style="resize:none" rows="4" cols="50" form="promo-from" class="form-control" placeholder="Deskripsi promo" required></textarea></p>
+                          <label for="deskripsi">Deskripsi</label>
+                          <input type="text" class="form-control" id="deskripsi" name="deskripsi" required/>
                       </div>
-                        <div class="form-group">
-                          <label class="input-group date" data-provide="datepicker">Periode Awal:</label>
-                              <input id="promo-start-date" type="text" class="form-control" required>
-                              <div class="input-group-addon">
-                                  <span class="glyphicon glyphicon-th"></span>
-                              </div>
-                            </div>
-                          <div class="form-group">
-                              <label class="input-group date" data-provide="datepicker">Periode Akhir:</label>
-                                  <input id="promo-start-date" type="text" class="form-control" required>
-                                  <div class="input-group-addon">
-                                      <span class="glyphicon glyphicon-th"></span>
-                                  </div>
-                              </div>
-                        <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Harga</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="harga-produk" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Nominal</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="nominal-produk" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <button class="btn btn-default" type="submit" value="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                  	<div class="form-group">
+                  		<label for="periode-awal">Periode Awal</label>
+                  		<input type="date" class="form-control" id="periode-awal" name="periode-awal" required>
+                  	</div>
+                  	<div class="form-group">
+                  		<label for="periode-akhir">Periode Akhir</label>
+                  		<input type="date" class="form-control" id="periode-akhir" name="periode-akhir" required>
+                  	</div>
+                  	<div class="form-group">
+                  		<label for="kode-promo">Kode Promo</label>
+                  		<input type="text" class="form-control" id="kode-promo" name="kode-promo" disabled>
+                  	</div>
+                  	<div class="form-group">
+                  		<label for="kategori">Kategori</label>
+                  		<select name="kategori" id="kategori" class="form-control">
+                  		<?php
+                  			foreach ($kategori_utama as $key => $value) {
+                  				echo "<option value=" . $value['kode'] . ">" . $value['nama'] . "</option>";
+                  			}
+                  		?>
+                  		</select>
+                  	</div>
+                  	<div class="form-group">
+                  		<label for="sub-kategori">Sub Kategori</label>
+                  		<select name="sub-kategori" id="sub-kategori" class="form-control">
+                  		</select>
+                  	</div>
+                      <button type="submit" id="namaJasaKirim-submit" value="submit" class="btn btn-default">Submit</button>
+                  </form>
                 </div>
             </div>
             <!-- /.row -->

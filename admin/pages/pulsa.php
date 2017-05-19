@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-
-=======
     session_start();
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +89,7 @@
             <!-- /.navbar-static-side -->
         </nav>
 =======
-        <?php 
+        <?php
             require 'navbar.php';
         ?>
 >>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
@@ -139,7 +135,7 @@
                             </div>
                         </div>
                     </form>
-                    <?php 
+                    <?php
                         if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
                         $_SESSION['form-pulsa-message'] = null;
                     ?>

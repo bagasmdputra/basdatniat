@@ -40,7 +40,6 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -65,7 +64,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
