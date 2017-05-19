@@ -1,5 +1,5 @@
-<?php  
-    
+<?php
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +77,7 @@
                             <a href="#"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
+                            <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
                         </li>
                         <li>
                             <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>

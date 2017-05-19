@@ -1,5 +1,5 @@
 <?php
-  echo "string";
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Admin JasaKirim</a>
+                <a class="navbar-brand" href="index.php">Admin TokoKeren</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -77,7 +77,7 @@
                             <a href="jasakirim.php"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
+                            <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
                         </li>
                         <li>
                             <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>
@@ -92,35 +92,44 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Jasa Kirim (Pulsa)</h1>
+                    <h1 class="page-header">Buat Promo(Pulsa)</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="jasakirim.php" class="form-horizontal">
+                    <form action="promo.php" class="form-horizontal">
+                      <div class="form-group">
+                        <label>Deskripsi :</label>
+                        <p><textarea id="promo-description" style="resize:none" rows="4" cols="50" form="promo-from" class="form-control" placeholder="Deskripsi promo" required></textarea></p>
+                      </div>
                         <div class="form-group">
-                            <label for="kode-produk" class="control-label col-sm-4 col-lg-2">Nama Lengkap</label>
+                          <label class="input-group date" data-provide="datepicker">Periode Awal:</label>
+                              <input id="promo-start-date" type="text" class="form-control" required>
+                              <div class="input-group-addon">
+                                  <span class="glyphicon glyphicon-th"></span>
+                              </div>
+                            </div>
+                          <div class="form-group">
+                              <label class="input-group date" data-provide="datepicker">Periode Akhir:</label>
+                                  <input id="promo-start-date" type="text" class="form-control" required>
+                                  <div class="input-group-addon">
+                                      <span class="glyphicon glyphicon-th"></span>
+                                  </div>
+                              </div>
+                        <div class="form-group">
+                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Harga</label>
                             <div class="col-sm-8 col-lg-10">
-                                <input type="text" name="Nama-lengkap" class="form-control" required>
+                                <input type="number" name="harga-produk" class="form-control" required>
                             </div>
                         </div>
-                        </div>
                         <div class="form-group">
-                            <label for="lama-kirim" class="control-label col-sm-4 col-lg-2">Lama</label>
+                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Nominal</label>
                             <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="Lama" class="form-control" required>
+                                <input type="number" name="nominal-produk" class="form-control" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="tarif-pulsa" class="control-label col-sm-4 col-lg-2">Tarif</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="Tarif-pulsa" class="form-control" required>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
                         <div class="form-group">
                             <div class="text-center">
                                 <button class="btn btn-default" type="submit" value="submit">Submit</button>
