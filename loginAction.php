@@ -25,7 +25,7 @@
                     $_SESSION['email'] = "email";
                     $_SESSION['role'] = 'pelanggan';
                     $_SESSION['real_email'] = $email;
-                    header("Location: pelanggan.php");
+                    header("Location: index.php");
                     break;
                 }
             }
@@ -45,7 +45,7 @@
                     $_SESSION['email'] = "email";
                     $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
-                    header("Location: pelanggan.php");
+                    header("Location: index.php");
                     break;
                 }
             }
