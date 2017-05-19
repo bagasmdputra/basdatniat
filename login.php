@@ -2,7 +2,7 @@
 	require 'connect.php';
 	if(isset($_SESSION['role'])){
 		if($_SESSION['role'] == 'admin'){
-			require 'admin.php';
+			header("Location: admin/index.php");
 		}
 		else if($_SESSION['role'] == 'user'){
 			require 'pengguna.php';
@@ -233,7 +233,7 @@ $(window).load(function() {
 			   <div class="col-md-6 login-left">
 			  	 <h3>NEW CUSTOMERS</h3>
 				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-				 <a class="acount-btn" href="account.php">Create an Account</a>
+				 <a class="acount-btn" href="register.php">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
@@ -247,7 +247,6 @@ $(window).load(function() {
 					<span>Password<label>*</label></span>
 					<input name="password" id="pwdLogin" type="password">
 				  </div>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
 				  <input type="submit" name='login'value="Login">
 			    </form>
 			   </div>

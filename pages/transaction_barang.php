@@ -9,18 +9,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Tokokeren | Home :: </title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
-		<script src="js/simpleCart.min.js"> </script>
+		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
 </head>
 <body>
@@ -30,8 +31,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.php">login</a></li>
-					<li class="text"><a href="login.php">Cart</a></li>
+					<li class="text"><a href="../login.php">login</a></li>
+					<li class="text"><a href="../login.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -59,23 +60,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <li class="dropdown">
 		            <li><a href="./pages/products.php">Products</a></li>
 					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="./pages/openshop.php">Open Shop</a></li>
-					<li><a href="./pages/addproduct.php">Add product</a></li>
+					<li><a href="products.php">Open Shop</a></li>
+					<li><a href="products.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
 </div>
-			   <div class="search-box">
-					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
+			 
 			
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
@@ -89,21 +82,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="banner-section">
-			<div class="container">
-				<div class="banner-grids">
-					<div class="col-md-6 banner-grid">
-						<h2>the latest collections</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a href="products.php" class="button"> shop now </a>
-					</div>
-				<div class="col-md-6 banner-grid1">
-						<img src="images/p2.png" class="img-responsive" alt=""/>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		</div>
+    <div class="content">
+	 <div class="container">
+		<div class="table-responsive">
+         <table class="table">
+                        <thead>
+                          <tr>
+                              <th>No Invoice</th>
+                              <th>Nama Toko</th>
+                              <th>Tanggal</th>
+                              <th>Status</th>
+                              <th>Total Bayar</th>
+                              <th>Alamat Kirim</th>
+                              <th>Biaya Kirim</th>
+                              <th>Nomor Resi</th>
+                              <th>Jasa Kirim</th>
+                              <th>Ulasan</th>
+                          </tr>
+                            </thead>
+<?php 
+
+$db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+
+    $query = "SELECT * FROM TRANSAKSI_SHIPPED WHERE email_pembeli='Marica@gmail.com'"; 
+
+    $result = pg_query($query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    while($myrow = pg_fetch_assoc($result)) { 
+
+        $stat = "hai";
+        if ($myrow['status']=='1'){
+            $stat = "Transaksi dilakukan";
+        }elseif ($myrow['status']=='2'){
+            $stat = "Barang sudah dibayar";
+        }elseif ($myrow['status']=='3'){
+            $stat = "Barang sudah dikirim";
+        }else{
+            $stat = "Barang sudah diterima";
+        }
+
+        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                <p><a class=\"button stroke orange\" href=\"produklist.php?%s\">Daftar&nbspproduk</a></p>
+                          </td></tr>",
+                $myrow['no_invoice'],
+                $myrow['nama_toko'], 
+                $myrow['tanggal'],
+                $stat,
+                $myrow['total_bayar'],
+                $myrow['alamat_kirim'],
+                $myrow['biaya_kirim'],
+                $myrow['no_resi'],
+                $myrow['nama_jasa_kirim'],
+                ("invoice_no=".$myrow['no_invoice'])
+               );
+        } 
+ ?> 
+
+                    </table> 
+            </div>
+        </div>
+        </div>
+
+    
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -170,7 +215,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
+				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
 			<div class="item-info">
 					<h5>Lorem ipsum</h5>
 				</div>
@@ -186,6 +231,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 		
+		<div class="subscribe">
+	 <div class="container">
+
+		
+	 <div class="clearfix"></div>
+	 </div>
+</div>
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">

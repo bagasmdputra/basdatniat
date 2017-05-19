@@ -1,7 +1,10 @@
 <?php
+<<<<<<< HEAD
 
+=======
+    session_start();
+>>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +47,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
+<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -88,6 +92,11 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+=======
+        <?php 
+            require 'navbar.php';
+        ?>
+>>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
 
         <div id="page-wrapper">
             <div class="row">
@@ -99,28 +108,28 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="pulsa.php" class="form-horizontal">
+                    <form action="pulsa-action.php" method="post" class="form-horizontal">
                         <div class="form-group">
-                            <label for="kode-produk" class="control-label col-sm-4 col-lg-2">Kode Produk</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="text" name="kode-produk" class="form-control" required>
+                            <label for="kode-produk" class="control-label col-sm-4 col-lg-3">Kode Produk*</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <input type="text" name="kode-produk" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nama-produk" class="control-label col-sm-4 col-lg-2">Nama</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="text" name="nama-produk" class="form-control" required>
+                            <label for="nama-produk" class="control-label col-sm-4 col-lg-3">Nama*</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <input type="text" name="nama-produk" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Harga</label>
-                            <div class="col-sm-8 col-lg-10">
+                            <label for="harga-produk" class="control-label col-sm-4 col-lg-3">Harga*</label>
+                            <div class="col-sm-8 col-lg-9">
                                 <input type="number" name="harga-produk" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Nominal</label>
-                            <div class="col-sm-8 col-lg-10">
+                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-3">Nominal*</label>
+                            <div class="col-sm-8 col-lg-9">
                                 <input type="number" name="nominal-produk" class="form-control" required>
                             </div>
                         </div>
@@ -130,6 +139,10 @@
                             </div>
                         </div>
                     </form>
+                    <?php 
+                        if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
+                        $_SESSION['form-pulsa-message'] = null;
+                    ?>
                 </div>
             </div>
             <!-- /.row -->

@@ -11,20 +11,39 @@
             header("Location: admin/index.php");
         }
 
-        $sql = 'SELECT * FROM PENGGUNA';
-        $result = pg_query($db, $sql);
-        echo($result + 'haha');
+        $sql = 'SELECT * FROM PENGGUNA as PG, PELANGGAN as PL WHERE PG.email = PL.email and PL.is_penjual = FALSE';
+        $resultPelanggan = pg_query($db, $sql);
         // Check connection
         if (!$db) {
             die("Connection failed ");
         }
 
-        if ($result> 0) {
+        if ($resultPelanggan> 0) {
             // output data of each row
-            while($row = pg_fetch_assoc($result)) {
+            while($row = pg_fetch_assoc($resultPelanggan)) {
                 if($row['email'] == $email && $row['password'] == $password ){
                     $_SESSION['email'] = "email";
-                    $_SESSION['role'] = 'user';
+                    $_SESSION['role'] = 'pelanggan';
+                    $_SESSION['real_email'] = $email;
+                    header("Location: pelanggan.php");
+                    break;
+                }
+            }
+        }
+
+        $sql = 'SELECT * FROM PENGGUNA as PG, PELANGGAN as PL WHERE PG.email = PL.email and PL.is_penjual = TRUE';
+        $resultPenjual = pg_query($db, $sql);
+        // Check connection
+        if (!$db) {
+            die("Connection failed ");
+        }
+
+        if ($resultPenjual> 0) {
+            // output data of each row
+            while($row = pg_fetch_assoc($resultPenjual)) {
+                if($row['email'] == $email && $row['password'] == $password ){
+                    $_SESSION['email'] = "email";
+                    $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
                     header("Location: pelanggan.php");
                     break;
