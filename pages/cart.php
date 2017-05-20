@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php 
 
 //        $email = $_SESSION['email'];
-             $email= "armin622@gmail.com";
+             $email= "aindrea336@gmail.com";
              
              
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
@@ -118,13 +118,13 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         echo pg_last_error(); 
         exit(); 
     } 
-
-    
+    $total_berat = 0;
+    $total_biaya = 0;
 
     while($myrow = pg_fetch_assoc($result)) { 
- 
-        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                <p><a class=\"button stroke orange\" href=\"beli_produk.ph\">Beli</a></p>
+        $total_biaya +=  $myrow['sub_total'];
+        $total_berat +=  ($myrow['berat'] * $myrow['kuantitas']);
+        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>
                           </td></tr>",
                 $myrow['kode_produk'],
                 $myrow['nama'], 
@@ -134,38 +134,63 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                 $myrow['sub_total']
 
                );
-        } 
+        }
+            
+//    echo $total_biaya . "   " . $total_berat;
  ?> 
 
                     </table> 
             </div>
-    </div>
-		<div class="banner-bottom">
-		<div class="gallery-cursual">
-		<!--requried-jsfiles-for owl-->
-		<script src="js/owl.carousel.js"></script>
-			<script>
-				$(document).ready(function() {
-					$("#owl-demo").owlCarousel({
-						items : 3,
-						lazyLoad : true,
-						autoPlay : true,
-						pagination : false,
-					});
-				});
-			</script>
-		<!--requried-jsfiles-for owl -->
+        
+        <form id="checkoutcart" action="add_cart.php" method="post">
+            <div class="wow fadeInRight" data-wow-delay="0.4s">
+                <span>Alamat Kirim<label>*</label></span>
+                <input type="text" name="berat_total">
+             </div>
             
-		</div>
-		</div>
-		
-		<div class="subscribe">
-	 <div class="container">
+             <label for="sel1">Select list:</label>
+           <select class="form-control" name="jasa_kirim" id="sel1">\
+<?php 
 
-		
-	 <div class="clearfix"></div>
-	 </div>
-</div>
+
+    $query = "
+        SELECT jasa_kirim
+        FROM tokokeren.TOKO_JASA_KIRIM
+        WHERE nama_toko in(
+            SELECT b.nama_toko
+            FROM tokokeren.KERANJANG_BELANJA a
+                LEFT JOIN tokokeren.SHIPPED_PRODUK b ON a.kode_produk = b.kode_produk
+            WHERE pembeli = '$email'
+            LIMIT 1);"; 
+
+    $result = pg_query($query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    while($myrow = pg_fetch_assoc($result)) { 
+
+        printf (" <option>%s</option>",
+                $myrow['jasa_kirim']
+               );
+        } 
+ ?>                          
+            </select>
+          <input type="hidden" name="total_berat" value="<?php echo $total_berat ; ?>"> 
+        <input type="hidden" name="total_biaya" value="<?php echo $total_biaya ; ?>"> 
+        </form>
+        <form>
+      
+					   <input type="submit" value="submit" class="btn btn-primary" form="checkoutcart">
+					   <div class="clearfix"> </div>
+       
+        </form>
+    </div>
+
+
+
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
