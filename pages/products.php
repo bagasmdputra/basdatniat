@@ -135,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <form action="products_barang.php" method="post" class="form-group">
                                   <label for="sel1">Select list:</label>
                                   <select class="form-control" name="toko" id="sel1">
-                                    <?php 
+ <?php 
 
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     echo $_POST['toko'];
@@ -158,6 +158,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         } 
  ?> 
                                   </select>
+                                    
                                 <input class="btn btn-primary" type="submit">
                                 </form>
 

@@ -86,6 +86,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--header-->
     <div class="container">
+        <label for="sel1">Kategori:</label>
+           <select class="form-control" name="toko" id="sel1">\
+        </select>
+        
+        <label for="sel1">Sub Kategori:</label>
+           <select class="form-control" name="toko" id="sel1">\
+        </select>
+        <br>
+        <br>
+        
 		<div class="table-responsive">
          <table id="produkbarang" class="table">
                         <thead>
