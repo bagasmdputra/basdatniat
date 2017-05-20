@@ -42,6 +42,7 @@ session_start();
 
         <div id="wrapper">
 
+<<<<<<< HEAD
             <!-- Navigation -->
             <?php 
             require 'navbar.php';
@@ -52,7 +53,6 @@ session_start();
                     <div class="col-lg-12">
                         <h1 class="page-header">Tambah Produk (Pulsa)</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
                 <div class="row">

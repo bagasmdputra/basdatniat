@@ -13,13 +13,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
 		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
@@ -82,71 +85,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
+    <div class="container">
 		<div class="table-responsive">
-         <table class="table">
+         <table id="produkbarang" class="table">
                         <thead>
                           <tr>
+                              <th>Kode Produk</th>
                               <th>Nama Produk</th>
                               <th>Berat</th>
                               <th>Kuantitas</th>
                               <th>Harga</th>
-                              <th>Sub total</th>
-                              <th>Ulasan</th>
+                              <th>Sub Total</th>
                           </tr>
                             </thead>
 <?php 
+
+//        $email = $_SESSION['email'];
+             $email= "armin622@gmail.com";
+             
+             
+$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+
+    $query = "
+        SELECT * 
+        FROM tokokeren.KERANJANG_BELANJA a LEFT JOIN tokokeren.PRODUK  b ON a.kode_produk = b.kode_produk
+        WHERE pembeli='$email'
+        ORDER BY a.kode_produk ASC"; 
+
+    $result = pg_query($query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
     
 
-    $number = $_GET['invoice_no'];
+    while($myrow = pg_fetch_assoc($result)) { 
+ 
+        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                <p><a class=\"button stroke orange\" href=\"beli_produk.ph\">Beli</a></p>
+                          </td></tr>",
+                $myrow['kode_produk'],
+                $myrow['nama'], 
+                $myrow['berat'],
+                $myrow['kuantitas'],
+                $myrow['harga'],
+                $myrow['sub_total']
 
-    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
-//    email diganti dari session
-        $email = "gaston@gmail.com";
-
-        $query = "
-            SELECT a.kode_produk, nama,berat, kuantitas, b.harga, sub_total, komentar 
-            FROM tokokeren.LIST_ITEM a 
-            LEFT JOIN tokokeren.PRODUK b 
-                ON a.kode_produk = b.kode_produk 
-            LEFT JOIN 
-                    (SELECT * FROM tokokeren.ULASAN WHERE email_pembeli='$email')  c 
-                ON c.kode_produk = b.kode_produk 
-            WHERE no_invoice='$number' "; 
-
-        $result = pg_query($query); 
-        if (!$result) { 
-            echo "Problem with query " . $query . "<br/>"; 
-            echo pg_last_error(); 
-            exit(); 
+               );
         } 
-
-        while($myrow = pg_fetch_assoc($result)) { 
-            
-            $kode_produk = $myrow['kode_produk'];
-            $ulasan = "<button type=\"submit\" disabled>Ulas</button>";
-            
-            if(is_null($myrow['komentar'])){
-                $ulasan = "<p><a class=\"button stroke orange\" href=\"ulas.php?kode_produk=$kode_produk\">Ulas</a></p>";
-            }
-            
-            
-            printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                    %s
-                              </td></tr>",
-                    $myrow['nama'],
-                    $myrow['berat'], 
-                    $myrow['kuantitas'],
-                    $myrow['harga'],
-                    $myrow['sub_total'],
-                    $ulasan
-                    
-                   );
-        } 
-        ?> 
+ ?> 
 
                     </table> 
             </div>
-    
+    </div>
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -162,70 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
+            
 		</div>
 		</div>
 		
@@ -291,6 +221,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	<!--footer-->
-		
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#produkbarang').DataTable();
+        });
+    </script>
 </body>
 </html>
