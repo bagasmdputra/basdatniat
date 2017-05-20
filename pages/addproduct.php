@@ -111,7 +111,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="form-group">
                                 <label for="harga-produk" class="control-label col-sm-4 col-lg-3">Harga*</label>
                                 <div class="col-sm-8 col-lg-9">
-                                    <input type="number" name="harga-produk" class="form-control" required>
+                                    <input type="number" name="harga-produk" class="form-control"  autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="form-group">
                                 <label for="stok-produk" class="control-label col-sm-4 col-lg-3">Stok*</label>
                                 <div class="col-sm-3 col-lg-4">
-                                    <input type="number" name="stok-produk" class="form-control" required>
+                                    <input type="number" name="stok-produk" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -166,25 +166,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="form-group">
                                 <label for="min-order-produk" class="control-label col-sm-4 col-lg-3">Minimal Order*</label>
                                 <div class="col-sm-3 col-lg-4">
-                                    <input type="number" name="min-order-produk" class="form-control" required>
+                                    <input type="number" name="min-order-produk" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="min-grosir-produk" class="control-label col-sm-4 col-lg-3">Minimal Grosir*</label>
                                 <div class="col-sm-3 col-lg-4">
-                                    <input type="number" name="min-grosir-produk" class="form-control" required>
+                                    <input type="number" name="min-grosir-produk" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="max-grosir-produk" class="control-label col-sm-4 col-lg-3">Maksimal Grosir*</label>
                                 <div class="col-sm-3 col-lg-4">
-                                    <input type="number" name="max-grosir-produk" class="form-control" required>
+                                    <input type="number" name="max-grosir-produk" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="harga-grosir-produk" class="control-label col-sm-4 col-lg-3">Harga Grosir*</label>
                                 <div class="col-sm-3 col-lg-4">
-                                    <input type="number" name="harga-grosir-produk" class="form-control" required>
+                                    <input type="number" name="harga-grosir-produk" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">

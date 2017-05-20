@@ -103,19 +103,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nama-produk" class="control-label col-sm-4 col-lg-2">Deskripsi</label>
+									<label for="deskripsi-toko" class="control-label col-sm-4 col-lg-2">Deskripsi</label>
 									<div class="col-sm-8 col-lg-10">
 										<textarea name="deskripsi-toko" class="form-control" rows="3" style="resize: none; overflow-y: auto;"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="harga-produk" class="control-label col-sm-4 col-lg-2">Slogan</label>
+									<label for="slogan-toko" class="control-label col-sm-4 col-lg-2">Slogan</label>
 									<div class="col-sm-8 col-lg-10">
-										<input type="text" name="slogan-toko" class="form-control">
+										<input type="text" name="slogan-toko" class="form-control" autocomplete="off">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Lokasi*</label>
+									<label for="lokasi-toko" class="control-label col-sm-4 col-lg-2">Lokasi*</label>
 									<div class="col-sm-8 col-lg-10">
 										<textarea name="lokasi-toko" class="form-control" rows="3" style="resize: none; overflow-y: auto;"  required></textarea>
 									</div>
