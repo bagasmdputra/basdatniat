@@ -5,7 +5,40 @@ session_start();
 <html lang="en">
 
 <head>
+    <script type="text/javascript">
+    $(document).ready(function(){
+var counter = 1;
+$("#pop-button").click(function(){
+  $("#pop-login").hide();
+});
+$("#add-subcat").click(function(){
+  counter++;
+  $('#subcat').append("<div class='col-md-12'><label>Subkategori "+counter+"</label>"+
+    "</div><div class='form-group'><div class='col-md-6'><label for='sub-code'>Kode subkategori:</label>"+
+    "<input maxlength='5' required type='text' class='form-control' id='sub-code' name='sub-code-"+counter+"'></div><div class='form-group'><div class='col-md-6'>"+
+    "<label for='sub-name'>Nama Subkategori:</label><input  required type='text' class='form-control' name='sub-name-"+counter+"'id='sub-name'><BR>"+
+    "</div></div></div>");
+  $('#hidden-input').val(counter);
 
+});
+
+});
+
+function showSub(str){
+if (window.XMLHttpRequest) {
+  xmlhttp=new XMLHttpRequest();
+} else {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("sel2").innerHTML=this.responseText;
+    }
+}
+xmlhttp.open("GET","getsub.php?q="+str,true);
+  xmlhttp.send();
+}
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +84,7 @@ session_start();
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Tambah Produk (Pulsa)</h1>
+                        <h1 class="page-header">Buat Kategori</h1>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -59,32 +92,45 @@ session_start();
                     <div class="col-sm-8">
                         <form action="pulsa-action.php" method="post" class="form-horizontal">
                             <div class="form-group">
-                                <label for="kode-produk" class="control-label col-sm-4 col-lg-3">Kode Produk*</label>
+                                <label for="kode-kategori" class="control-label col-sm-4 col-lg-3">Kode Kategori*</label>
                                 <div class="col-sm-8 col-lg-9">
-                                    <input type="text" name="kode-produk" class="form-control" autocomplete="off" required>
+                                    <input type="text" name="kode-kategori" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="nama-produk" class="control-label col-sm-4 col-lg-3">Nama*</label>
+                                <label for="nama-kategori" class="control-label col-sm-4 col-lg-3">Nama Kategori*</label>
                                 <div class="col-sm-8 col-lg-9">
-                                    <input type="text" name="nama-produk" class="form-control" autocomplete="off" required>
+                                    <input type="text" name="nama-kategori" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="harga-produk" class="control-label col-sm-4 col-lg-3">Harga*</label>
-                                <div class="col-sm-8 col-lg-9">
-                                    <input type="number" name="harga-produk" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="nominal-produk" class="control-label col-sm-4 col-lg-3">Nominal*</label>
-                                <div class="col-sm-8 col-lg-9">
-                                    <input type="number" name="nominal-produk" class="form-control" required>
-                                </div>
-                            </div>
+                            <div id="subcat">
+					<div class="col-md-12">
+						<label>Subkategori 1</label>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-8">
+							<label for="sub-code">Kode subkategori:</label>
+					    	<input required type="text" maxlength="5" class="form-control" name='sub-code-1' id="sub-code-1">
+						</div>
+					</div>
+					<div class="form-group">
+					 	<div class="col-md-6">
+					 		<label for="sub-name">Nama Subkategori</label>
+					    	<input required type="text" class="form-control" name='sub-name-1' id="sub-name-1"><BR>
+					 	</div>
+					</div>
+				</div>
+				<input type="text" id="hidden-input" name="counter" value="1">
+				<div class="col-md-12">
+					<button type="button" class="btn btn-default" id="add-subcat">
+					<span class="glyphicon glyphicon-plus"></span>Tambah Subkategori
+					</button>
+					<br>
+
+				</div>
                             <div class="form-group">
                                 <div class="text-center">
-                                    <button class="btn btn-default" type="submit" value="submit">Submit</button>
+                                    <button id="cat-form" class="btn btn-default" type="submit" value="submit">Submit</button>
                                 </div>
                             </div>
                             <?php

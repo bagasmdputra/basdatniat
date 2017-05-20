@@ -5,7 +5,7 @@
 			header("Location: admin/index.php");
 		}
 		else if($_SESSION['role'] == 'pelanggan'){
-			require 'single.php';
+			require 'pelanggan.php';
 		}
 		else if($_SESSION['role'] == 'penjual'){
 			require 'penjual.php';
@@ -413,7 +413,7 @@ $('#register-form-link').click(function(e) {
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="register">
 											</div>
 										</div>
 									</div>

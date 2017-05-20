@@ -40,7 +40,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-    
+
         <?php
             require 'navbar.php';
         ?>
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="buatKategori.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Buat Kategori</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
