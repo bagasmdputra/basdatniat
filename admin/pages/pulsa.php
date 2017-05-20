@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-
-=======
-    session_start();
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,137 +34,91 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div id="wrapper">
+        <div id="wrapper">
 
-        <!-- Navigation -->
-<<<<<<< HEAD
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Admin TokoKeren</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Nama Admin</a>
-                </li>
-                <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
-                        </li>
-                        <li>
-                            <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
-                        </li>
-                        <li>
-                            <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-=======
-        <?php 
+            <!-- Navigation -->
+            <?php 
             require 'navbar.php';
-        ?>
->>>>>>> 0e729904f50c4fdc181106f17c2cce1b00b0dc92
+            ?>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Tambah Produk (Pulsa)</h1>
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Tambah Produk (Pulsa)</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-sm-8">
-                    <form action="pulsa-action.php" method="post" class="form-horizontal">
-                        <div class="form-group">
-                            <label for="kode-produk" class="control-label col-sm-4 col-lg-3">Kode Produk*</label>
-                            <div class="col-sm-8 col-lg-9">
-                                <input type="text" name="kode-produk" class="form-control" autocomplete="off" required>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-sm-8">
+                        <form action="pulsa-action.php" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="kode-produk" class="control-label col-sm-4 col-lg-3">Kode Produk*</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <input type="text" name="kode-produk" class="form-control" autocomplete="off" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama-produk" class="control-label col-sm-4 col-lg-3">Nama*</label>
-                            <div class="col-sm-8 col-lg-9">
-                                <input type="text" name="nama-produk" class="form-control" autocomplete="off" required>
+                            <div class="form-group">
+                                <label for="nama-produk" class="control-label col-sm-4 col-lg-3">Nama*</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <input type="text" name="nama-produk" class="form-control" autocomplete="off" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-3">Harga*</label>
-                            <div class="col-sm-8 col-lg-9">
-                                <input type="number" name="harga-produk" class="form-control" required>
+                            <div class="form-group">
+                                <label for="harga-produk" class="control-label col-sm-4 col-lg-3">Harga*</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <input type="number" name="harga-produk" class="form-control" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-3">Nominal*</label>
-                            <div class="col-sm-8 col-lg-9">
-                                <input type="number" name="nominal-produk" class="form-control" required>
+                            <div class="form-group">
+                                <label for="nominal-produk" class="control-label col-sm-4 col-lg-3">Nominal*</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <input type="number" name="nominal-produk" class="form-control" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <button class="btn btn-default" type="submit" value="submit">Submit</button>
+                            <div class="form-group">
+                                <div class="text-center">
+                                    <button class="btn btn-default" type="submit" value="submit">Submit</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    <?php 
-                        if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
-                        $_SESSION['form-pulsa-message'] = null;
-                    ?>
+                            <?php 
+                                if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
+                                $_SESSION['form-pulsa-message'] = null;
+                            ?>
+                        </form>
+
+                    </div>
                 </div>
+                <!-- /.row -->
             </div>
-            <!-- /.row -->
+            <!-- /#page-wrapper -->
+
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="../vendor/raphael/raphael.min.js"></script>
+        <script src="../vendor/morrisjs/morris.min.js"></script>
+        <script src="../data/morris-data.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    </body>
 
-</body>
-
-</html>
+    </html>
