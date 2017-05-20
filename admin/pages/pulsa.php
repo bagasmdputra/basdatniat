@@ -41,10 +41,15 @@ session_start();
     <body>
 
         <div id="wrapper">
+<<<<<<< HEAD
 
         <!-- Navigation -->
         <?php
 
+=======
+            <!-- Navigation -->
+            <?php
+>>>>>>> 9dc3a19681f350df0e57dca35afe0454cad9144f
             require 'navbar.php';
             ?>
 
