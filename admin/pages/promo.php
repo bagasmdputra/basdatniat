@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                                <label for="subkategori-produk" class="control-label col-sm-4 col-lg-3  ">Subkategori*</label>
+                                <label for="subkategori-produk" class="control-label col-sm-4 col-lg-3  ">Kategori</label>
                                 <div class="col-sm-3 col-lg-4">
                                     <select name="subkategori-produk" class="form-control" required>
                                         <?php
