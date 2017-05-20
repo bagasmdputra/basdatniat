@@ -101,7 +101,7 @@
                 <div class="col-sm-8">
                   <h2>Membuat Promo</h2>
                   <hr/>
-                  <form action="membuat_promo.php" method="post">
+                  <form action="promo-action.php" method="post">
                       <div class="form-group">
                           <label for="deskripsi">Deskripsi</label>
                           <input type="text" class="form-control" id="deskripsi" name="deskripsi" required/>
@@ -119,7 +119,7 @@
                   		<input type="text" class="form-control" id="kode-promo" name="kode-promo" disabled>
                   	</div>
                   	<div class="form-group">
-                  		<label for="kategori">Kategori</label>
+                  		<label for="kategori">Kategorie</label>
                   		<select name="kategori" id="kategori" class="form-control">
                   		<?php
                   			foreach ($kategori_utama as $key => $value) {
@@ -133,7 +133,7 @@
                   		<select name="sub-kategori" id="sub-kategori" class="form-control">
                   		</select>
                   	</div>
-                      <button type="submit" id="namaJasaKirim-submit" value="submit" class="btn btn-default">Submit</button>
+                      <button type="submit" id="deskripsi-submit" value="submit" class="btn btn-default">Submit</button>
                   </form>
                 </div>
             </div>
@@ -160,6 +160,45 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		var text = "<?php echo $kode; ?>";
+        	$("#kode-promo").val(text);
+
+        	var my_sub_kategori = <?php echo json_encode($sub_kategori); ?>;
+        	var e = document.getElementById("kategori");
+    		var my_kode_kategori = e.options[e.selectedIndex].value;
+    		for(i = 0; i < my_sub_kategori.length; i++) {
+    			if (my_kode_kategori.localeCompare(my_sub_kategori[i].kode_kategori) == 0) {
+    				$("#sub-kategori").append("<option value=\"" + my_sub_kategori[i].kode + "\"" + ">" + my_sub_kategori[i].nama + "</option>");
+    			}
+    		};
+
+    		$("#kategori").change(function() {
+    			var e = document.getElementById("kategori");
+    			var my_kode_kategori = e.options[e.selectedIndex].value;
+
+    			$('#sub-kategori')
+    			    .find('option')
+    			    .remove()
+    			    .end()
+    			;
+
+    			for(i = 0; i < my_sub_kategori.length; i++) {
+    				if (my_kode_kategori.localeCompare(my_sub_kategori[i].kode_kategori) == 0) {
+    					$("#sub-kategori").append("<option value=\"" + my_sub_kategori[i].kode + "\"" + ">" + my_sub_kategori[i].nama + "</option>");
+    				}
+    			};
+    		});
+
+    		$("#periode-awal").change(function() {
+    			var temp = document.getElementById("periode-awal").value;
+    			document.getElementById("periode-akhir").setAttribute("min", temp);
+    		});
+
+    	});
+    </script>
 
 </body>
 
