@@ -13,6 +13,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -82,8 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
+    <div class="container">
 		<div class="table-responsive">
-         <table class="table">
+         <table id="produkbarang" class="table">
                         <thead>
                           <tr>
                               <th>Kode Produk</th>
@@ -100,11 +104,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php 
 
 $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
-
+    $toko =  $_POST['toko'];
     $query = "
-        SELECT a.kode_produk, nama, harga, deskripsi, is_asuransi, stok, is_baru, harga_grosir
+        SELECT *
         FROM SHIPPED_PRODUK a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
-        WHERE nama_toko='ABC Telecom'
+        WHERE nama_toko='$toko'
         ORDER BY a.kode_produk ASC"; 
 
     $result = pg_query($query); 
@@ -117,7 +121,7 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
     while($myrow = pg_fetch_assoc($result)) { 
 
         printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                <p><a class=\"button stroke orange\" href=\"produklist.php?kode_produk=%s\">Daftar&nbspproduk</a></p>
+                                <p><a class=\"button stroke orange\" href=\"produklist.php?kode_produk=%s\">Beli</a></p>
                           </td></tr>",
                 $myrow['kode_produk'],
                 $myrow['nama'], 
@@ -134,7 +138,7 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
 
                     </table> 
             </div>
-    
+    </div>
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -279,6 +283,12 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
 			</div>
 		</div>
 	<!--footer-->
-		
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#produkbarang').DataTable();
+        });
+    </script>
 </body>
 </html>

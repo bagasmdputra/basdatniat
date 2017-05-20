@@ -9,10 +9,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Tokokeren | Home :: </title>
+    
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -103,15 +105,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="img-container">
                             <img src="../images/p2.png" class="img-responsive image" alt=""/>
                             <div class="middle">
-                                <a href="products_barang.php" class="button"> Barang </a>
+                                <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Barang</button>
+<!--                                <a href="products_barang.php" class="button" > Barang </a>-->
                             </div>
                         </div>
 					</div>
+                
+
+                
 				<div class="col-md-6">
 						<div class="img-container">
                             <img src="../images/p2.png" class="img-responsive image" alt=""/>
                             <div class="middle">
-                                <a href="products_pulsa.php" class="button"> Pulsa </a>
+                                <a href="products_pulsa.php" class="btn btn-primary"> Pulsa </a>
                             </div>
                         </div>
 				</div>
@@ -119,7 +125,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 		</div>
 		</div>
-		<div class="banner-bottom">
+<!--                modal    -->
+                
+                
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                         <div class="modal-header">
+                                <form action="products_barang.php" method="post" class="form-group">
+                                  <label for="sel1">Select list:</label>
+                                  <select class="form-control" name="toko" id="sel1">
+                                    <?php 
+
+$db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+    echo $_POST['toko'];
+    $query = "
+        SELECT *
+        FROM TOKO ORDER BY nama ASC"; 
+
+    $result = pg_query($query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    while($myrow = pg_fetch_assoc($result)) { 
+
+        printf (" <option>%s</option>",
+                $myrow['nama']
+               );
+        } 
+ ?> 
+                                  </select>
+                                <input class="btn btn-primary" type="submit">
+                                </form>
+
+                             
+                        </div>
+                      </div>
+                    </div>
+    </div>
+<!--                end modal-->
+                
+                <script>
+                    $('#myModal').on('shown.bs.modal', function () {
+                        $('#myInput').focus()
+                    })
+                </script>
+                
+    
+    <div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
 		<script src="../js/owl.carousel.js"></script>
@@ -134,70 +190,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
+		
 		</div>
 		</div>
 		
