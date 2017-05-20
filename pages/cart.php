@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!--
 Au<!--
 Author: W3layouts

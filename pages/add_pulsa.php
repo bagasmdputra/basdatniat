@@ -1,4 +1,5 @@
  <?php 
+        session_start();
         $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
         $no_invoice =  "TP".rand(10000000,99999999);
@@ -23,7 +24,7 @@
             echo "Error with query: " . $errormessage; 
             exit(); 
         } 
-
+      header("Location: ../index.php");
         printf ("These values were inserted into the database - %s %s %s", $no_invoice, $tanggal, $waktu_bayar);
 
         ?> 

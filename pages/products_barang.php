@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -112,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           </tr>
                             </thead>
 <?php 
-session_start();
+
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     $toko =  str_replace("'", "''",$_POST['toko']);
     $query = "

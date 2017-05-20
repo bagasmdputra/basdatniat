@@ -24,6 +24,7 @@ session_start();
             echo "Error with query: " . $errormessage; 
             exit(); 
         } 
+  header("Location: ../index.php");
 
 //        printf ("These values were inserted into the database - %s %s %s", $no_invoice, $tanggal, $waktu_bayar);
 
