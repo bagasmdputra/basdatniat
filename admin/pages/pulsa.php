@@ -45,7 +45,7 @@ session_start();
     <body>
 
         <div id="wrapper">
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -98,6 +98,16 @@ session_start();
             <!-- Navigation -->
             <?php 
 >>>>>>> 02e15cb62a1c90dcc647256c9dae68032038300f
+=======
+
+        <!-- Navigation -->
+        <?php
+
+=======
+            <!-- Navigation -->
+            <?php
+>>>>>>> 9dc3a19681f350df0e57dca35afe0454cad9144f
+>>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
             require 'navbar.php';
             ?>
 
@@ -141,6 +151,7 @@ session_start();
                                 </div>
                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </div>
                     </form>
                     <?php
@@ -149,6 +160,9 @@ session_start();
                     ?>
 =======
                             <?php 
+=======
+                            <?php
+>>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
                                 if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
                                 $_SESSION['form-pulsa-message'] = null;
                             ?>

@@ -15,8 +15,8 @@
         if(!empty(pg_query($db, "SELECT * FROM produk WHERE kode_produk = '".$_POST['kode-produk']."'"))) {
             $_SESSION['form-pulsa-message'] = 'Kode produk tersebut sudah digunakan';
         } else {
-            $result = pg_query_params($db, "INSERT INTO produk(kode_produk,nama,harga,deskripsi) VALUES ($1,$2, $3, NULL)", array($kode_produk, $nama_produk, $harga_produk, $nominal_produk));
-            $result = pg_query_params($db, "INSERT INTO produk_pulsa(kode_produk,nominal) VALUES ($1, $4)", array($kode_produk, $nama_produk, $harga_produk, $nominal_produk));
+            $result = pg_query_params($db, "INSERT INTO produk(kode_produk,nama,harga,deskripsi) VALUES ($1,$2, $3, NULL)", array($kode_produk, $nama_produk, $harga_produk));
+            $result = pg_query_params($db, "INSERT INTO produk_pulsa(kode_produk,nominal) VALUES ($1, $2)", array($kode_produk, $nominal_produk));
             $_SESSION['form-pulsa-message'] = 'Input berhasil';
         }
     }

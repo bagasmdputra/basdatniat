@@ -40,6 +40,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
+<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -84,6 +85,9 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+=======
+
+>>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
         <?php
             require 'navbar.php';
         ?>
@@ -106,7 +110,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="buatKategori.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Buat Kategori</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

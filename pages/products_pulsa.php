@@ -106,11 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $query = "
         SELECT a.kode_produk, nama, harga, deskripsi, nominal
         FROM tokokeren.PRODUK_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
-<<<<<<< HEAD
         ORDER BY a.kode_produk ASC;";
-=======
-        ORDER BY a.kode_produk ASC;"; 
->>>>>>> c3810b6925d9466566338f0a4b6d2d16f995b458
 
         $result = pg_query($query);
         if (!$result) {
@@ -132,15 +128,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     $myrow['harga'],
                     $myrow['deskripsi'],
                     $myrow['nominal'],
-<<<<<<< HEAD
-                    $myrow['kode_produk']
 
-=======
                     $myrow['kode_produk'],
                     $myrow['nominal'],
                     $myrow['harga']
-                    
->>>>>>> c3810b6925d9466566338f0a4b6d2d16f995b458
+
                    );
         }
 

@@ -1,5 +1,5 @@
 <?php  
-
+	session_start();
 	require '../connect.php';
 	$db = connectDB();
 
@@ -66,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="products.php">Products</a></li>
 								<li><a href="transactions.php">Transactions</a></li>
 								<li><a href="openshop.php">Open Shop</a></li>
-								<li><a href="addproducts.php">Add product</a></li>
+								<li><a href="addproduct.php">Add product</a></li>
 							</ul>
 						</div>
 						<!--/.navbar-collapse-->
@@ -103,25 +103,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nama-produk" class="control-label col-sm-4 col-lg-2">Deskripsi</label>
+									<label for="deskripsi-toko" class="control-label col-sm-4 col-lg-2">Deskripsi</label>
 									<div class="col-sm-8 col-lg-10">
 										<textarea name="deskripsi-toko" class="form-control" rows="3" style="resize: none; overflow-y: auto;"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="harga-produk" class="control-label col-sm-4 col-lg-2">Slogan</label>
+									<label for="slogan-toko" class="control-label col-sm-4 col-lg-2">Slogan</label>
 									<div class="col-sm-8 col-lg-10">
-										<input type="text" name="slogan-toko" class="form-control">
+										<input type="text" name="slogan-toko" class="form-control" autocomplete="off">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Lokasi*</label>
+									<label for="lokasi-toko" class="control-label col-sm-4 col-lg-2">Lokasi*</label>
 									<div class="col-sm-8 col-lg-10">
 										<textarea name="lokasi-toko" class="form-control" rows="3" style="resize: none; overflow-y: auto;"  required></textarea>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Jasa Kirim*</label>
+									<label for="jasa-kirim-toko" class="control-label col-sm-4 col-lg-2">Jasa Kirim*</label>
 									<div class="col-sm-3 col-lg-4">
 										<select name="jasa-kirim-toko" class="form-control" required>
 											<?php

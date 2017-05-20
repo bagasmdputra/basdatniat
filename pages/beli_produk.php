@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="banner-grids">
 					<div class="col-md-12">
-						
+				
 						
                 <form id="belibarangform" action="add_barang.php" method="post"> 
 				 

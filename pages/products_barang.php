@@ -86,6 +86,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--header-->
     <div class="container">
+        <label for="sel1">Kategori:</label>
+           <select class="form-control" name="toko" id="sel1">\
+        </select>
+        
+        <label for="sel1">Sub Kategori:</label>
+           <select class="form-control" name="toko" id="sel1">\
+        </select>
+        <br>
+        <br>
+        
 		<div class="table-responsive">
          <table id="produkbarang" class="table">
                         <thead>
@@ -102,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           </tr>
                             </thead>
 <?php 
-
+session_start();
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     $toko =  str_replace("'", "''",$_POST['toko']);
     $query = "
@@ -113,7 +123,9 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                     LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY a.kode_produk ASC"; 
-
+     
+    $_SESSION['toko'] = $toko;
+             echo  $_SESSION['toko'];
     $result = pg_query($query); 
     if (!$result) { 
         echo "Problem with query " . $query . "<br/>"; 
