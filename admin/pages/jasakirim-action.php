@@ -1,7 +1,6 @@
 <?php
 require "../../connect.php";
 $is_page_requires_login = TRUE; // if this value is TRUE, the visitor will be redirected immediately to the login page
-
 ?>
 
 <h2>Form Membuat Jasa Kirim</h2>

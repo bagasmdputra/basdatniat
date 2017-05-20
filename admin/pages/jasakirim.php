@@ -101,7 +101,7 @@
                 <div class="col-sm-8">
                   <form action="jasakirim-action.php" method="post">
                       <div class="form-group">
-                          <label for="namaJasaKirim">Namaww</label>
+                          <label for="namaJasaKirim">Nama</label>
                           <input type="text" class="form-control" id="namaJasaKirim" name="namaJasaKirim" maxlength="100" required onchange="checkname()" ononkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
                           <span class="help-block"><p class="text-danger" id="namaJasaKirim-danger"></p></span>
                       </div>
@@ -114,7 +114,7 @@
                           <input type="number" step="0.01" class="form-control" id="tarif" min="1" max="9999999999" name="tarif" required>
                           <span class="help-block"><p class="text-danger" id="lamaKirim-danger"></p></span>
                       </div>
-                      <button type="submit" id="namaJasaKirim-submit" value="submit" class="btn btn-default">Submittt</button>
+                      <button type="submit" id="namaJasaKirim-submit" value="submit" class="btn btn-default">Submit</button>
                   </form>
                 </div>
             </div>

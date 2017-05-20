@@ -131,6 +131,11 @@
                   	<div class="form-group">
                   		<label for="sub-kategori">Sub Kategori</label>
                   		<select name="sub-kategori" id="sub-kategori" class="form-control">
+                        <?php
+                          foreach ($sub_kategori as $key => $value) {
+                            echo "<option value=" . $value['kode'] . ">" . $value['nama'] . "</option>";
+                          }
+                        ?>
                   		</select>
                   	</div>
                       <button type="submit" id="deskripsi-submit" value="submit" class="btn btn-default">Submit</button>

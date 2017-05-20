@@ -120,6 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</script>
 		<!--requried-jsfiles-for owl -->
 		<!--start content-slider-->
+<!--
 		<div id="owl-demo" class="owl-carousel text-center">
 			<div class="item">
 				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
@@ -182,7 +183,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
-		<!--sreen-gallery-cursual-->
+		
+-->
 		</div>
 		</div>
 		

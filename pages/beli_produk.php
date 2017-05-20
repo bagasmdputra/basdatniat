@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<!-- cart -->
 		<script src="../js/simpleCart.min.js"> </script>
 	<!-- cart -->
@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+					<li class="text"><a href="./cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
+	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
@@ -58,10 +58,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./products.php">Products</a></li>
-					<li><a href="./transactions.php">Transactions</a></li>
-					<li><a href="./openshop.php">Open Shop</a></li>
-					<li><a href="./addproduct.php">Add product</a></li>
+		            <li><a href="products.php">Products</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
+					<li><a href="openshop.php">Open Shop</a></li>
+					<li><a href="addproducts.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -82,71 +82,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-		<div class="table-responsive">
-         <table class="table">
-                        <thead>
-                          <tr>
-                              <th>Nama Produk</th>
-                              <th>Berat</th>
-                              <th>Kuantitas</th>
-                              <th>Harga</th>
-                              <th>Sub total</th>
-                              <th>Ulasan</th>
-                          </tr>
-                            </thead>
-<?php 
-    
-
-    $number = $_GET['invoice_no'];
-
-    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
-//    email diganti dari session
-        $email = "gaston@gmail.com";
-
-        $query = "
-            SELECT a.kode_produk, nama,berat, kuantitas, b.harga, sub_total, komentar 
-            FROM tokokeren.LIST_ITEM a 
-            LEFT JOIN tokokeren.PRODUK b 
-                ON a.kode_produk = b.kode_produk 
-            LEFT JOIN 
-                    (SELECT * FROM tokokeren.ULASAN WHERE email_pembeli='$email')  c 
-                ON c.kode_produk = b.kode_produk 
-            WHERE no_invoice='$number' "; 
-
-        $result = pg_query($query); 
-        if (!$result) { 
-            echo "Problem with query " . $query . "<br/>"; 
-            echo pg_last_error(); 
-            exit(); 
-        } 
-
-        while($myrow = pg_fetch_assoc($result)) { 
-            
-            $kode_produk = $myrow['kode_produk'];
-            $ulasan = "<button type=\"submit\" disabled>Ulas</button>";
-            
-            if(is_null($myrow['komentar'])){
-                $ulasan = "<p><a class=\"button stroke orange\" href=\"ulas.php?kode_produk=$kode_produk\">Ulas</a></p>";
-            }
-            
-            
-            printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                    %s
-                              </td></tr>",
-                    $myrow['nama'],
-                    $myrow['berat'], 
-                    $myrow['kuantitas'],
-                    $myrow['harga'],
-                    $myrow['sub_total'],
-                    $ulasan
+    <div class="banner-section">
+			<div class="container">
+				<div class="banner-grids">
+					<div class="col-md-12">
+						
+						
+                <form id="belibarangform" action="add_barang.php" method="post"> 
+				 
+				     <div class="register-bottom-grid">
+						    <h3>MASUKKAN Data Berat dan Jumlah</h3>
+							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
+								<span>Kode produk</span>
+                                 <input type="text"  name="kode" 
+								<?php $kode = $_GET['kode_produk'];
+                                 echo "value='$kode' "; ?> readonly >
+							 </div>
+							 <div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Berat total<label>*</label></span>
+								<input type="number" name="berat_total" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="1">
+							 </div>
+                         <div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Jumlah barang<label>*</label></span>
+								<input type="number" name="kuantitas" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="1">
+							 </div>
+                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo $harga ; ?>">
+                         
+					 </div>
                     
-                   );
-        } 
-        ?> 
+				</form>
+                        <div class="clearfix"> </div>
+				<div class="register-but">
+				   <form>
+					   <input type="submit" value="submit" form="belibarangform">
+					   <div class="clearfix"> </div>
+				   </form>
+				</div>
+					</div>
+				
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</div>
 
-                    </table> 
-            </div>
-    
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -162,70 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
+
 		</div>
 		</div>
 		

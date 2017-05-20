@@ -13,6 +13,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -32,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -50,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
+	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
@@ -58,17 +60,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="products.php">Products</a></li>
-					<li><a href="transactions.php">Transactions</a></li>
-					<li><a href="openshop.php">Open Shop</a></li>
-					<li><a href="addproduct.php">Add product</a></li>
+		            <li><a href="./products.php">Products</a></li>
+					<li><a href="./transactions.php">Transactions</a></li>
+					<li><a href="./openshop.php">Open Shop</a></li>
+					<li><a href="./addproduct.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
 			
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
@@ -86,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="content">
 	 <div class="container">
 		<div class="table-responsive">
-         <table class="table">
+         <table id="transaksipulsa" class="table">
                         <thead>
                           <tr>
                               <th>No Invoice</th>
@@ -100,12 +101,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php 
 
-    $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
-
+    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+        
+             
+//        $email = $_SESSION['email'];
+             $email= "aindrea336@gmail.com";
         $query = "
         SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
-        FROM TRANSAKSI_PULSA a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
-        WHERE email_pembeli='Kendal@gmail.com'"; 
+        FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+        WHERE email_pembeli='$email'"; 
 
         $result = pg_query($query); 
         if (!$result) { 
@@ -284,6 +288,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	<!--footer-->
-		
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#transaksipulsa').DataTable();
+        });
+    </script>
 </body>
 </html>

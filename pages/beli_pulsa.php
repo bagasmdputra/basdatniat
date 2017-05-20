@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -88,25 +88,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12">
 						
 						
-                         <form> 
+                <form id="belipulsaform" action="add_pulsa.php" method="post"> 
 				 
 				     <div class="register-bottom-grid">
 						    <h3>MASUKKAN NOMOR HP/TOKEN LISTRIK</h3>
 							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 								<span>Kode produk</span>
+                                 <input type="text"  name="kode" 
 								<?php $kode = $_GET['kode_produk'];
-                                 echo "<input type=\"text\"  value='$kode'  disabled>"; ?>
+                                 echo "value='$kode' "; ?> readonly >
 							 </div>
 							 <div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Nomor HP / Token Listrik<label>*</label></span>
-								<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+								<input type="text" name="nomor" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="52625">
 							 </div>
+                          <input type="hidden" name="nominal" value="<?php $nominal = $_GET['nominal']; echo $nominal; ?>">
+                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo $harga; ?>">
+                         
 					 </div>
+                    
 				</form>
                         <div class="clearfix"> </div>
 				<div class="register-but">
 				   <form>
-					   <input type="submit" value="submit">
+					   <input type="submit" value="submit" form="belipulsaform">
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>
@@ -132,70 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
+
 		</div>
 		</div>
 		
