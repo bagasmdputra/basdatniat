@@ -66,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="products.php">Products</a></li>
 								<li><a href="transactions.php">Transactions</a></li>
 								<li><a href="openshop.php">Open Shop</a></li>
-								<li><a href="addproducts.php">Add product</a></li>
+								<li><a href="addproduct.php">Add product</a></li>
 							</ul>
 						</div>
 						<!--/.navbar-collapse-->
@@ -121,7 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Jasa Kirim*</label>
+									<label for="jasa-kirim-toko" class="control-label col-sm-4 col-lg-2">Jasa Kirim*</label>
 									<div class="col-sm-3 col-lg-4">
 										<select name="jasa-kirim-toko" class="form-control" required>
 											<?php
