@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -61,10 +61,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="products.php">Open Shop</a></li>
-					<li><a href="products.php">Add product</a></li>
+		            <li><a href="./products.php">Products</a></li>
+					<li><a href="./transactions.php">Transactions</a></li>
+					<li><a href="./openshop.php">Open Shop</a></li>
+					<li><a href="./addproduct.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -103,12 +103,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php 
 
-$db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
-    $toko =  $_POST['toko'];
+$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+    $toko =  str_replace("'", "''",$_POST['toko']);
     $query = "
-        SELECT *
-        FROM SHIPPED_PRODUK a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
-        WHERE nama_toko='$toko'
+        SELECT a.kode_produk, b.nama, harga,deskripsi, is_asuransi, stok, is_baru, harga_grosir, d.nama as kategori, c.nama as subkategori
+                FROM tokokeren.SHIPPED_PRODUK a 
+                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+        WHERE nama_toko ='$toko'
         ORDER BY a.kode_produk ASC"; 
 
     $result = pg_query($query); 
@@ -118,11 +121,18 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
         exit(); 
     } 
 
-    while($myrow = pg_fetch_assoc($result)) { 
+    
 
-        printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                <p><a class=\"button stroke orange\" href=\"produklist.php?kode_produk=%s\">Beli</a></p>
+    while($myrow = pg_fetch_assoc($result)) { 
+    $kategori = rawurlencode($myrow['kategori']);
+    $subkategori = rawurlencode($myrow['subkategori']);
+                    
+  
+        printf ("<tr class=\"%s %s\"><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
+                                <p><a class=\"button stroke orange\" href=\"beli_produk.php?kode_produk=%s&harga=%s\">Beli</a></p>
                           </td></tr>",
+                $kategori,
+                $subkategori,
                 $myrow['kode_produk'],
                 $myrow['nama'], 
                 $myrow['harga'],
@@ -131,7 +141,8 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
                 $myrow['stok'],
                 $myrow['is_baru'],
                 $myrow['harga_grosir'],
-                $myrow['kode_produk']
+                $myrow['kode_produk'],
+                 $myrow['harga']
                );
         } 
  ?> 
@@ -154,70 +165,7 @@ $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=B
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		<div id="owl-demo" class="owl-carousel text-center">
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-				<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b2                                                                   .jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-			<div class="item">
-				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
-			<div class="item-info">
-					<h5>Lorem ipsum</h5>
-				</div>
-			</div>
-		</div>
-		<!--sreen-gallery-cursual-->
+            
 		</div>
 		</div>
 		
