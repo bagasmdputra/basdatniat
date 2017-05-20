@@ -25,7 +25,7 @@
                     <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
+                    <a href="buatKategori.php"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
                 </li>
                 <li>
                     <a href="jasakirim.php"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>

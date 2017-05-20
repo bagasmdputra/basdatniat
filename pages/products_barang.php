@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -123,7 +124,9 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                     LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY a.kode_produk ASC"; 
-
+     
+    $_SESSION['toko'] = $toko;
+             echo  $_SESSION['toko'];
     $result = pg_query($query); 
     if (!$result) { 
         echo "Problem with query " . $query . "<br/>"; 

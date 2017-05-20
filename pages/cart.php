@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -136,6 +137,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                );
         }
             
+            
 //    echo $total_biaya . "   " . $total_berat;
  ?> 
 
@@ -145,14 +147,14 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         <form id="checkoutcart" action="add_cart.php" method="post">
             <div class="wow fadeInRight" data-wow-delay="0.4s">
                 <span>Alamat Kirim<label>*</label></span>
-                <input type="text" name="berat_total">
+                <input type="text" name="alamat" required>
              </div>
             
              <label for="sel1">Select list:</label>
-           <select class="form-control" name="jasa_kirim" id="sel1">\
+           <select class="form-control" name="jasa_kirim" >\
 <?php 
 
-
+               
     $query = "
         SELECT jasa_kirim
         FROM tokokeren.TOKO_JASA_KIRIM
@@ -169,6 +171,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         echo pg_last_error(); 
         exit(); 
     } 
+        
 
     while($myrow = pg_fetch_assoc($result)) { 
 
