@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -50,18 +50,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
+	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="products.php">Open Shop</a></li>
-					<li><a href="products.php">Add product</a></li>
+		            <li><a href="./products.php">Products</a></li>
+					<li><a href="./transactions.php">Transactions</a></li>
+					<li><a href="./openshop.php">Open Shop</a></li>
+					<li><a href="./addproduct.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -102,10 +102,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php 
 
-$db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
-    $query = "SELECT * FROM TRANSAKSI_SHIPPED WHERE email_pembeli='Marica@gmail.com'"; 
-
+    $email = $_SESSION['email'];
+    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email'"; 
+    
+             
     $result = pg_query($query); 
     if (!$result) { 
         echo "Problem with query " . $query . "<br/>"; 

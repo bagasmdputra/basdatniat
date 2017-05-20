@@ -53,18 +53,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
+	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="../index.php">Home</a></li>
 		        <li class="dropdown">
-		            <li><a href="products.php">Products</a></li>
-					<li><a href="transactions.php">Transactions</a></li>
-					<li><a href="products.php">Open Shop</a></li>
-					<li><a href="products.php">Add product</a></li>
+		            <li><a href="./products.php">Products</a></li>
+					<li><a href="./transactions.php">Transactions</a></li>
+					<li><a href="./openshop.php">Open Shop</a></li>
+					<li><a href="./addproduct.php">Add product</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -101,11 +101,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php 
 
-    $db = pg_connect('host=localhost dbname=bagaskoro.meyca user=postgres password=Basdat');
+    $db = pg_connect('host=localhost dbname=c12 user=postgres   password=basdat');
 
         $query = "
         SELECT a.kode_produk, nama, harga, deskripsi, nominal
-        FROM PRODUK_PULSA a LEFT JOIN PRODUK b ON a.kode_produk = b.kode_produk
+        FROM tokokeren.PRODUK_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
         ORDER BY a.kode_produk ASC;"; 
 
         $result = pg_query($query); 
@@ -120,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>
                             <td>
-                                <p><a class=\"button stroke orange\" href=\"beli_pulsa.php?kode_produk=%s\">Beli</a></p>
+                                <p><a class=\"button stroke orange\" href=\"beli_pulsa.php?kode_produk=%s&nominal=%s&harga=%s\">Beli</a></p>
                           </td>
                           </tr>",
                     $myrow['kode_produk'],
@@ -128,7 +128,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     $myrow['harga'],
                     $myrow['deskripsi'],
                     $myrow['nominal'],
-                    $myrow['kode_produk']
+                    $myrow['kode_produk'],
+                     $myrow['nominal'],
+                    $myrow['harga']
                     
                    );
         }
@@ -218,5 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $('#produkpulsa').DataTable();
         });
     </script>
+            </div>
+    </div>
 </body>
 </html>
