@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="./cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -88,10 +88,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12">
 						
 						
-                <form id="belipulsaform" action="add_pulsa.php" method="post"> 
+                <form id="belibarangform" action="add_barang.php" method="post"> 
 				 
 				     <div class="register-bottom-grid">
-						    <h3>MASUKKAN NOMOR HP/TOKEN LISTRIK</h3>
+						    <h3>MASUKKAN Data Berat dan Jumlah</h3>
 							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 								<span>Kode produk</span>
                                  <input type="text"  name="kode" 
@@ -99,11 +99,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                  echo "value='$kode' "; ?> readonly >
 							 </div>
 							 <div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Nomor HP / Token Listrik<label>*</label></span>
-								<input type="text" name="nomor" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="52625">
+								<span>Berat total<label>*</label></span>
+								<input type="number" name="berat_total" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="1">
 							 </div>
-                          <input type="hidden" name="nominal" value="<?php $nominal = $_GET['nominal']; echo "value='$nominal' "; ?>">
-                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo "value='$harga' "; ?>">
+                         <div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Jumlah barang<label>*</label></span>
+								<input type="number" name="kuantitas" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="1">
+							 </div>
+                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo $harga ; ?>">
                          
 					 </div>
                     
@@ -111,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="clearfix"> </div>
 				<div class="register-but">
 				   <form>
-					   <input type="submit" value="submit" form="belipulsaform">
+					   <input type="submit" value="submit" form="belibarangform">
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>

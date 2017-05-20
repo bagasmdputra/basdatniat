@@ -104,7 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
-    $email = $_SESSION['email'];
+//    $email = $_SESSION['email'];
+             $email = 'allegra467@gmail.com';
     $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email'"; 
     
              

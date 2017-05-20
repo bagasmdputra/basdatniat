@@ -129,7 +129,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                     
   
         printf ("<tr class=\"%s %s\"><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
-                                <p><a class=\"button stroke orange\" href=\"beli_produk.php?kode_produk=%s\">Beli</a></p>
+                                <p><a class=\"button stroke orange\" href=\"beli_produk.php?kode_produk=%s&harga=%s\">Beli</a></p>
                           </td></tr>",
                 $kategori,
                 $subkategori,
@@ -141,7 +141,8 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                 $myrow['stok'],
                 $myrow['is_baru'],
                 $myrow['harga_grosir'],
-                $myrow['kode_produk']
+                $myrow['kode_produk'],
+                 $myrow['harga']
                );
         } 
  ?> 

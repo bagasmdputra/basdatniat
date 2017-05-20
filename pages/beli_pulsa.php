@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../login.php">Cart</a></li>
+					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -102,8 +102,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span>Nomor HP / Token Listrik<label>*</label></span>
 								<input type="text" name="nomor" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="52625">
 							 </div>
-                          <input type="hidden" name="nominal" value="<?php $nominal = $_GET['nominal']; echo "value='$nominal' "; ?>">
-                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo "value='$harga' "; ?>">
+                          <input type="hidden" name="nominal" value="<?php $nominal = $_GET['nominal']; echo $nominal; ?>">
+                          <input type="hidden" name="harga" value="<?php $harga = $_GET['harga']; echo $harga; ?>">
                          
 					 </div>
                     

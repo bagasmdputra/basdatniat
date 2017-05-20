@@ -104,8 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         
              
-        $email = $_SESSION['email'];
-             
+//        $email = $_SESSION['email'];
+             $email= "aindrea336@gmail.com";
         $query = "
         SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
         FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
