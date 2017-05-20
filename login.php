@@ -387,10 +387,7 @@ $('#register-form-link').click(function(e) {
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
+								<form id="register-form" action="register.php" method="post" style="display: none;">
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
@@ -399,6 +396,18 @@ $('#register-form-link').click(function(e) {
 									</div>
 									<div class="form-group">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<input type="text" name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Full Name" value="">
+									</div>
+									<div class="form-group">
+										<input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone Number" value="" pattern="^(\+62|0)?\d{7,20}$">
+									</div>
+									<div class="form-group">
+										<select class="form-control" name="sex" id="sex" tabindex="2" placeholder="Sex">
+											<option value="L">L</option>
+											<option value="P">P</option>
+										</select>
 									</div>
 									<div class="form-group">
 										<div class="row">
