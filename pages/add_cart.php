@@ -10,7 +10,7 @@
         $status = 1;
 //        $email_pembeli = "aindrea336@gmail.com" ;
         $email_pembeli = $_SESSION['email'];
-        $nama_toko = "Abram''s Electronic";
+        $nama_toko = $_SESSION['toko'];
 //        $nama_toko = $_SESSION['toko'];
         $alamat_kirim = $_POST['alamat'];
 //        echo $alamat_kirim."  ".$_SESSION['toko'];;
