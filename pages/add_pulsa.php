@@ -7,8 +7,8 @@
         $waktu_bayar = date("m-d-Y H:i:s") ;
         $status = 1;
         $total_bayar = pg_escape_string($_POST['harga']);
-//        $email_pembeli =  $_SESSION['email']; 
-    $email_pembeli = "aindrea336@gmail.com";
+        $email_pembeli =  $_SESSION['email']; 
+//    $email_pembeli = "aindrea336@gmail.com";
         $nominal = pg_escape_string($_POST['nominal']);
         $nomor = pg_escape_string($_POST['nomor']);
         $kode_produk = pg_escape_string($_POST['kode']); 

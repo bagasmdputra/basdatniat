@@ -7,8 +7,8 @@
         $tanggal = date("m-d-Y");
         $waktu_bayar = date("m-d-Y H:i:s") ;
         $status = 1;
-        $email_pembeli = "aindrea336@gmail.com" ;
-//        $email_pembeli = $_SESSION['email'];
+//        $email_pembeli = "aindrea336@gmail.com" ;
+        $email_pembeli = $_SESSION['email'];
         $nama_toko = "Abram''s Electronic";
 //        $nama_toko = $_SESSION['toko'];
         $alamat_kirim = $_POST['alamat'];
@@ -37,6 +37,9 @@
 
 
         $query = "INSERT INTO tokokeren.TRANSAKSI_SHIPPED(no_invoice,tanggal, waktu_bayar, status, total_bayar, email_pembeli, nama_toko, alamat_kirim, biaya_kirim, no_resi, nama_jasa_kirim) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" . $status . "', '" . $total_bayar . "', '" . $email_pembeli . "', '" . $nama_toko . "', '" . $alamat_kirim . "', '" . $biaya_kirim . "', '" . $no_resi . "', '" . $nama_jasa_kirim . "')";
+
+    echo "INSERT INTO tokokeren.TRANSAKSI_SHIPPED(no_invoice,tanggal, waktu_bayar, status, total_bayar, email_pembeli, nama_toko, alamat_kirim, biaya_kirim, no_resi, nama_jasa_kirim) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" . $status . "', '" . $total_bayar . "', '" . $email_pembeli . "', '" . $nama_toko . "', '" . $alamat_kirim . "', '" . $biaya_kirim . "', '" . $no_resi . "', '" . $nama_jasa_kirim . "')";
+
         $result = pg_query($query); 
 
         if (!$result) { 
@@ -52,13 +55,13 @@
         ORDER BY a.kode_produk ASC"; 
 
     $result3 = pg_query($query); 
-    if (!$result) { 
+    if (!$result3) { 
         echo "Problem with query " . $query . "<br/>"; 
         echo pg_last_error(); 
         exit(); 
     } 
 
-    while($myrow = pg_fetch_assoc($result)) { 
+    while($myrow = pg_fetch_assoc($result3)) { 
               $insert_query = "INSERT INTO tokokeren.LIST_ITEM(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . $no_invoice . "', '" . $myrow['kode_produk']. "', '" .  
                 $myrow['berat']. "', '" . 
                 $myrow['kuantitas']. "', '" . 
@@ -66,11 +69,15 @@
                 $myrow['sub_total']. "')";
             $result = pg_query($db, $insert_query);
         
-            
+            echo "INSERT INTO tokokeren.LIST_ITEM(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . $no_invoice . "', '" . $myrow['kode_produk']. "', '" .  
+                $myrow['berat']. "', '" . 
+                $myrow['kuantitas']. "', '" . 
+                $myrow['harga']. "', '" . 
+                $myrow['sub_total']. "')";
        
         }
         $query = "DELETE FROM tokokeren.KERANJANG_BELANJA WHERE pembeli='.$email_pembeli.'";
             $result = pg_query($query); 
 
-  header("Location: ../index.php");
+//  header("Location: ../index.php");
         ?> 

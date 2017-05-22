@@ -1,3 +1,10 @@
+<?php
+  if (!isset($_SESSION['role'])) {
+    session_unset();
+    session_destroy();
+    header("Location: ../index.php");
+  }
+ ?>
 <!--
 Au<!--
 Author: W3layouts

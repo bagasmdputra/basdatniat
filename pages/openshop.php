@@ -35,8 +35,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<div class="top-right">
 					<ul>
-						<li class="text"><a href="../login.php">login</a></li>
-						<li class="text"><a href="../login.php">Cart</a></li>
+                        <li class="text"><a href="../logout.php">logout</a></li>
+                        <li class="text"><a href="cart.php">Cart</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
