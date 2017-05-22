@@ -2,6 +2,10 @@
 	require '../connect.php';
 	$db = connectDB();
 
+    if(!isset($_SESSION['email']) && $S_ESSION['role'] != "penjual"){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}
 ?>
 <!--
 Author: W3layouts
