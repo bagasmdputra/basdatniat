@@ -1,4 +1,8 @@
-<?php   session_start(); ?>
+<?php   session_start();
+if(!isset($_SESSION['email'])){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}?>
 <!--
 Au<!--
 Author: W3layouts
@@ -9,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren | Home :: </title>
+<title>Tokokeren | Transaksi Pulsa :: </title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
@@ -34,8 +38,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+                        <li class="text"><a href="../logout.php">logout</a></li>
+                        <li class="text"><a href="cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -64,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="./products.php">Products</a></li>
 					<li><a href="./transactions.php">Transactions</a></li>
 					<li><a href="./openshop.php">Open Shop</a></li>
-					<li><a href="./addproduct.php">Add product</a></li>
+					<?php if ($_SESSION['role']=="penjual"){ 					echo "<li><a href=\"./addproduct.php\">Add product</a></li>"                         ;}?>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -105,8 +109,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         
              
-//        $email = $_SESSION['email'];
-             $email= "aindrea336@gmail.com";
+        $email = $_SESSION['email'];
+//             $email= "aindrea336@gmail.com";
         $query = "
         SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
         FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk

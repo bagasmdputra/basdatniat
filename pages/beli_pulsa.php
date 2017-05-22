@@ -1,4 +1,10 @@
-<?php   session_start(); ?>
+<?php   session_start();
+
+if(!isset($_SESSION['email'])){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}
+?>
 <!--
 Au<!--
 Author: W3layouts
@@ -43,7 +49,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="header-bottom">
 					<div class="container">
-<!--/.content-->
+<?php
+    if (isset($_SESSION['message'])){
+    $pesan = $_SESSION['message'];
+     echo "
+            <div class=\"container\">
+                <div class=\"alert alert-danger\">
+                     <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+                    $pesan
+              </div>
+            </div>";
+     unset($_SESSION["message"]);
+ }
+    ?>
+                        <!--/.content-->
 <div class="content white">
 	<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">

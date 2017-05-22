@@ -1,14 +1,12 @@
 <?php
     require 'connect.php';
-    echo('masuk');
     $db = connectDB();
     if (isset($_POST['login'])){
-        echo "if";
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $isAdmin = isAdmin($db, $email, $password);
-        if ($isAdmin == true){
-            header("Location: admin/index.php");
+        $isAdmins = isAdmin($db, $email, $password);
+        if ($isAdmins == true){
+          header('Location: admin/index.php');
         }
 
         $sql = 'SELECT * FROM PENGGUNA as PG, PELANGGAN as PL WHERE PG.email = PL.email and PL.is_penjual = FALSE';
@@ -25,7 +23,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'pelanggan';
                     $_SESSION['real_email'] = $email;
-                    header("Location: pelanggan.php");
+                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
                     break;
                 }
             }
@@ -45,11 +43,12 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
-                    header("Location: index.php");
+                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
                     break;
                 }
             }
         }
+        echo "<script>alert('Wrong username or password!');window.location.href='login.php';</script>";
 
         pg_close($db);
     }
