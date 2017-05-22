@@ -1,4 +1,5 @@
  <?php 
+        session_start();
         $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
         $no_invoice =  "TP".rand(10000000,99999999);
@@ -6,8 +7,8 @@
         $waktu_bayar = date("m-d-Y H:i:s") ;
         $status = 1;
         $total_bayar = pg_escape_string($_POST['harga']);
-//        $email_pembeli =  $_SESSION['email']; 
-    $email_pembeli = "aindrea336@gmail.com";
+        $email_pembeli =  $_SESSION['email']; 
+//    $email_pembeli = "aindrea336@gmail.com";
         $nominal = pg_escape_string($_POST['nominal']);
         $nomor = pg_escape_string($_POST['nomor']);
         $kode_produk = pg_escape_string($_POST['kode']); 
@@ -23,7 +24,7 @@
             echo "Error with query: " . $errormessage; 
             exit(); 
         } 
-
+      header("Location: ../index.php");
         printf ("These values were inserted into the database - %s %s %s", $no_invoice, $tanggal, $waktu_bayar);
 
         ?> 

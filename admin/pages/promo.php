@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require 'connect.php';
     $db = connectDB();
 ?>
@@ -63,56 +62,65 @@
                   <h2>Membuat Promo</h2>
                   <hr/>
                   <form action="promo-action.php" method="post">
-                      <div class="form-group">
-                          <label for="deskripsi">Deskripsi</label>
-                          <input type="text" class="form-control" id="deskripsi" name="deskripsi" required/>
-                      </div>
-<<<<<<< HEAD
-                  	<div class="form-group">
-                  		<label for="periode-awal">Periode Awal</label>
-                  		<input type="date" class="form-control" id="periode-awal" name="periode-awal" required>
-                  	</div>
-                  	<div class="form-group">
-                  		<label for="periode-akhir">Periode Akhir</label>
-                  		<input type="date" class="form-control" id="periode-akhir" name="periode-akhir" required>
-                  	</div>
-                  	<div class="form-group">
-                  		<label for="kode-promo">Kode Promo</label>
-                  		<input type="text" class="form-control" id="kode-promo" name="kode-promo" disabled>
-                  	</div>
                     <div class="form-group">
-                            <label for="subkategori-produk" class="control-label col-sm-4 col-lg-3  ">Kategori</label>
-                            <div class="col-sm-3 col-lg-4">
-                                <select name="subkategori-produk" class="form-control" required>
-                                    <?php
+                        <label for="deskripsi">Deskripsi</label>
+                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required/>
+                    </div>
+                	<div class="form-group">
+                		<label for="periode-awal">Periode Awal</label>
+                		<input type="date" class="form-control" id="periode-awal" name="periode-awal" required>
+                	</div>
+                	<div class="form-group">
+                		<label for="periode-akhir">Periode Akhir</label>
+                		<input type="date" class="form-control" id="periode-akhir" name="periode-akhir" required>
+                	</div>
+                	<div class="form-group">
+                		<label for="kode-promo">Kode Promo</label>
+                		<input type="text" class="form-control" id="kode-promo" name="kode-promo" disabled>
+                	 </div>
 
-                                    $query = "SELECT kode, nama FROM kategori_utama;";
-                                    $result = pg_query($db, $query);
+                  <div class="form-group">
+                                <label for="kategori" class="control-label col-sm-4 col-lg-2  ">Kategori</label>
+                                <div class="col-sm-3 col-lg-4">
+                                    <select name="kategori-produk" class="form-control" required>
+                                        <?php
+                                        $query = "SELECT kode, nama FROM kategori_utama;";
+                                        $result = pg_query($db, $query);
 
-                                    if (!$db) {
-                                        die("Connection failed ");
-                                    }
-                                    if ($result > 0) {
-                                            // output data of each row
-                                        while($row = pg_fetch_assoc($result)) {
-                                            echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
+                                        if (!$db) {
+                                            die("Connection failed ");
                                         }
-                                    }
+                                        if ($result > 0) {
+                                                // output data of each row
+                                            while($row = pg_fetch_assoc($result)) {
+                                                echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sub-kategori" class="control-label col-sm-4 col-lg-2  ">Subkategori</label>
+                                <div class="col-sm-3 col-lg-4">
+                                    <select name="subkategori-produk" class="form-control" required>
+                                        <?php
+                                        $query = "SELECT kode, nama FROM sub_kategori;";
+                                        $result = pg_query($db, $query);
 
+                                        if (!$db) {
+                                            die("Connection failed ");
+                                        }
+                                        if ($result > 0) {
+                                                // output data of each row
+                                            while($row = pg_fetch_assoc($result)) {
+                                                echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
+                                            }
+                                        }
                                     ?>
                                 </select>
                             </div>
                         </div>
-                  	<div class="form-group">
-                  		<label for="sub-kategori">Sub Kategori</label>
-                  		<select name="sub-kategori" id="sub-kategori" class="form-control">
-                        <?php
-                          foreach ($sub_kategori as $key => $value) {
-                            echo "<option value=" . $value['kode'] . ">" . $value['nama'] . "</option>";
-                          }
-                        ?>
-                  		</select>
-                  	</div>
                       <button type="submit" id="deskripsi-submit" value="submit" class="btn btn-default">Submit</button>
                   </form>
                 </div>

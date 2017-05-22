@@ -48,6 +48,7 @@ session_start();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -108,6 +109,10 @@ session_start();
             <?php
 >>>>>>> 9dc3a19681f350df0e57dca35afe0454cad9144f
 >>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
+=======
+            <!-- Navigation -->
+            <?php
+>>>>>>> 56f34249a74851662aee726b28b45a0801c7bc58
             require 'navbar.php';
             ?>
 
@@ -118,7 +123,7 @@ session_start();
                     </div>
                 </div>
                 <!-- /.row -->
-                <div class="row">
+                <div class="row" id="content">
                     <div class="col-sm-8">
                         <form action="pulsa-action.php" method="post" class="form-horizontal">
                             <div class="form-group">

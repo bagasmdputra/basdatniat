@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -8,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren | Home :: </title>
+<title>Tokokeren | Ulas :: </title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
@@ -31,8 +32,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+                        <li class="text"><a href="../logout.php">logout</a></li>
+                        <li class="text"><a href="cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -110,6 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      </div>
         </div>
     </div>
+<<<<<<< HEAD
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 
@@ -210,6 +212,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="clearfix"></div>
 	 </div>
 </div>
+=======
+
+>>>>>>> 56f34249a74851662aee726b28b45a0801c7bc58
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">

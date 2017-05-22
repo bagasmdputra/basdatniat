@@ -133,10 +133,6 @@ xmlhttp.open("GET","getsub.php?q="+str,true);
                                     <button id="cat-form" class="btn btn-default" type="submit" value="submit">Submit</button>
                                 </div>
                             </div>
-                            <?php
-                                if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
-                                $_SESSION['form-pulsa-message'] = null;
-                            ?>
                         </form>
 
                     </div>
