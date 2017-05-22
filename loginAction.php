@@ -6,7 +6,7 @@
         $password = $_POST['password'];
         $isAdmins = isAdmin($db, $email, $password);
         if ($isAdmins == true){
-            header("Location: admin/index.php");
+          header('Location: admin/index.php');
         }
 
         $sql = 'SELECT * FROM PENGGUNA as PG, PELANGGAN as PL WHERE PG.email = PL.email and PL.is_penjual = FALSE';
@@ -23,7 +23,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'pelanggan';
                     $_SESSION['real_email'] = $email;
-                    header("Location: pelanggan.php");
+                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
                     break;
                 }
             }
@@ -43,7 +43,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
-                    header("Location: index.php");
+                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
                     break;
                 }
             }

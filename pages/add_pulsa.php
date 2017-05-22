@@ -14,7 +14,7 @@
         $kode_produk = pg_escape_string($_POST['kode']); 
         
 
-        if(!preg_match('/^(\d{10-12}(\d{20})?)?$/',$nomor)){
+        if(!preg_match('/^(\d{12}(\d{20})?)?$/',$nomor)){
             $error = "Data tidak valid, digit nomor anda tidak sesuai";
             $_SESSION['message'] = $error;
             header("Location: ". $_SERVER['HTTP_REFERER']);
