@@ -1,6 +1,7 @@
 <?php
 
 require_once 'connect.php';
+$flag = false;
 if (isset($_POST['register-submit'])){
 		$password = $_POST['password'];
 		$name = $_POST['fullname'];
@@ -32,12 +33,12 @@ if (isset($_POST['register-submit'])){
 	} if ($password != "" && !preg_match("/^[A-Za-z0-9]{6,}$/", $password)) {
 		echo "<script>$('#alert-password').html('Password minimal 6 karakter');</script>";
 		$flag = false;
-		} if ($password != "" && $repeat_password != "" && $password !== $repeat_password){
-		echo "<script>$('#alert-repeat-password').html('Harap masukkan password kembali');</script>";
+	} if ($password != "" && $repeat_password != "" && $password !== $repeat_password){
+		echo "<script>$('#alert-confirm-password').html('Harap masukkan password kembali');</script>";
 		$flag = false;
 	}
-
 		if ($flag){
+			echo "flag";
 			$conn = connectDB();
 			$query = "INSERT INTO tokokeren.pengguna (email, password, nama, jenis_kelamin, tgl_lahir, no_telp, alamat) VALUES ('$email', '$password', '$name', '$sex', '01-01-1991', '$phone', '$alamat')";
 			$result = pg_query($conn, $query);

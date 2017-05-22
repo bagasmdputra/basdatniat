@@ -392,15 +392,19 @@ $('#register-form-link').click(function(e) {
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
+									<div id="alert-email"></div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
 									</div>
+									<div id="alert-password"></div>
 									<div class="form-group">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
 									</div>
+									<div id="alert-confirm-password"></div>
 									<div class="form-group">
 										<input type="text" name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Full Name" value="">
 									</div>
+									<div id="alert-name"></div>
 									<div class="form-group">
 										<input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone Number" value="" pattern="^(\+62|0)?\d{7,20}$">
 									</div>
@@ -410,9 +414,11 @@ $('#register-form-link').click(function(e) {
 											<option value="P">P</option>
 										</select>
 									</div>
+									<div id="alert-sex"></div>
 									<div class="form-group">
 										<input type="text" name="alamat" id="alamat" tabindex="2" class="form-control" placeholder="Address" value="">
 									</div>
+									<div id="alert-address"></div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
