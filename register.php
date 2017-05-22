@@ -1,30 +1,16 @@
 <?php
 
+require_once 'connect.php';
 if (isset($_POST['register-submit'])){
-		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$name = $_POST['fullname'];
 		$email = $_POST['email'];
-		$repeat_email = $_POST['repeat_email'];
 		$repeat_password = $_POST['confirm-password'];
-		$no_identitas = $_POST['no_identitas'];
-		$birth_date = $_POST['birth_date'];
+		$phone = $_POST['phone'];
+		$alamat = $_POST['alamat'];
+		$sex = $_POST['sex'];
 		$flag = true;
 
-			if ($username == ""){
-		echo '<script>$("#alert-username").html("Username Masih Kosong");</script>';
-		$flag = false;
-	} if ($username != "" && !preg_match("/^[A-Za-z0-9.]*$/", $username)){
-		echo "<script> $('#alert-username').html('Username hanya dapat berisi huruf, titik dan angka');</script>";
-		$flag = false;
-	} if ($username != ""){
-		$conn = connectDB();
-		$query = "SELECT * FROM tokokeren.pengguna WHERE username = '$username'";
-		$result = pg_query($conn, $query);
-		while ($row = pg_fetch_assoc($result)) {
-			echo '<script>$("#alert-username").html("Username Sudah Ada !");</script>';
-			$flag = false;
-		}
 	}    if ($email != ""){
 		$conn = connectDB();
 		$query = "SELECT * FROM tokokeren.pengguna WHERE email = '$email'";
@@ -43,32 +29,26 @@ if (isset($_POST['register-submit'])){
 	} if ($email == ""){
 		echo '<script>$("#alert-email").html("Email tidak boleh kosong");</script>';
 		$flag = false;
-	} if ($address == ""){
-		echo '<script>$("#alert-address").html("Harap isi alamat");</script>';
-		$flag = false;
 	} if ($password != "" && !preg_match("/^[A-Za-z0-9]{6,}$/", $password)) {
 		echo "<script>$('#alert-password').html('Password minimal 6 karakter');</script>";
 		$flag = false;
 		} if ($password != "" && $repeat_password != "" && $password !== $repeat_password){
 		echo "<script>$('#alert-repeat-password').html('Harap masukkan password kembali');</script>";
 		$flag = false;
-		} if ($email != "" && $repeat_email != "" && $email !== $repeat_email){
-		echo "<script>$('#alert-repeat-email').html('Harap masukkan e-mail kembali');</script>";
-		$flag = false;
-		}
+	}
 
 		if ($flag){
 			$conn = connectDB();
-			$query = "INSERT INTO SIRIMA.AKUN (username, role, password) VALUES ('$username', false, '$password')";
+			$query = "INSERT INTO tokokeren.pengguna (email, password, nama, jenis_kelamin, tgl_lahir, no_telp, alamat) VALUES ('$email', '$password', '$name', '$sex', '01-01-1991', '$phone', '$alamat')";
 			$result = pg_query($conn, $query);
 
-			$query = "INSERT INTO SIRIMA.PELAMAR (username, nama_lengkap, alamat, jenis_kelamin, tanggal_lahir, no_ktp, email) VALUES('$username', '$name', '$address', '$jenis_kelamin', '$birth_date', '$no_identitas', '$email')";
+			$query = "INSERT INTO tokokeren.pelanggan (email, is_penjual, nilai_reputasi, poin) VALUES('$email', 'FALSE', '0', NULL)";
 			$result = pg_query($conn, $query);
 
-			$_SESSION['username'] = $username;
+			$_SESSION['email'] = 'email';
+			$_SESSION['real_email'] = $email;
 			$_SESSION['role'] = "user";
-			echo "<script>alert('Registrasi Berhasil!');window.location.replace('pelamarpage.php')";
+			echo "<script>alert('Registrasi Berhasil!');window.location.href('pelanggan.php')";
 		}
-	}
 
  ?>
