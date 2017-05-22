@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="./pages/products.php">Products</a></li>
 					<li><a href="./pages/transactions.php">Transactions</a></li>
 					<li><a href="./pages/openshop.php">Open Shop</a></li>
-                <?php if ($_SESSION['role']=="penjual"){
+                <?php if (isset($_SESSION['role']) && $_SESSION['role']=="penjual"){
 					echo "<li><a href=\"./pages/addproduct.php\">Add product</a></li>";
 }?>
 	        </ul>
