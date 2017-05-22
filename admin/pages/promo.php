@@ -80,7 +80,7 @@
                 	 </div>
 
                   <div class="form-group">
-                                <label for="kategori" class="control-label col-sm-4 col-lg-2  ">Kategori</label>
+                                <label for="kategori" class="control-label col-sm-4 col-lg-2 ">Kategori Utama</label>
                                 <div class="col-sm-3 col-lg-4">
                                     <select name="kategori-produk" class="form-control" required>
                                         <?php

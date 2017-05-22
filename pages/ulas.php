@@ -1,7 +1,8 @@
-<?php   session_start(); 
+<?php
+session_start();
 if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }?>
 <!--
 Au<!--
@@ -10,6 +11,39 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $kode_produk = pg_escape_string($_POST["kode-produk"]);
+    $rating = pg_escape_string($_POST["rating"]);
+    $komentar = pg_escape_string($_POST["komentar"]);
+    $date = date("Y-m-d");
+
+    if (is_logged_in_user_admin()) {
+      session_start();
+      session_destroy();
+      header("Location: login.php");
+    }
+
+    $user_email = get_logged_in_user_email();
+
+    $query = "INSERT INTO tokokeren.ulasan (email_pembeli, kode_produk, tanggal, rating, komentar)
+                                VALUES('$user_email', '$kode_produk', '$date', '$rating', '$komentar')";
+
+    $db_conn = connectDB();
+    $result = pg_query($db_conn, $query);
+
+    if (!$result)
+    {
+        echo pg_last_error($db_conn);
+    }
+    else
+    {
+        header("Location: index.php");
+    }
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -117,7 +151,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      </div>
         </div>
     </div>
-<<<<<<< HEAD
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 
@@ -218,9 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="clearfix"></div>
 	 </div>
 </div>
-=======
 
->>>>>>> 56f34249a74851662aee726b28b45a0801c7bc58
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
@@ -276,6 +307,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	<!--footer-->
+
+
 
 </body>
 </html>
