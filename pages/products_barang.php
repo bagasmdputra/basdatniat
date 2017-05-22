@@ -1,7 +1,7 @@
 <?php   session_start();
     if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }
     $toko =  str_replace("'", "''",$_POST['toko']);
 ?>
@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -63,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -78,86 +78,86 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 
 			<!--header-->
     <div class="container">
         <label for="sel1">Kategori:</label>
            <select class="form-control" name="kategori drop" id="kategoridd">
                <option id="all">all</option>
-<?php 
-               
-               
+<?php
 
-$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+
+
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
     $query1 = "
         SELECT DISTINCT d.nama as kategori
-                FROM tokokeren.SHIPPED_PRODUK a 
+                FROM tokokeren.SHIPPED_PRODUK a
                     LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
                     LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
                     LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY kategori";
-               
-    $result1 = pg_query($query1); 
-    if (!$result1) { 
-        echo "Problem with query " . $query1 . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
 
-    
+    $result1 = pg_query($query1);
+    if (!$result1) {
+        echo "Problem with query " . $query1 . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    while($myrow1 = pg_fetch_assoc($result1)) { 
+
+
+    while($myrow1 = pg_fetch_assoc($result1)) {
     $kategori =  str_replace(str_split('\\/:*?"<>|& '), '',$myrow1['kategori']);
                         printf (" <option id = \"%s\" >%s</option>",
                 $kategori,
                 $myrow1['kategori']
                );
-        } 
- ?> 
+        }
+ ?>
 
         </select>
-        
+
         <label for="sel1">Sub Kategori:</label>
            <select class="form-control" name="sub kategori drop" id="subkategoridd">
                <option id="all1">all</option>
 <?php
-    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
     $query2 = "
         SELECT DISTINCT c.nama as subkategori
-                FROM tokokeren.SHIPPED_PRODUK a 
+                FROM tokokeren.SHIPPED_PRODUK a
                     LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
                     LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
                     LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
-        ORDER BY subkategori"; 
-    $result2 = pg_query($db,$query2); 
-    if (!$result2) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+        ORDER BY subkategori";
+    $result2 = pg_query($db,$query2);
+    if (!$result2) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    
 
-    while($myrow2 = pg_fetch_assoc($result2)) { 
+
+    while($myrow2 = pg_fetch_assoc($result2)) {
     $subkategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow2['subkategori']);
-                    
-  
+
+
                 printf (" <option id = \"%s\" >%s</option>",
                 $subkategori,
                 $myrow2['subkategori']
-                
+
                );
-        } 
- ?> 
+        }
+ ?>
 
         </select>
         <br>
         <br>
-        
+
 		<div class="table-responsive">
          <table id="produkbarang" class="table">
                         <thead>
@@ -174,42 +174,42 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                           </tr>
                             </thead>
              <tbody>
-<?php 
+<?php
 
 
-    
+
     $query = "
         SELECT a.kode_produk, b.nama, harga,deskripsi, is_asuransi, stok, is_baru, harga_grosir, d.nama as kategori, c.nama as subkategori
-                FROM tokokeren.SHIPPED_PRODUK a 
+                FROM tokokeren.SHIPPED_PRODUK a
                     LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
                     LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
                     LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
-        ORDER BY a.kode_produk ASC"; 
-     
+        ORDER BY a.kode_produk ASC";
+
     $_SESSION['toko'] = $toko;
              echo  $_SESSION['toko'];
-    $result = pg_query($query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+    $result = pg_query($query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    
 
-    while($myrow = pg_fetch_assoc($result)) { 
+
+    while($myrow = pg_fetch_assoc($result)) {
     $kategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow['kategori']);
     $subkategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow['subkategori']);
-                    
-  
+
+
         printf ("<tr class=\"%s %s\"><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
                                 <p><a class=\"button stroke orange\" href=\"beli_produk.php?kode_produk=%s&harga=%s\">Beli</a></p>
                           </td></tr>",
                 $kategori,
                 $subkategori,
                 $myrow['kode_produk'],
-                $myrow['nama'], 
+                $myrow['nama'],
                 $myrow['harga'],
                 $myrow['deskripsi'],
                 $myrow['is_asuransi'],
@@ -219,17 +219,17 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                 $myrow['kode_produk'],
                  $myrow['harga']
                );
-        } 
- ?> 
+        }
+ ?>
              </tbody>
-                    </table> 
+                    </table>
             </div>
     </div>
-		
+
 		<div class="subscribe">
 	 <div class="container">
 
-		
+
 	 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -281,7 +281,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>
@@ -292,16 +292,16 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function(){
-            
+
             $('#produkbarang').DataTable();
         });
-        
+
         var activities = document.getElementById("kategoridd");
-        
-        
+
+
         activities.addEventListener("change", function() {
-            
-            
+
+
             if(activities.value != "all")
             {
                 var idDropdown = $("#kategoridd option:selected").attr('id');
@@ -312,34 +312,34 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
             }
             else{
                 $("#produkbarang tbody tr").show();
-                
+
             }
-            
+
         });
-        
+
         var activ = document.getElementById("subkategoridd");
-        
+
         activ.addEventListener("change", function() {
             if(activ.value != "all1")
             {
                 var idDropdown = $("#subkategoridd option:selected").attr('id');
                  $("#kategoridd").val('all');
                 filterRows(idDropdown);
-                
+
             }else{
                  $("#produkbarang tbody tr").show();
-                 
+
             }
-           
+
         });
-        
-        
-        
+
+
+
         function filterRows(statusName) {
             $("#produkbarang tbody tr."+statusName).show();
             $("#produkbarang tbody tr").not("."+statusName).hide();
         }
-    
+
 
     </script>
 </body>

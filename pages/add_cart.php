@@ -1,6 +1,6 @@
- <?php 
+ <?php
         session_start();
-        $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+        $db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
 
 
         $no_invoice = "TS".rand(10000000,99999999) ;
@@ -13,7 +13,7 @@
 //        $nama_toko = $_SESSION['toko'];
         $alamat_kirim = $_POST['alamat'];
 //        echo $alamat_kirim."  ".$_SESSION['toko'];;
-         
+
         $random_string_length = 4;
         $characters = 'abcdefghijklmnopqrstuvwxyz';
          $string = '';
@@ -25,68 +25,68 @@
 
         $no_resi = $string . $num . $num;
         $nama_jasa_kirim = $_POST['jasa_kirim'];
-        
+
         $tarif_query = "SELECT tarif AS sum_tarif FROM TOKOKEREN.JASA_KIRIM WHERE nama = '$nama_jasa_kirim';";
                     $result = pg_query($db, $tarif_query);
                     $tarif = pg_fetch_all($result)[0]['sum_tarif'];
 
         echo $tarif;
         $biaya_kirim = $_POST['total_berat'] * $tarif;
-        
+
         $total_bayar= $_POST['total_biaya'] + $biaya_kirim;
 
 
         $query = "INSERT INTO tokokeren.TRANSAKSI_SHIPPED(no_invoice,tanggal, waktu_bayar, status, total_bayar, email_pembeli, nama_toko, alamat_kirim, biaya_kirim, no_resi, nama_jasa_kirim) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" . $status . "', '" . $total_bayar . "', '" . $email_pembeli . "', '" . $nama_toko . "', '" . $alamat_kirim . "', '" . $biaya_kirim . "', '" . $no_resi . "', '" . $nama_jasa_kirim . "')";
 
 
-        $result = pg_query($query); 
+        $result = pg_query($query);
 
-        if (!$result) { 
-            $errormessage = pg_last_error(); 
-            echo "Error with query: " . $errormessage; 
-            exit(); 
-        } 
+        if (!$result) {
+            $errormessage = pg_last_error();
+            echo "Error with query: " . $errormessage;
+            exit();
+        }
 
  $query = "
-        SELECT * 
+        SELECT *
         FROM tokokeren.KERANJANG_BELANJA a LEFT JOIN tokokeren.PRODUK  b ON a.kode_produk = b.kode_produk
         WHERE pembeli='$email_pembeli'
-        ORDER BY a.kode_produk ASC"; 
+        ORDER BY a.kode_produk ASC";
 
-    $result3 = pg_query($query); 
-    if (!$result3) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+    $result3 = pg_query($query);
+    if (!$result3) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    while($myrow = pg_fetch_assoc($result3)) { 
+    while($myrow = pg_fetch_assoc($result3)) {
 
-        $insert_query = "INSERT INTO tokokeren.\"list_item\"(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . 
-                $no_invoice . "', '" . 
-                $myrow['kode_produk']. "', '" .  
-                $myrow['berat']. "', '" . 
-                $myrow['kuantitas']. "', '" . 
-                $myrow['harga']. "', '" . 
+        $insert_query = "INSERT INTO tokokeren.\"list_item\"(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" .
+                $no_invoice . "', '" .
+                $myrow['kode_produk']. "', '" .
+                $myrow['berat']. "', '" .
+                $myrow['kuantitas']. "', '" .
+                $myrow['harga']. "', '" .
                 $myrow['sub_total']. "')";
             $result = pg_query($db, $insert_query);
-        
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
-       
+
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
+
     }
 
         $query = "DELETE FROM tokokeren.KERANJANG_BELANJA WHERE pembeli='$email_pembeli'";
-            $result = pg_query($db, $query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+            $result = pg_query($db, $query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
             $message = "Selamat, transaksi Anda Berhasil";
             $_SESSION['message'] = $message;
   header("Location: ../index.php");
-        ?> 
+        ?>

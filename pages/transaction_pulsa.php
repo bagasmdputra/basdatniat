@@ -1,7 +1,7 @@
 <?php   session_start();
 if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }?>
 <!--
 Au<!--
@@ -19,10 +19,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
-    
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--header-->
-    
+
        <div class="content">
 	 <div class="container">
 		<div class="table-responsive">
@@ -104,27 +104,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <th>Nomor</th>
                           </tr>
                             </thead>
-<?php 
+<?php
 
-    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
         
-             
+
         $email = $_SESSION['email'];
 //             $email= "aindrea336@gmail.com";
         $query = "
-        SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
+        SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor
         FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
-        WHERE email_pembeli='$email'"; 
+        WHERE email_pembeli='$email'";
 
-        $result = pg_query($query); 
-        if (!$result) { 
-            echo "Problem with query " . $query . "<br/>"; 
-            echo pg_last_error(); 
-            exit(); 
-        } 
+        $result = pg_query($query);
+        if (!$result) {
+            echo "Problem with query " . $query . "<br/>";
+            echo pg_last_error();
+            exit();
+        }
 
-        while($myrow = pg_fetch_assoc($result)) { 
-   
+        while($myrow = pg_fetch_assoc($result)) {
+
             $stat = "hai";
             if ($myrow['status']=='1'){
                 $stat = "Transaksi dilakukan";
@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",
                     $myrow['no_invoice'],
-                    $myrow['nama'], 
+                    $myrow['nama'],
                     $myrow['tanggal'],
                     $stat,
                     $myrow['total_bayar'],
@@ -143,12 +143,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    );
         }
 
-?> 
-                    </table> 
+?>
+                    </table>
             </div>
            </div>
     </div>
-    
+
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -230,11 +230,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!--sreen-gallery-cursual-->
 		</div>
 		</div>
-		
+
 		<div class="subscribe">
 	 <div class="container">
 
-		
+
 	 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -286,7 +286,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>

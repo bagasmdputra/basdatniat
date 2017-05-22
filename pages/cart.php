@@ -1,10 +1,10 @@
-<?php  
-        session_start(); 
+<?php
+        session_start();
     if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }
-    
+
 ; ?>
 <!--
 Au<!--
@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -79,8 +79,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -106,36 +106,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <th>Sub Total</th>
                           </tr>
                             </thead>
-<?php 
+<?php
 
         $email = $_SESSION['email'];
 //             $email= "aindrea336@gmail.com";
-             
-             
-$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+
+
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
 
     $query = "
-        SELECT * 
+        SELECT *
         FROM tokokeren.KERANJANG_BELANJA a LEFT JOIN tokokeren.PRODUK  b ON a.kode_produk = b.kode_produk
         WHERE pembeli='$email'
-        ORDER BY a.kode_produk ASC"; 
+        ORDER BY a.kode_produk ASC";
 
-    $result = pg_query($query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+    $result = pg_query($query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
     $total_berat = 0;
     $total_biaya = 0;
 
-    while($myrow = pg_fetch_assoc($result)) { 
+    while($myrow = pg_fetch_assoc($result)) {
         $total_biaya +=  $myrow['sub_total'];
         $total_berat +=  ($myrow['berat'] * $myrow['kuantitas']);
         printf ("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>
                           </td></tr>",
                 $myrow['kode_produk'],
-                $myrow['nama'], 
+                $myrow['nama'],
                 $myrow['berat'],
                 $myrow['kuantitas'],
                 $myrow['harga'],
@@ -143,25 +143,25 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
                );
         }
-            
-            
-//    echo $total_biaya . "   " . $total_berat;
- ?> 
 
-                    </table> 
+
+//    echo $total_biaya . "   " . $total_berat;
+ ?>
+
+                    </table>
             </div>
-        
+
         <form id="checkoutcart" action="add_cart.php" method="post">
             <div class="wow fadeInRight" data-wow-delay="0.4s">
                 <span>Alamat Kirim<label>*</label></span>
                 <input type="text" name="alamat" required>
              </div>
-            
+
              <label for="sel1">Select list:</label>
            <select class="form-control" name="jasa_kirim" >\
-<?php 
+<?php
 
-               
+
     $query = "
         SELECT jasa_kirim
         FROM tokokeren.TOKO_JASA_KIRIM
@@ -170,32 +170,32 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
             FROM tokokeren.KERANJANG_BELANJA a
                 LEFT JOIN tokokeren.SHIPPED_PRODUK b ON a.kode_produk = b.kode_produk
             WHERE pembeli = '$email'
-            LIMIT 1);"; 
+            LIMIT 1);";
 
-    $result = pg_query($query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
-        
+    $result = pg_query($query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    while($myrow = pg_fetch_assoc($result)) { 
+
+    while($myrow = pg_fetch_assoc($result)) {
 
         printf (" <option>%s</option>",
                 $myrow['jasa_kirim']
                );
-        } 
- ?>                          
+        }
+ ?>
             </select>
-          <input type="hidden" name="total_berat" value="<?php echo $total_berat ; ?>"> 
-        <input type="hidden" name="total_biaya" value="<?php echo $total_biaya ; ?>"> 
+          <input type="hidden" name="total_berat" value="<?php echo $total_berat ; ?>">
+        <input type="hidden" name="total_biaya" value="<?php echo $total_biaya ; ?>">
         </form>
         <form>
-      
+
 					   <input type="submit" value="submit" class="btn btn-primary" form="checkoutcart">
 					   <div class="clearfix"> </div>
-       
+
         </form>
     </div>
 
@@ -249,7 +249,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>

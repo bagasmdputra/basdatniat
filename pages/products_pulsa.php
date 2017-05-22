@@ -2,7 +2,7 @@
      session_start();
     if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }
  ?>
 <!--
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php
 
-    $db = pg_connect('host=localhost dbname=c12 user=postgres   password=basdat');
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
 
         $query = "
         SELECT a.kode_produk, nama, harga, deskripsi, nominal

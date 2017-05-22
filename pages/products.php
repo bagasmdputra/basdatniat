@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Tokokeren | Produk kami :: </title>
-    
+
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="./products.php">Products</a></li>
 					<li><a href="./transactions.php">Transactions</a></li>
 					<li><a href="./openshop.php">Open Shop</a></li>
-					<?php 
+					<?php
         if (isset($_SESSION['role']) && $_SESSION['role']=="penjual"){ 					echo "<li><a href=\"./addproduct.php\">Add product</a></li>";}
                 ?>
 	        </ul>
@@ -76,8 +76,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -96,17 +96,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12 banner-grid">
 						<h2>Buy our latest products</h2>
 						<p>Click one of the buttons below to explore our best offers only for you.</p>
-						
+
 					</div>
-				
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		</div>
-    
+
 		<div class="banner-section">
 			<div class="container">
-				
+
 					<div class="col-md-6 ">
                         <div class="img-container">
                             <img src="../images/p2.png" class="img-responsive image" alt=""/>
@@ -116,9 +116,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
 					</div>
-                
 
-                
+
+
 				<div class="col-md-6">
 						<div class="img-container">
                             <img src="../images/p2.png" class="img-responsive image" alt=""/>
@@ -128,12 +128,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
 				</div>
 				<div class="clearfix"></div>
-			
+
 		</div>
 		</div>
 <!--                modal    -->
-                
-                
+
+
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -141,47 +141,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <form action="products_barang.php" method="post" class="form-group">
                                   <label for="sel1">Select list:</label>
                                   <select class="form-control" name="toko" id="sel1">
- <?php 
+ <?php
 
-$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+ $db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
     echo $_POST['toko'];
     $query = "
         SELECT *
-        FROM tokokeren.TOKO ORDER BY nama ASC"; 
+        FROM tokokeren.TOKO ORDER BY nama ASC";
 
-    $result = pg_query($query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+    $result = pg_query($query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
 
-    while($myrow = pg_fetch_assoc($result)) { 
+    while($myrow = pg_fetch_assoc($result)) {
 
         printf (" <option>%s</option>",
                 $myrow['nama']
                );
-        } 
- ?> 
+        }
+ ?>
                                   </select>
-                                    
+
                                 <input class="btn btn-primary" type="submit">
                                 </form>
 
-                             
+
                         </div>
                       </div>
                     </div>
     </div>
 <!--                end modal-->
-                
+
                 <script>
                     $('#myModal').on('shown.bs.modal', function () {
                         $('#myInput').focus()
                     })
                 </script>
-                
-    
+
+
     <div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -197,14 +197,14 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 				});
 			</script>
 		<!--requried-jsfiles-for owl -->
-		
+
 		</div>
 		</div>
-		
+
 		<div class="subscribe">
 	 <div class="container">
 
-		
+
 	 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -256,13 +256,13 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
 	<!--footer-->
-		
+
 </body>
 </html>

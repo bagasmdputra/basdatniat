@@ -1,7 +1,7 @@
-<?php   session_start(); 
+<?php   session_start();
 if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }
 ?>
 <!--
@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -74,8 +74,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -106,23 +106,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <th>Ulasan</th>
                           </tr>
                             </thead>
-<?php 
+<?php
 
-$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
 
     $email = $_SESSION['email'];
 //             $email = 'allegra467@gmail.com';
-    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email' ORDER BY tanggal DESC"; 
-    
-             
-    $result = pg_query($query); 
-    if (!$result) { 
-        echo "Problem with query " . $query . "<br/>"; 
-        echo pg_last_error(); 
-        exit(); 
-    } 
+    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email' ORDER BY tanggal DESC";
 
-    while($myrow = pg_fetch_assoc($result)) { 
+
+    $result = pg_query($query);
+    if (!$result) {
+        echo "Problem with query " . $query . "<br/>";
+        echo pg_last_error();
+        exit();
+    }
+
+    while($myrow = pg_fetch_assoc($result)) {
 
         $stat = "hai";
         if ($myrow['status']=='1'){
@@ -139,7 +139,7 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                                 <p><a class=\"button stroke orange\" href=\"produklist.php?%s\">Daftar&nbspproduk</a></p>
                           </td></tr>",
                 $myrow['no_invoice'],
-                $myrow['nama_toko'], 
+                $myrow['nama_toko'],
                 $myrow['tanggal'],
                 $stat,
                 $myrow['total_bayar'],
@@ -149,15 +149,15 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                 $myrow['nama_jasa_kirim'],
                 ("invoice_no=".$myrow['no_invoice'])
                );
-        } 
- ?> 
+        }
+ ?>
 
-                    </table> 
+                    </table>
             </div>
         </div>
         </div>
 
-    
+
 		<div class="banner-bottom">
 		<div class="gallery-cursual">
 		<!--requried-jsfiles-for owl-->
@@ -177,11 +177,11 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 		<!--sreen-gallery-cursual-->
 		</div>
 		</div>
-		
+
 		<div class="subscribe">
 	 <div class="container">
 
-		
+
 	 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -233,13 +233,13 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
 	<!--footer-->
-		
+
 </body>
 </html>
