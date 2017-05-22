@@ -1,6 +1,6 @@
  <?php
         session_start();
-        $db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
+        $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
 
         $no_invoice =  "TP".rand(10000000,99999999);
         $tanggal = date("m-d-Y");

@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
+$db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
     $query1 = "
         SELECT DISTINCT d.nama as kategori
                 FROM tokokeren.SHIPPED_PRODUK a
@@ -124,7 +124,7 @@ $db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
            <select class="form-control" name="sub kategori drop" id="subkategoridd">
                <option id="all1">all</option>
 <?php
-$db = pg_connect('host=localhost dbname=c212 user=c212 password=bdc1222016');
+$db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
     $query2 = "
         SELECT DISTINCT c.nama as subkategori
                 FROM tokokeren.SHIPPED_PRODUK a

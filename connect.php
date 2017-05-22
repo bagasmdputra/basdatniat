@@ -2,13 +2,10 @@
     session_start();
 
     function connectDB() {
-        $host        = "host=127.0.0.1";
-        $port        = "port=5432";
-        $dbname      = "dbname = c12";
-        $credentials = "user = postgres password=basdat";
+
 
         // Create connection
-        $db = pg_connect( "$host $port $dbname $credentials"  );
+        $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
 
         // Check connection
         if(!$db) {
