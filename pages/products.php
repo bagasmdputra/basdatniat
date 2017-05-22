@@ -147,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     echo $_POST['toko'];
     $query = "
         SELECT *
-        FROM tokokeren.TOKO ORDER BY nama ASC";
+        FROM  TOKO ORDER BY nama ASC";
 
     $result = pg_query($query);
     if (!$result) {

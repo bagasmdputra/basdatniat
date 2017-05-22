@@ -116,7 +116,7 @@ $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc122201
 
     $query = "
         SELECT *
-        FROM tokokeren.KERANJANG_BELANJA a LEFT JOIN tokokeren.PRODUK  b ON a.kode_produk = b.kode_produk
+        FROM  KERANJANG_BELANJA a LEFT JOIN  PRODUK  b ON a.kode_produk = b.kode_produk
         WHERE pembeli='$email'
         ORDER BY a.kode_produk ASC";
 
@@ -164,11 +164,11 @@ $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc122201
 
     $query = "
         SELECT jasa_kirim
-        FROM tokokeren.TOKO_JASA_KIRIM
+        FROM  TOKO_JASA_KIRIM
         WHERE nama_toko in(
             SELECT b.nama_toko
-            FROM tokokeren.KERANJANG_BELANJA a
-                LEFT JOIN tokokeren.SHIPPED_PRODUK b ON a.kode_produk = b.kode_produk
+            FROM  KERANJANG_BELANJA a
+                LEFT JOIN  SHIPPED_PRODUK b ON a.kode_produk = b.kode_produk
             WHERE pembeli = '$email'
             LIMIT 1);";
 

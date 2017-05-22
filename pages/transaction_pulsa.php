@@ -113,7 +113,7 @@ $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc122201
 //             $email= "aindrea336@gmail.com";
         $query = "
         SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor
-        FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+        FROM  TRANSAKSI_PULSA a LEFT JOIN  PRODUK b ON a.kode_produk = b.kode_produk
         WHERE email_pembeli='$email'";
 
         $result = pg_query($query);

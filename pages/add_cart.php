@@ -36,7 +36,7 @@
         $total_bayar= $_POST['total_biaya'] + $biaya_kirim;
 
 
-        $query = "INSERT INTO tokokeren.TRANSAKSI_SHIPPED(no_invoice,tanggal, waktu_bayar, status, total_bayar, email_pembeli, nama_toko, alamat_kirim, biaya_kirim, no_resi, nama_jasa_kirim) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" . $status . "', '" . $total_bayar . "', '" . $email_pembeli . "', '" . $nama_toko . "', '" . $alamat_kirim . "', '" . $biaya_kirim . "', '" . $no_resi . "', '" . $nama_jasa_kirim . "')";
+        $query = "INSERT INTO  TRANSAKSI_SHIPPED(no_invoice,tanggal, waktu_bayar, status, total_bayar, email_pembeli, nama_toko, alamat_kirim, biaya_kirim, no_resi, nama_jasa_kirim) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" . $status . "', '" . $total_bayar . "', '" . $email_pembeli . "', '" . $nama_toko . "', '" . $alamat_kirim . "', '" . $biaya_kirim . "', '" . $no_resi . "', '" . $nama_jasa_kirim . "')";
 
 
         $result = pg_query($query);
@@ -49,7 +49,7 @@
 
  $query = "
         SELECT *
-        FROM tokokeren.KERANJANG_BELANJA a LEFT JOIN tokokeren.PRODUK  b ON a.kode_produk = b.kode_produk
+        FROM  KERANJANG_BELANJA a LEFT JOIN  PRODUK  b ON a.kode_produk = b.kode_produk
         WHERE pembeli='$email_pembeli'
         ORDER BY a.kode_produk ASC";
 
@@ -62,7 +62,7 @@
 
     while($myrow = pg_fetch_assoc($result3)) {
 
-        $insert_query = "INSERT INTO tokokeren.\"list_item\"(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" .
+        $insert_query = "INSERT INTO  \"list_item\"(no_invoice,kode_produk, berat, kuantitas, harga, sub_total) VALUES('" .
                 $no_invoice . "', '" .
                 $myrow['kode_produk']. "', '" .
                 $myrow['berat']. "', '" .
@@ -79,7 +79,7 @@
 
     }
 
-        $query = "DELETE FROM tokokeren.KERANJANG_BELANJA WHERE pembeli='$email_pembeli'";
+        $query = "DELETE FROM  KERANJANG_BELANJA WHERE pembeli='$email_pembeli'";
             $result = pg_query($db, $query);
     if (!$result) {
         echo "Problem with query " . $query . "<br/>";

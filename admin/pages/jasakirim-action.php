@@ -9,7 +9,7 @@ $is_page_requires_login = TRUE; // if this value is TRUE, the visitor will be re
 
         header("Location: index.php"); // prevent normal user from accessing this page
 
-	$query = "SELECT nama FROM tokokeren.jasa_kirim";
+	$query = "SELECT nama FROM  jasa_kirim";
 	$db_conn = connectDB();
 	$namaTmp = pg_query($db_conn, $query);
 	$resultNama = pg_fetch_all($namaTmp);
@@ -22,7 +22,7 @@ $is_page_requires_login = TRUE; // if this value is TRUE, the visitor will be re
 
 		$db_conn = connectDB();
 
-        $query = "INSERT INTO tokokeren.jasa_kirim (nama, lama_kirim, tarif)
+        $query = "INSERT INTO  jasa_kirim (nama, lama_kirim, tarif)
                       VALUES ('$namaJasaKirim', '$lamaKirim', '$tarif')";
 
         $result = pg_query($db_conn, $query);

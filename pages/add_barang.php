@@ -23,7 +23,7 @@ $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc122201
       echo  $kode_produk. $berat.$kuantitas. $harga.$sub_total .$pembeli;
 
 
-        $query = "INSERT INTO tokokeren.keranjang_belanja(pembeli, kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . $pembeli . "', '" . $kode_produk . "', '" . $berat . "', '" .$kuantitas. "', '" .$harga. "', '". $sub_total . "')";
+        $query = "INSERT INTO  keranjang_belanja(pembeli, kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . $pembeli . "', '" . $kode_produk . "', '" . $berat . "', '" .$kuantitas. "', '" .$harga. "', '". $sub_total . "')";
         $result = pg_query($query);
 
         if (!$result) {

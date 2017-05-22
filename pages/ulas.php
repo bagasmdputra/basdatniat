@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $user_email = get_logged_in_user_email();
 
-    $query = "INSERT INTO tokokeren.ulasan (email_pembeli, kode_produk, tanggal, rating, komentar)
+    $query = "INSERT INTO  ulasan (email_pembeli, kode_produk, tanggal, rating, komentar)
                                 VALUES('$user_email', '$kode_produk', '$date', '$rating', '$komentar')";
 
     $db_conn = connectDB();

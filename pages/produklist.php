@@ -111,11 +111,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         $query = "
             SELECT a.kode_produk, nama,berat, kuantitas, b.harga, sub_total, komentar
-            FROM tokokeren.LIST_ITEM a
-            LEFT JOIN tokokeren.PRODUK b
+            FROM  LIST_ITEM a
+            LEFT JOIN  PRODUK b
                 ON a.kode_produk = b.kode_produk
             LEFT JOIN
-                    (SELECT * FROM tokokeren.ULASAN WHERE email_pembeli='$email')  c
+                    (SELECT * FROM  ULASAN WHERE email_pembeli='$email')  c
                 ON c.kode_produk = b.kode_produk
             WHERE no_invoice='$number' ";
 

@@ -14,7 +14,7 @@ if (isset($_POST['register-submit'])){
 
 	}    if ($email != ""){
 		$conn = connectDB();
-		$query = "SELECT * FROM tokokeren.pengguna WHERE email = '$email'";
+		$query = "SELECT * FROM  pengguna WHERE email = '$email'";
 		$result = pg_query($conn, $query);
 		while ($row = pg_fetch_assoc($result)) {
 			echo "<script>alert('Email sudah terdaftar!');window.location.href='login.php';$('#register-form-link').click();</script>";
@@ -39,10 +39,10 @@ if (isset($_POST['register-submit'])){
 	}
 		if ($flag){
 			$conn = connectDB();
-			$query = "INSERT INTO tokokeren.pengguna (email, password, nama, jenis_kelamin, tgl_lahir, no_telp, alamat) VALUES ('$email', '$password', '$name', '$sex', '01-01-1991', '$phone', '$alamat')";
+			$query = "INSERT INTO  pengguna (email, password, nama, jenis_kelamin, tgl_lahir, no_telp, alamat) VALUES ('$email', '$password', '$name', '$sex', '01-01-1991', '$phone', '$alamat')";
 			$result = pg_query($conn, $query);
 
-			$query = "INSERT INTO tokokeren.pelanggan (email, is_penjual, nilai_reputasi, poin) VALUES('$email', 'FALSE', '0', NULL)";
+			$query = "INSERT INTO  pelanggan (email, is_penjual, nilai_reputasi, poin) VALUES('$email', 'FALSE', '0', NULL)";
 			$result = pg_query($conn, $query);
 
 			$_SESSION['email'] = 'email';
