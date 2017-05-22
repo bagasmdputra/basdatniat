@@ -1,7 +1,8 @@
  <?php
         session_start();
         $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
-
+        $setsearchpath = "SET search_path to TOKOKEREN";
+        pg_query($db, $setsearchpath);
 
         $no_invoice = "TS".rand(10000000,99999999) ;
         $tanggal = date("m-d-Y");

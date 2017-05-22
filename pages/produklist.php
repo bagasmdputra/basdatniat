@@ -106,6 +106,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $number = $_GET['invoice_no'];
 
     $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
+    $setsearchpath = "SET search_path to TOKOKEREN";
+    pg_query($db, $setsearchpath);
 //    email diganti dari session
         $email = $_SESSION['email'];
 

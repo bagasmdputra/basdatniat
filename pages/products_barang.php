@@ -91,6 +91,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
+$setsearchpath = "SET search_path to TOKOKEREN";
+pg_query($db, $setsearchpath);
     $query1 = "
         SELECT DISTINCT d.nama as kategori
                 FROM tokokeren.SHIPPED_PRODUK a

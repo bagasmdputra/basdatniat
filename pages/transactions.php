@@ -1,7 +1,7 @@
 <?php   session_start(); 
 if(!isset($_SESSION['email'])){ //if login in session is not set
     header("Location: ../login.php");
-    
+
 }?>
 <!--
 Au<!--
@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -73,8 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -93,18 +93,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12 banner-grid">
 						<h2>Transactions you've done</h2>
 						<p>Click one of the buttons below to check your history of transaction.</p>
-						
+
 					</div>
-				
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		</div>
-    
-    
+
+
 		<div class="banner-section">
 			<div class="container">
-				
+
 					<div class="col-md-6 ">
                         <div class="img-container">
                             <img src="../images/p2.png" class="img-responsive image" alt=""/>
@@ -122,14 +122,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
 				</div>
 				<div class="clearfix"></div>
-			
+
 		</div>
 		</div>
 
 		<div class="subscribe">
 	 <div class="container">
 
-		
+
 	 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -181,13 +181,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
 	<!--footer-->
-		
+
 </body>
 </html>
