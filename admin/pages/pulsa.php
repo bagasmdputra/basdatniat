@@ -41,15 +41,8 @@ session_start();
     <body>
 
         <div id="wrapper">
-<<<<<<< HEAD
-
-        <!-- Navigation -->
-        <?php
-
-=======
             <!-- Navigation -->
             <?php
->>>>>>> 9dc3a19681f350df0e57dca35afe0454cad9144f
             require 'navbar.php';
             ?>
 
@@ -60,7 +53,7 @@ session_start();
                     </div>
                 </div>
                 <!-- /.row -->
-                <div class="row">
+                <div class="row" id="content">
                     <div class="col-sm-8">
                         <form action="pulsa-action.php" method="post" class="form-horizontal">
                             <div class="form-group">

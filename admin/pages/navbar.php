@@ -1,3 +1,9 @@
+<?php  
+    if($_SESSION['role'] != 'admin'){
+        header('Location: ../../index.php');
+    }
+?>
+
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,8 +17,7 @@
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <li><a href="#"><i class="fa fa-user fa-fw"></i> Nama Admin</a>
-        </li>
+        <li><a href="#"><i class="fa fa-user fa-fw"></i></a></li>
         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
         </li>
     </ul>
@@ -31,7 +36,7 @@
                     <a href="jasakirim.php"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
+                    <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
                 </li>
                 <li>
                     <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>
