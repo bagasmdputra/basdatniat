@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
-    session_start();
-=======
 session_start();
->>>>>>> 02e15cb62a1c90dcc647256c9dae68032038300f
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,74 +42,8 @@ session_start();
     <body>
 
         <div id="wrapper">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Admin TokoKeren</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Nama Admin</a>
-                </li>
-                <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> Buat Kategori</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-truck fa-fw"></i> Tambah Jasa Kirim</a>
-                        </li>
-                        <li>
-                            <a href="promo.php"><i class="fa fa-tags fa-fw"></i> Buat Promo</a>
-                        </li>
-                        <li>
-                            <a href="pulsa.php"><i class="fa fa-shopping-cart fa-fw"></i> Tambah Produk (Pulsa)</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-=======
-        <?php
-=======
-            <!-- Navigation -->
-            <?php 
->>>>>>> 02e15cb62a1c90dcc647256c9dae68032038300f
-=======
-
-        <!-- Navigation -->
-        <?php
-
-=======
-            <!-- Navigation -->
+            
             <?php
->>>>>>> 9dc3a19681f350df0e57dca35afe0454cad9144f
->>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
-=======
-            <!-- Navigation -->
-            <?php
->>>>>>> 56f34249a74851662aee726b28b45a0801c7bc58
             require 'navbar.php';
             ?>
 
@@ -155,51 +86,41 @@ session_start();
                                     <button class="btn btn-default" type="submit" value="submit">Submit</button>
                                 </div>
                             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         </div>
                     </form>
                     <?php
-                        if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
-                        $_SESSION['form-pulsa-message'] = null;
+
+                    if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
+                    $_SESSION['form-pulsa-message'] = null;
                     ?>
-=======
-                            <?php 
-=======
-                            <?php
->>>>>>> 84b5b0d2bf36f879dcf16b9de532d9d15717af71
-                                if(!empty($_SESSION['form-pulsa-message'])) echo '<p class="text-center">'.$_SESSION['form-pulsa-message'].'</p>';
-                                $_SESSION['form-pulsa-message'] = null;
-                            ?>
-                        </form>
 
-                    </div>
->>>>>>> 02e15cb62a1c90dcc647256c9dae68032038300f
+
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /#page-wrapper -->
-
+            <!-- /.row -->
         </div>
-        <!-- /#wrapper -->
+        <!-- /#page-wrapper -->
 
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
+    </div>
+    <!-- /#wrapper -->
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Morris Charts JavaScript -->
-        <script src="../vendor/raphael/raphael.min.js"></script>
-        <script src="../vendor/morrisjs/morris.min.js"></script>
-        <script src="../data/morris-data.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
 
-    </body>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
 
-    </html>
+</body>
+
+</html>

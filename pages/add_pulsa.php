@@ -22,10 +22,10 @@
             exit();
         }
 
-        echo "INSERT INTO tokokeren.transaksi_pulsa(no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" .$status. "', " .$total_bayar. ", '". $email_pembeli ."', " .$nominal. ", ".$nomor. ", '".$kode_produk. "')";
+        echo "INSERT INTO  transaksi_pulsa(no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" .$status. "', " .$total_bayar. ", '". $email_pembeli ."', " .$nominal. ", ".$nomor. ", '".$kode_produk. "')";
 
 
-        $query = "INSERT INTO tokokeren.transaksi_pulsa(no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" .$status. "', " .$total_bayar. ", '". $email_pembeli ."', " .$nominal. ", ".$nomor. ", '".$kode_produk. "')";
+        $query = "INSERT INTO  transaksi_pulsa(no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" .$status. "', " .$total_bayar. ", '". $email_pembeli ."', " .$nominal. ", ".$nomor. ", '".$kode_produk. "')";
         $result = pg_query($query);
 
         if (!$result) {

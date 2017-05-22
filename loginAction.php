@@ -23,7 +23,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'pelanggan';
                     $_SESSION['real_email'] = $email;
-                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
+                    echo "<script>alert('Login berhasil!');window.location.href='index.php';</script>";
                     break;
                 }
             }
@@ -43,7 +43,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
-                    echo "<script>alert('Login berhasil!');window.location.href='pelanggan.php';</script>";
+                    echo "<script>alert('Login berhasil!');window.location.href='index.php';</script>";
                     break;
                 }
             }

@@ -114,7 +114,7 @@ pg_query($db, $setsearchpath);
 
         $query = "
         SELECT a.kode_produk, nama, harga, deskripsi, nominal
-        FROM tokokeren.PRODUK_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+        FROM  PRODUK_PULSA a LEFT JOIN  PRODUK b ON a.kode_produk = b.kode_produk
         ORDER BY a.kode_produk ASC;";
 
         $result = pg_query($query);

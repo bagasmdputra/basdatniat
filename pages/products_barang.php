@@ -95,10 +95,10 @@ $setsearchpath = "SET search_path to TOKOKEREN";
 pg_query($db, $setsearchpath);
     $query1 = "
         SELECT DISTINCT d.nama as kategori
-                FROM tokokeren.SHIPPED_PRODUK a
-                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
-                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
-                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+                FROM  SHIPPED_PRODUK a
+                    LEFT JOIN  PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN  SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN  KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY kategori";
 
@@ -129,10 +129,10 @@ pg_query($db, $setsearchpath);
 $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc1222016');
     $query2 = "
         SELECT DISTINCT c.nama as subkategori
-                FROM tokokeren.SHIPPED_PRODUK a
-                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
-                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
-                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+                FROM  SHIPPED_PRODUK a
+                    LEFT JOIN  PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN  SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN  KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY subkategori";
     $result2 = pg_query($db,$query2);
@@ -182,10 +182,10 @@ $db = pg_connect('host=dbpg.cs.ui.ac.id dbname=c212 user=c212 password=bdc122201
 
     $query = "
         SELECT a.kode_produk, b.nama, harga,deskripsi, is_asuransi, stok, is_baru, harga_grosir, d.nama as kategori, c.nama as subkategori
-                FROM tokokeren.SHIPPED_PRODUK a
-                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
-                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
-                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+                FROM  SHIPPED_PRODUK a
+                    LEFT JOIN  PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN  SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN  KATEGORI_UTAMA d ON c.kode_kategori = d.kode
         WHERE nama_toko ='$toko'
         ORDER BY a.kode_produk ASC";
 

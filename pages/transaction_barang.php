@@ -114,7 +114,7 @@ pg_query($db, $setsearchpath);
 
     $email = $_SESSION['email'];
 //             $email = 'allegra467@gmail.com';
-    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email' ORDER BY tanggal DESC";
+    $query = "SELECT * FROM  TRANSAKSI_SHIPPED WHERE email_pembeli='$email' ORDER BY tanggal DESC";
 
 
     $result = pg_query($query);
