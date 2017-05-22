@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 				<ul>
 					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+					<li class="text"><a href="./cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>

@@ -1,4 +1,8 @@
-<?php   session_start(); ?>
+<?php    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+; ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -35,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="../login.php">login</a></li>
+					<li class="text"><a href="../logout.php">logout</a></li>
 					<li class="text"><a href="../cart.php">Cart</a></li>
 				</ul>
 				</div>

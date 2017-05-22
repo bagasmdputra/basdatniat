@@ -30,8 +30,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.php">login</a></li>
-					<li class="text"><a href="login.php">Cart</a></li>
+					
+    <?php 
+                    if (!isset($_SESSION['email'])){
+                        echo"<li class=\"text\"><a href=\"logout.php\">logout</a></li>";
+                        echo "<li class=\"text\"><a href=\"pages/cart.php\">Cart</a></li>";
+                    }else{
+                            echo"<li class=\"text\"><a href=\"login.php\">login</a></li>";
+                        }
+                    
+					
+    ?>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
