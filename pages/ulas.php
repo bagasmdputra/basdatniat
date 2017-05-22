@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="../css/owl.carousel.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Tokokeren Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="../application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="../js/jquery.min.js"></script>
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <h1 class="navbar-brand"><a  href="../index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
-	
+
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><a href="../index.php">Home</a></li>
@@ -75,8 +75,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
-			
+
+
 <!-- search-scripts -->
 					<script src="js/classie.js"></script>
 					<script src="js/uisearch.js"></script>
@@ -95,24 +95,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="login-page">
 			   <div class="account_grid">
 <div class="col-md-12">
-                <form action="loginAction.php" method="post">
-				  <div>
-					<span>Nama<label>*</label></span>
-					<input name="name" id="name" type="text" required/>
-				  </div>
-                    
-                    <div>
-                    <label for="input-7-sm" class="control-label">Small Rating</label>  
-                    <input id="input-7-sm" class="rating rating-loading" value="2" data-min="0" data-max="5" data-step="0.5" data-size="sm"><hr/>
-                    </div>
-                    
-				  <div>
-					<span>Review<label>*</label></span>
-                      <textarea name="review" class="form-control" rows="5" id="review" type="textarea" required></textarea>
-				  </div>
-				
-				  <input type="submit" name='submit' value="Submit">
-			    </form>
+	<form action="transaction_item_list.php" method="post" class="form">
+		<div class="form-group">
+			<label for="kode-produk">Kode Produk:</label>
+			<input type="text" class="form-control" id="kode-produk" name="kode-produk" readonly/>
+		</div>
+		<div class="form-group">
+			<label for="rating">Rating:</label>
+			<input type="number"class="form-control" min="1" max="5" id="rating" name="rating" placeholder="1-5" required>
+		</div>
+		<div class="form-group">
+			<label for="komentar">Komentar:</label>
+			<textarea class="form-control" id="komentar" name="komentar" rows="5" required></textarea>
+		</div>
+			<button type="submit" id="filter-submit" value="submit" class="btn btn-default">Submit</button>
+	</form>
       <div class="clearfix"> </div>
     </div>
     </div>
@@ -120,7 +117,110 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      </div>
         </div>
     </div>
+<<<<<<< HEAD
+		<div class="banner-bottom">
+		<div class="gallery-cursual">
 
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".use-address").click(function() {
+					var $row = $(this).closest("tr");    // Find the row
+					var $text = $row.find(".nr").text(); // Find the text
+						$("#kode-produk").val($text);
+				});
+			});
+		</script>
+
+				<!--requried-jsfiles-for owl-->
+		<script src="js/owl.carousel.js"></script>
+			<script>
+				$(document).ready(function() {
+					$("#owl-demo").owlCarousel({
+						items : 3,
+						lazyLoad : true,
+						autoPlay : true,
+						pagination : false,
+					});
+				});
+			</script>
+		<!--requried-jsfiles-for owl -->
+		<!--start content-slider-->
+		<div id="owl-demo" class="owl-carousel text-center">
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
+				<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b4.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b6.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b7.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b1.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b2.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+			<div class="item">
+				<img class="lazyOwl" data-src="images/b3.jpg" alt="name">
+			<div class="item-info">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+		</div>
+		<!--sreen-gallery-cursual-->
+		</div>
+		</div>
+
+		<div class="subscribe">
+	 <div class="container">
+
+
+	 <div class="clearfix"></div>
+	 </div>
+</div>
+=======
+
+>>>>>>> 56f34249a74851662aee726b28b45a0801c7bc58
 	<!--footer-->
 		<div class="footer-section">
 			<div class="container">
@@ -169,13 +269,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					
+
 					</div>
 				<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
 	<!--footer-->
-		
+
 </body>
 </html>

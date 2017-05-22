@@ -1,9 +1,9 @@
 <?php
-  if (!isset($_SESSION['email'])) {
-    session_unset();
-    session_destroy();
-    header("Location: ../index.php");
-  } 
+     session_start();
+    if(!isset($_SESSION['email'])){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}
  ?>
 <!--
 Au<!--

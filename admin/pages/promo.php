@@ -45,7 +45,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <?php  
+        <?php
             require 'navbar.php';
         ?>
 
@@ -59,37 +59,31 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-sm-8">
-                    <form action="promo.php" class="form-horizontal">
-                      <div class="form-group">
-                        <label>Deskripsi :</label>
-                        <p><textarea id="promo-description" style="resize:none" rows="4" cols="50" form="promo-from" class="form-control" placeholder="Deskripsi promo" required></textarea></p>
-                      </div>
-                        <div class="form-group">
-                          <label class="input-group date" data-provide="datepicker">Periode Awal:</label>
-                              <input id="promo-start-date" type="text" class="form-control" required>
-                              <div class="input-group-addon">
-                                  <span class="glyphicon glyphicon-th"></span>
-                              </div>
-                            </div>
-                          <div class="form-group">
-                              <label class="input-group date" data-provide="datepicker">Periode Akhir:</label>
-                                  <input id="promo-start-date" type="text" class="form-control" required>
-                                  <div class="input-group-addon">
-                                      <span class="glyphicon glyphicon-th"></span>
-                                  </div>
-                              </div>
-                        <div class="form-group">
-                            <label for="kode-promo" class="control-label col-sm-4 col-lg-2">Kode Promo</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="kode-promo" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <label for="kategori-produk" class="control-label col-sm-4 col-lg-2  ">Kategori</label>
+                  <h2>Membuat Promo</h2>
+                  <hr/>
+                  <form action="promo-action.php" method="post">
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required/>
+                    </div>
+                	<div class="form-group">
+                		<label for="periode-awal">Periode Awal</label>
+                		<input type="date" class="form-control" id="periode-awal" name="periode-awal" required>
+                	</div>
+                	<div class="form-group">
+                		<label for="periode-akhir">Periode Akhir</label>
+                		<input type="date" class="form-control" id="periode-akhir" name="periode-akhir" required>
+                	</div>
+                	<div class="form-group">
+                		<label for="kode-promo">Kode Promo</label>
+                		<input type="text" class="form-control" id="kode-promo" name="kode-promo" disabled>
+                	 </div>
+
+                  <div class="form-group">
+                                <label for="kategori" class="control-label col-sm-4 col-lg-2  ">Kategori</label>
                                 <div class="col-sm-3 col-lg-4">
                                     <select name="kategori-produk" class="form-control" required>
                                         <?php
-
                                         $query = "SELECT kode, nama FROM kategori_utama;";
                                         $result = pg_query($db, $query);
 
@@ -102,17 +96,15 @@
                                                 echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
                                             }
                                         }
-                                        
                                         ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="kategori-produk" class="control-label col-sm-4 col-lg-2  ">Subkategori</label>
+                                <label for="sub-kategori" class="control-label col-sm-4 col-lg-2  ">Subkategori</label>
                                 <div class="col-sm-3 col-lg-4">
                                     <select name="subkategori-produk" class="form-control" required>
                                         <?php
-
                                         $query = "SELECT kode, nama FROM sub_kategori;";
                                         $result = pg_query($db, $query);
 
@@ -125,17 +117,12 @@
                                                 echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
                                             }
                                         }
-                                        
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <button class="btn btn-default" type="submit" value="submit">Submit</button>
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                    </form>
+                      <button type="submit" id="deskripsi-submit" value="submit" class="btn btn-default">Submit</button>
+                  </form>
                 </div>
             </div>
             <!-- /.row -->
@@ -161,6 +148,45 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		var text = "<?php echo $kode; ?>";
+        	$("#kode-promo").val(text);
+
+        	var my_sub_kategori = <?php echo json_encode($sub_kategori); ?>;
+        	var e = document.getElementById("kategori");
+    		var my_kode_kategori = e.options[e.selectedIndex].value;
+    		for(i = 0; i < my_sub_kategori.length; i++) {
+    			if (my_kode_kategori.localeCompare(my_sub_kategori[i].kode_kategori) == 0) {
+    				$("#sub-kategori").append("<option value=\"" + my_sub_kategori[i].kode + "\"" + ">" + my_sub_kategori[i].nama + "</option>");
+    			}
+    		};
+
+    		$("#kategori").change(function() {
+    			var e = document.getElementById("kategori");
+    			var my_kode_kategori = e.options[e.selectedIndex].value;
+
+    			$('#sub-kategori')
+    			    .find('option')
+    			    .remove()
+    			    .end()
+    			;
+
+    			for(i = 0; i < my_sub_kategori.length; i++) {
+    				if (my_kode_kategori.localeCompare(my_sub_kategori[i].kode_kategori) == 0) {
+    					$("#sub-kategori").append("<option value=\"" + my_sub_kategori[i].kode + "\"" + ">" + my_sub_kategori[i].nama + "</option>");
+    				}
+    			};
+    		});
+
+    		$("#periode-awal").change(function() {
+    			var temp = document.getElementById("periode-awal").value;
+    			document.getElementById("periode-akhir").setAttribute("min", temp);
+    		});
+
+    	});
+    </script>
 
 </body>
 
