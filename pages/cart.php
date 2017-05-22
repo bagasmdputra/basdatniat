@@ -1,7 +1,10 @@
-<?php    if(!isset($_SESSION)) 
-    { 
+<?php  
         session_start(); 
-    } 
+    if(!isset($_SESSION['email'])){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}
+    
 ; ?>
 <!--
 Au<!--
@@ -105,8 +108,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </thead>
 <?php 
 
-//        $email = $_SESSION['email'];
-             $email= "aindrea336@gmail.com";
+        $email = $_SESSION['email'];
+//             $email= "aindrea336@gmail.com";
              
              
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');

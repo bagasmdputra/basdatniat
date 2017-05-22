@@ -58,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      echo "
             <div class=\"container\">
                 <div class=\"alert alert-success\">
+                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
                     $pesan
               </div>
             </div>";
