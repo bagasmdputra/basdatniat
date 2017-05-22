@@ -1,4 +1,6 @@
-<?php   session_start(); ?>
+<?php   session_start();
+    $toko =  str_replace("'", "''",$_POST['toko']);
+?>
 <!--
 Au<!--
 Author: W3layouts
@@ -9,11 +11,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren | Home :: </title>
+<title>Tokokeren | Produk Barang :: </title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../css/owl.carousel.css" rel="stylesheet">
+
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
 
@@ -35,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+                        <li class="text"><a href="../logout.php">logout</a></li>
+                        <li class="text"><a href="cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -74,25 +76,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 			 
 			
-<!-- search-scripts -->
-					<script src="js/classie.js"></script>
-					<script src="js/uisearch.js"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-					<!-- //search-scripts -->
-					<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
+
 			<!--header-->
     <div class="container">
         <label for="sel1">Kategori:</label>
-           <select class="form-control" name="toko" id="sel1">\
+           <select class="form-control" name="kategori drop" id="kategoridd">
+               <option id="all">all</option>
+<?php 
+               
+               
+
+$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+    $query1 = "
+        SELECT DISTINCT d.nama as kategori
+                FROM tokokeren.SHIPPED_PRODUK a 
+                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+        WHERE nama_toko ='$toko'
+        ORDER BY kategori";
+               
+    $result1 = pg_query($query1); 
+    if (!$result1) { 
+        echo "Problem with query " . $query1 . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    
+
+    while($myrow1 = pg_fetch_assoc($result1)) { 
+    $kategori =  str_replace(str_split('\\/:*?"<>|& '), '',$myrow1['kategori']);
+                        printf (" <option id = \"%s\" >%s</option>",
+                $kategori,
+                $myrow1['kategori']
+               );
+        } 
+ ?> 
+
         </select>
         
         <label for="sel1">Sub Kategori:</label>
-           <select class="form-control" name="toko" id="sel1">\
+           <select class="form-control" name="sub kategori drop" id="subkategoridd">
+               <option id="all1">all</option>
+<?php
+    $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
+    $query2 = "
+        SELECT DISTINCT c.nama as subkategori
+                FROM tokokeren.SHIPPED_PRODUK a 
+                    LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk
+                    LEFT JOIN tokokeren.SUB_KATEGORI c ON a.kategori= c.kode
+                    LEFT JOIN tokokeren.KATEGORI_UTAMA d ON c.kode_kategori = d.kode
+        WHERE nama_toko ='$toko'
+        ORDER BY subkategori"; 
+    $result2 = pg_query($db,$query2); 
+    if (!$result2) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+
+    
+
+    while($myrow2 = pg_fetch_assoc($result2)) { 
+    $subkategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow2['subkategori']);
+                    
+  
+                printf (" <option id = \"%s\" >%s</option>",
+                $subkategori,
+                $myrow2['subkategori']
+                
+               );
+        } 
+ ?> 
+
         </select>
         <br>
         <br>
@@ -112,10 +169,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <th>Beli</th>
                           </tr>
                             </thead>
+             <tbody>
 <?php 
 
-$db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
-    $toko =  str_replace("'", "''",$_POST['toko']);
+
+    
     $query = "
         SELECT a.kode_produk, b.nama, harga,deskripsi, is_asuransi, stok, is_baru, harga_grosir, d.nama as kategori, c.nama as subkategori
                 FROM tokokeren.SHIPPED_PRODUK a 
@@ -137,8 +195,8 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     
 
     while($myrow = pg_fetch_assoc($result)) { 
-    $kategori = rawurlencode($myrow['kategori']);
-    $subkategori = rawurlencode($myrow['subkategori']);
+    $kategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow['kategori']);
+    $subkategori = str_replace(str_split('\\/:*?"<>|& '), '',$myrow['subkategori']);
                     
   
         printf ("<tr class=\"%s %s\"><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>
@@ -159,28 +217,10 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
                );
         } 
  ?> 
-
+             </tbody>
                     </table> 
             </div>
     </div>
-		<div class="banner-bottom">
-		<div class="gallery-cursual">
-		<!--requried-jsfiles-for owl-->
-		<script src="js/owl.carousel.js"></script>
-			<script>
-				$(document).ready(function() {
-					$("#owl-demo").owlCarousel({
-						items : 3,
-						lazyLoad : true,
-						autoPlay : true,
-						pagination : false,
-					});
-				});
-			</script>
-		<!--requried-jsfiles-for owl -->
-            
-		</div>
-		</div>
 		
 		<div class="subscribe">
 	 <div class="container">
@@ -248,8 +288,55 @@ $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function(){
+            
             $('#produkbarang').DataTable();
         });
+        
+        var activities = document.getElementById("kategoridd");
+        
+        
+        activities.addEventListener("change", function() {
+            
+            
+            if(activities.value != "all")
+            {
+                var idDropdown = $("#kategoridd option:selected").attr('id');
+//                alert(idDropdown);
+                $("#subkategoridd").val("all");
+                filterRows(idDropdown);
+//                alert("masuk");
+            }
+            else{
+                $("#produkbarang tbody tr").show();
+                
+            }
+            
+        });
+        
+        var activ = document.getElementById("subkategoridd");
+        
+        activ.addEventListener("change", function() {
+            if(activ.value != "all1")
+            {
+                var idDropdown = $("#subkategoridd option:selected").attr('id');
+                 $("#kategoridd").val('all');
+                filterRows(idDropdown);
+                
+            }else{
+                 $("#produkbarang tbody tr").show();
+                 
+            }
+           
+        });
+        
+        
+        
+        function filterRows(statusName) {
+            $("#produkbarang tbody tr."+statusName).show();
+            $("#produkbarang tbody tr").not("."+statusName).hide();
+        }
+    
+
     </script>
 </body>
 </html>

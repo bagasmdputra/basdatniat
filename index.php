@@ -1,3 +1,6 @@
+<?php
+    session_start()
+?>
 <!--
 Au<!--
 Author: W3layouts
@@ -32,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul>
 					
     <?php 
-                    if (!isset($_SESSION['email'])){
+                    if (isset($_SESSION['email'])){
                         echo"<li class=\"text\"><a href=\"logout.php\">logout</a></li>";
                         echo "<li class=\"text\"><a href=\"pages/cart.php\">Cart</a></li>";
                     }else{
@@ -49,6 +52,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom">
 					<div class="container">
 <!--/.content-->
+                        <?php
+ if (isset($_SESSION['email']) && isset($_SESSION['message'])){
+    $pesan = $_SESSION['message'];
+     echo "
+            <div class=\"container\">
+                <div class=\"alert alert-success\">
+                    $pesan
+              </div>
+            </div>";
+     unset($_SESSION["message"]);
+ }
+    ?>
 <div class="content white">
 	<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">
@@ -104,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-6 banner-grid">
 						<h2>the latest collections</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a href="products.php" class="button"> shop now </a>
+						<a href="pages/products.php" class="button"> shop now </a>
 					</div>
 				<div class="col-md-6 banner-grid1">
 						<img src="images/p2.png" class="img-responsive" alt=""/>

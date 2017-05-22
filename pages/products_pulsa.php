@@ -1,4 +1,10 @@
-<?php   session_start(); ?>
+<?php
+  if (!isset($_SESSION['email'])) {
+    session_unset();
+    session_destroy();
+    header("Location: ../index.php");
+  } 
+ ?>
 <!--
 Au<!--
 Author: W3layouts
@@ -9,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tokokeren | Home :: </title>
+<title>Tokokeren | Produk Pulsa :: </title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/image.css" rel="stylesheet" type="text/css" media="all" />
@@ -35,8 +41,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 				<ul>
-					<li class="text"><a href="../login.php">login</a></li>
-					<li class="text"><a href="../cart.php">Cart</a></li>
+                        <li class="text"><a href="../logout.php">logout</a></li>
+                        <li class="text"><a href="cart.php">Cart</a></li>
 				</ul>
 				</div>
 				<div class="clearfix"></div>

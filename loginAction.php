@@ -22,7 +22,7 @@
             // output data of each row
             while($row = pg_fetch_assoc($resultPelanggan)) {
                 if($row['email'] == $email && $row['password'] == $password ){
-                    $_SESSION['email'] = "email";
+                    $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'pelanggan';
                     $_SESSION['real_email'] = $email;
                     header("Location: pelanggan.php");
@@ -42,10 +42,10 @@
             // output data of each row
             while($row = pg_fetch_assoc($resultPenjual)) {
                 if($row['email'] == $email && $row['password'] == $password ){
-                    $_SESSION['email'] = "email";
+                    $_SESSION['email'] = $email;
                     $_SESSION['role'] = 'penjual';
                     $_SESSION['real_email'] = $email;
-                    header("Location: penjual.php");
+                    header("Location: index.php");
                     break;
                 }
             }

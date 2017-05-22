@@ -5,10 +5,10 @@
 			header("Location: admin/index.php");
 		}
 		else if($_SESSION['role'] == 'pelanggan'){
-			require 'pelanggan.php';
+			require 'index.php';
 		}
 		else if($_SESSION['role'] == 'penjual'){
-			require 'penjual.php';
+			require 'index.php';
 		}
 	}
 	else{

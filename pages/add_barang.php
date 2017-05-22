@@ -2,8 +2,8 @@
 session_start();
         $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
-//        $pembeli =  $_SESSION['email']; 
-        $pembeli = "aindrea336@gmail.com" ;
+        $pembeli =  $_SESSION['email']; 
+//        $pembeli = "aindrea336@gmail.com" ;
         $kode_produk = $_POST['kode'];
         $berat = pg_escape_string($_POST['berat_total']);
         $kuantitas= pg_escape_string($_POST['kuantitas']);
@@ -13,7 +13,7 @@ session_start();
         
         
 //echo         $pembeli = "aindrea336@gmail.com" ;
-      echo  $kode_produk. $berat.$kuantitas. $harga.$sub_total;
+      echo  $kode_produk. $berat.$kuantitas. $harga.$sub_total .$pembeli;
 
         
         $query = "INSERT INTO tokokeren.keranjang_belanja(pembeli, kode_produk, berat, kuantitas, harga, sub_total) VALUES('" . $pembeli . "', '" . $kode_produk . "', '" . $berat . "', '" .$kuantitas. "', '" .$harga. "', '". $sub_total . "')";
@@ -22,6 +22,9 @@ session_start();
         if (!$result) { 
             $errormessage = pg_last_error(); 
             echo "Error with query: " . $errormessage; 
+            $error = "Data tidak bisa diproses";
+            $_SESSION['message'] = $error;
+//            header("Location: ". $_SERVER['HTTP_REFERER']);
             exit(); 
         } 
   header("Location: ../index.php");
