@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require 'connect.php';
     $db = connectDB();
 ?>
@@ -80,24 +79,41 @@
                                   </div>
                               </div>
                         <div class="form-group">
-                            <label for="harga-produk" class="control-label col-sm-4 col-lg-2">Harga</label>
+                            <label for="kode-promo" class="control-label col-sm-4 col-lg-2">Kode Promo</label>
                             <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="harga-produk" class="form-control" required>
+                                <input type="number" name="kode-promo" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nominal-produk" class="control-label col-sm-4 col-lg-2">Nominal</label>
-                            <div class="col-sm-8 col-lg-10">
-                                <input type="number" name="nominal-produk" class="form-control" required>
+                                <label for="kategori-produk" class="control-label col-sm-4 col-lg-2  ">Kategori</label>
+                                <div class="col-sm-3 col-lg-4">
+                                    <select name="kategori-produk" class="form-control" required>
+                                        <?php
+
+                                        $query = "SELECT kode, nama FROM kategori_utama;";
+                                        $result = pg_query($db, $query);
+
+                                        if (!$db) {
+                                            die("Connection failed ");
+                                        }
+                                        if ($result > 0) {
+                                                // output data of each row
+                                            while($row = pg_fetch_assoc($result)) {
+                                                echo '<option value="'.$row['kode'].'">'.$row['nama'].'</option>';
+                                            }
+                                        }
+                                        
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                                <label for="subkategori-produk" class="control-label col-sm-4 col-lg-3  ">Kategori</label>
+                            <div class="form-group">
+                                <label for="kategori-produk" class="control-label col-sm-4 col-lg-2  ">Subkategori</label>
                                 <div class="col-sm-3 col-lg-4">
                                     <select name="subkategori-produk" class="form-control" required>
                                         <?php
 
-                                        $query = "SELECT kode, nama FROM kategori_utama;";
+                                        $query = "SELECT kode, nama FROM sub_kategori;";
                                         $result = pg_query($db, $query);
 
                                         if (!$db) {

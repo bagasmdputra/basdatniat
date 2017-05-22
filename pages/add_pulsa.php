@@ -13,6 +13,14 @@
         $nomor = pg_escape_string($_POST['nomor']);
         $kode_produk = pg_escape_string($_POST['kode']); 
         
+
+        if(!preg_match('/^(\d{10-12}(\d{20})?)?$/',$nomor)){
+            $error = "Data tidak valid, digit nomor anda tidak sesuai";
+            $_SESSION['message'] = $error;
+            header("Location: ". $_SERVER['HTTP_REFERER']);
+            exit(); 
+        }
+
         echo "INSERT INTO tokokeren.transaksi_pulsa(no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES('" . $no_invoice . "', '" . $tanggal . "', '" . $waktu_bayar . "', '" .$status. "', " .$total_bayar. ", '". $email_pembeli ."', " .$nominal. ", ".$nomor. ", '".$kode_produk. "')";
 
         
@@ -24,6 +32,8 @@
             echo "Error with query: " . $errormessage; 
             exit(); 
         } 
+    $message="transaksi berhasil dilakukan";
+     $_SESSION['message'] = $message;
       header("Location: ../index.php");
         printf ("These values were inserted into the database - %s %s %s", $no_invoice, $tanggal, $waktu_bayar);
 

@@ -1,6 +1,5 @@
 <?php
 
-    session_start();
     require "connect.php";
     $db = connectDB();
     if(!$db) {

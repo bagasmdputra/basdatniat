@@ -4,8 +4,8 @@
     if (isset($_POST['login'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $isAdmin = isAdmin($db, $email, $password);
-        if ($isAdmin == true){
+        $isAdmins = isAdmin($db, $email, $password);
+        if ($isAdmins == true){
             header("Location: admin/index.php");
         }
 
