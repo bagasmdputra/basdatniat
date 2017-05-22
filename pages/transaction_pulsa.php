@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="./products.php">Products</a></li>
 					<li><a href="./transactions.php">Transactions</a></li>
 					<li><a href="./openshop.php">Open Shop</a></li>
-					<?php if ($_SESSION['role']=="penjual"){ 					echo "<li><a href=\"./addproduct.php\">Add product</a></li>"                         ?>}
+					<?php if ($_SESSION['role']=="penjual"){ 					echo "<li><a href=\"./addproduct.php\">Add product</a></li>"                         ;}?>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -109,8 +109,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
         
              
-//        $email = $_SESSION['email'];
-             $email= "aindrea336@gmail.com";
+        $email = $_SESSION['email'];
+//             $email= "aindrea336@gmail.com";
         $query = "
         SELECT a.no_invoice, b.nama, a.tanggal, a.status, a.total_bayar, a.nominal, a.nomor 
         FROM tokokeren.TRANSAKSI_PULSA a LEFT JOIN tokokeren.PRODUK b ON a.kode_produk = b.kode_produk

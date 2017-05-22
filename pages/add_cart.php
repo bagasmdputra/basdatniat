@@ -71,12 +71,22 @@
                 $myrow['sub_total']. "')";
             $result = pg_query($db, $insert_query);
         
-
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
        
-        }
+    }
 
-        $query = "DELETE FROM tokokeren.KERANJANG_BELANJA WHERE pembeli='.$email_pembeli.'";
-            $result = pg_query($query); 
-
-//  header("Location: ../index.php");
+        $query = "DELETE FROM tokokeren.KERANJANG_BELANJA WHERE pembeli='$email_pembeli'";
+            $result = pg_query($db, $query); 
+    if (!$result) { 
+        echo "Problem with query " . $query . "<br/>"; 
+        echo pg_last_error(); 
+        exit(); 
+    } 
+            $message = "Selamat, transaksi Anda Berhasil";
+            $_SESSION['message'] = $message;
+  header("Location: ../index.php");
         ?> 
