@@ -183,7 +183,7 @@ $('#register-form-link').click(function(e) {
 <body>
 	<!--header-->
 		<div class="header">
-			
+
 <div class="container">
 <!--/.content-->
 <div class="content white" >
@@ -194,15 +194,15 @@ $('#register-form-link').click(function(e) {
 	    </div>
 	    <!--/.navbar-header-->
 
-	  
+
 	</nav>
 	<!--/.navbar-->
 </div>
-			 
+
 					<div class="clearfix"></div>
 					</div>
 				</div>
-			
+
 			<!--header-->
 			<!--contact-->
 			<div class="content" >
@@ -295,8 +295,8 @@ $('#register-form-link').click(function(e) {
 
 
 	<!--footer-->
-		<div class="footer-section" style="position : absolute; bottom : 0px;">
-            
+		<div class="footer-section">
+
 			<div class="container">
 				<div class="footer-grids">
 					<div class="col-md-2 footer-grid">
