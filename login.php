@@ -183,176 +183,29 @@ $('#register-form-link').click(function(e) {
 <body>
 	<!--header-->
 		<div class="header">
-			<div class="header-top">
-			<div class="container">
-				<div class="top-right">
-				<ul>
-					<li class="text"><a href="login.php">login</a>
-					<li><div class="cart box_1">
-							<a href="checkout.php">
-								 <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)
-							</a>
-							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
-							<div class="clearfix"> </div>
-						</div></li>
-				</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			</div>
-			<div class="header-bottom">
-					<div class="container">
+			
+<div class="container">
 <!--/.content-->
-<div class="content white">
+<div class="content white" >
 	<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-	        </button>
+
 	       <h1 class="navbar-brand"><a  href="index.php">Tokokeren</a></h1>
 	    </div>
 	    <!--/.navbar-header-->
 
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
-		            <ul class="dropdown-menu multi-column columns-3">
-			            <div class="row">
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Women</a></li>
-						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.php">N-Gal</a></li>
-						            <li><a class="list1" href="products.php">Lobster</a></li>
-						            <li><a class="list1" href="products.php">Citypret</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Kids</a></li>
-						            <li><a class="list1" href="products.php">River Island</a></li>
-						            <li><a class="list1" href="products.php">Penny</a></li>
-						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.php">Divaat</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Men</a></li>
-						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.php">Quiksilver</a></li>
-						            <li><a class="list1" href="products.php">Incult</a></li>
-						            <li><a class="list1" href="products.php">Proline</a></li>
-					            </ul>
-				            </div>
-			            </div>
-		            </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">women <b class="caret"></b></a>
-		            <ul class="dropdown-menu multi-column columns-3">
-			            <div class="row">
-				            <div class="col-sm-4">
-					           <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Women</a></li>
-						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.php">N-Gal</a></li>
-						            <li><a class="list1" href="products.php">Lobster</a></li>
-						            <li><a class="list1" href="products.php">Citypret</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					             <ul class="multi-column-dropdown">
-						            <li><a class="list"  href="products.php">Kids</a></li>
-						            <li><a class="list1" href="products.php">River Island</a></li>
-						            <li><a class="list1" href="products.php">Penny</a></li>
-						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.php">Divaat</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a  class="list" href="products.php">Men</a></li>
-						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.php">Quiksilver</a></li>
-						            <li><a class="list1" href="products.php">Incult</a></li>
-						            <li><a class="list1" href="products.php">Proline</a></li>
-					            </ul>
-				            </div>
-			            </div>
-		            </ul>
-		        </li>
-		        <li class="dropdown">
-		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">kids <b class="caret"></b></a>
-		            <ul class="dropdown-menu multi-column columns-3">
-			            <div class="row">
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Women</a></li>
-						            <li><a class="list1" href="products.php">PrettySecrets</a></li>
-						            <li><a class="list1" href="products.php">N-Gal</a></li>
-						            <li><a class="list1" href="products.php">Lobster</a></li>
-						            <li><a class="list1" href="products.php">Citypret</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					             <ul class="multi-column-dropdown">
-						            <li><a  class="list" href="products.php">Kids</a></li>
-						            <li><a class="list1" href="products.php">River Island</a></li>
-						            <li><a class="list1" href="products.php">Penny</a></li>
-						            <li><a class="list1" href="products.php">Nidhi Munim</a></li>
-						            <li><a class="list1" href="products.php">Divaat</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a class="list" href="products.php">Men</a></li>
-						            <li><a class="list1" href="products.php">Fiesta Clara</a></li>
-						            <li><a class="list1" href="products.php">Quiksilver</a></li>
-						            <li><a class="list1" href="products.php">Incult</a></li>
-						            <li><a class="list1" href="products.php">Proline</a></li>
-					            </ul>
-				            </div>
-			            </div>
-		            </ul>
-		        </li>
-					<li><a href="products.php">Top</a></li>
-					<li><a href="products.php">Bikini</a></li>
-	        </ul>
-	    </div>
-	    <!--/.navbar-collapse-->
+	  
 	</nav>
 	<!--/.navbar-->
 </div>
-			   <div class="search-box">
-					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
-
-<!-- search-scripts -->
-					<script src="js/classie.js"></script>
-					<script src="js/uisearch.js"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-					<!-- //search-scripts -->
+			 
 					<div class="clearfix"></div>
 					</div>
 				</div>
-			</div>
+			
 			<!--header-->
 			<!--contact-->
-			<div class="content">
+			<div class="content" >
  				<div class="main-1">
 					<div class="container">
 						<div class="container">
@@ -392,15 +245,19 @@ $('#register-form-link').click(function(e) {
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
+									<div id="alert-email"></div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
 									</div>
+									<div id="alert-password"></div>
 									<div class="form-group">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
 									</div>
+									<div id="alert-confirm-password"></div>
 									<div class="form-group">
 										<input type="text" name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Full Name" value="">
 									</div>
+									<div id="alert-name"></div>
 									<div class="form-group">
 										<input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone Number" value="" pattern="^(\+62|0)?\d{7,20}$">
 									</div>
@@ -410,6 +267,11 @@ $('#register-form-link').click(function(e) {
 											<option value="P">P</option>
 										</select>
 									</div>
+									<div id="alert-sex"></div>
+									<div class="form-group">
+										<input type="text" name="alamat" id="alamat" tabindex="2" class="form-control" placeholder="Address" value="">
+									</div>
+									<div id="alert-address"></div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
@@ -429,24 +291,12 @@ $('#register-form-link').click(function(e) {
 				</div>
 			</div>
 <!-- login -->
-<div class="subscribe">
-	 <div class="container">
-	 <div class="subscribe1">
-		 <h4>the latest from Tokokeren</h4>
-		 </div>
-		 <div class="subscribe2">
-		 <form>
-			 <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-			 <input type="submit" value="JOIN">
-		 </form>
-	 </div>
-	 <div class="clearfix"></div>
-	 </div>
-</div>
-</div>
+
+
 
 	<!--footer-->
-		<div class="footer-section">
+		<div class="footer-section" style="position : absolute; bottom : 0px;">
+            
 			<div class="container">
 				<div class="footer-grids">
 					<div class="col-md-2 footer-grid">

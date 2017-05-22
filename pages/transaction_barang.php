@@ -1,4 +1,9 @@
-<?php   session_start(); ?>
+<?php   session_start(); 
+if(!isset($_SESSION['email'])){ //if login in session is not set
+    header("Location: ../login.php");
+    
+}
+?>
 <!--
 Au<!--
 Author: W3layouts
@@ -62,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="./products.php">Products</a></li>
 					<li><a href="./transactions.php">Transactions</a></li>
 					<li><a href="./openshop.php">Open Shop</a></li>
-					<li><a href="./addproduct.php">Add product</a></li>
+					<?php if ($_SESSION['role']=="penjual"){ 					echo "<li><a href=\"./addproduct.php\">Add product</a></li>"                         ;}?>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
@@ -105,9 +110,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 $db = pg_connect('host=localhost dbname=c12 user=postgres password=basdat');
 
-//    $email = $_SESSION['email'];
-             $email = 'allegra467@gmail.com';
-    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email'"; 
+    $email = $_SESSION['email'];
+//             $email = 'allegra467@gmail.com';
+    $query = "SELECT * FROM tokokeren.TRANSAKSI_SHIPPED WHERE email_pembeli='$email' ORDER BY tanggal DESC"; 
     
              
     $result = pg_query($query); 

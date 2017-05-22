@@ -1,13 +1,11 @@
 <?php
     require 'connect.php';
-    echo('masuk');
     $db = connectDB();
     if (isset($_POST['login'])){
-        echo "if";
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $isAdmin = isAdmin($db, $email, $password);
-        if ($isAdmin == true){
+        $isAdmins = isAdmin($db, $email, $password);
+        if ($isAdmins == true){
             header("Location: admin/index.php");
         }
 
@@ -50,6 +48,7 @@
                 }
             }
         }
+        echo "<script>alert('Wrong username or password!');window.location.href='login.php';</script>";
 
         pg_close($db);
     }

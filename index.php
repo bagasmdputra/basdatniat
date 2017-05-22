@@ -58,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      echo "
             <div class=\"container\">
                 <div class=\"alert alert-success\">
+                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
                     $pesan
               </div>
             </div>";
@@ -79,12 +80,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
-		        <li class="dropdown">
-		            <li><a href="./pages/products.php">Products</a></li>
-					<li><a href="./pages/transactions.php">Transactions</a></li>
-					<li><a href="./pages/openshop.php">Open Shop</a></li>
-					<li><a href="./pages/addproduct.php">Add product</a></li>
+                <?php if (isset($_SESSION['email'])){
+			
+                
+                echo"<li><a href=\"index.php\">Home</a></li>
+		        <li class=\"dropdown\">
+		            <li><a href=\"./pages/products.php\">Products</a></li>
+					<li><a href=\"./pages/transactions.php\">Transactions</a></li>
+					<li><a href=\"./pages/openshop.php\">Open Shop</a></li>";
+                } 
+                if (isset($_SESSION['role']) && $_SESSION['role']=="penjual"){
+					echo "<li><a href=\"./pages/addproduct.php\">Add product</a></li>";
+}?>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
